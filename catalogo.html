@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<!-- SEO Primary -->
+<title>Catálogo de Tartas &amp; Entremets | Iconic Pasteleria Barcelona</title>
+<meta name="description" content="Descubre nuestra colección de tartas artesanales y entremets con efecto velvet en Barcelona. Variedad de sabores: chocolate, matcha, caramelo, frambuesa y más. Haz tu pedido online con entrega a domicilio en 48h."/>
+<meta name="keywords" content="catalogo tartas barcelona, entremets barcelona, tartas efecto velvet, tartas personalizadas barcelona, tartas a domicilio barcelona, pasteles artesanales barcelona, pasteleria online barcelona"/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="Iconic Pasteleria"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://iconicpasteleria.com/catalogo.html"/>
+<meta property="og:title" content="Catálogo de Tartas &amp; Entremets | Iconic Pasteleria Barcelona"/>
+<meta property="og:description" content="Tartas artesanales y entremets premium con efecto velvet. Múltiples sabores y acabados. Pedidos online con entrega en Barcelona en 48h."/>
+<meta property="og:image" content="https://i.ibb.co/Lh9Mwj36/IMG-20260310-160811.jpg"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Catálogo de Tartas &amp; Entremets | Iconic Pasteleria Barcelona"/>
+<meta name="twitter:description" content="Tartas artesanales y entremets premium con efecto velvet. Pedidos online con entrega en Barcelona en 48h."/>
+<meta name="twitter:image" content="https://i.ibb.co/Lh9Mwj36/IMG-20260310-160811.jpg"/>
+
+<!-- Schema JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Catálogo de Tartas y Entremets — Iconic Pasteleria",
+  "description": "Colección de tartas artesanales y entremets con efecto velvet disponibles para pedido online en Barcelona.",
+  "url": "https://iconicpasteleria.com/catalogo.html",
+  "numberOfItems": 3,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Rouge Velvet",
+      "description": "Entremet de mousse de frambuesa, crujiente de almendra y cobertura velvet rojo intenso.",
+      "offers": {
+        "@type": "Offer",
+        "price": "48",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "seller": { "@type": "Organization", "name": "Iconic Pasteleria" }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Matcha Sublime",
+      "description": "Tarta de bizcocho de té matcha ceremonial, ganache de yuzu y acabado velvet verde jade.",
+      "offers": {
+        "@type": "Offer",
+        "price": "52",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "seller": { "@type": "Organization", "name": "Iconic Pasteleria" }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Caramel Noir",
+      "description": "Entremet de caramelo salado con chocolate 72% Callebaut y textura velvet marrón oscuro.",
+      "offers": {
+        "@type": "Offer",
+        "price": "55",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "seller": { "@type": "Organization", "name": "Iconic Pasteleria" }
+      }
+    }
+  ]
+}
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  * { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif; }
+  html { scroll-behavior: smooth; }
+  .nav-blur { background: rgba(255,255,255,0.85); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); }
+  .btn-primary { background: #1d1d1f; color: #fff; transition: background .2s, transform .15s; }
+  .btn-primary:hover { background: #3a3a3c; transform: scale(1.02); }
+  .product-card { transition: transform .35s cubic-bezier(.25,.46,.45,.94), box-shadow .35s ease; }
+  .product-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+  .alergenos-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+  .alergen-chip {
+    display: flex; align-items: center; gap: 3px;
+    background: #f5f5f7; border-radius: 50px;
+    padding: 3px 8px 3px 5px;
+    font-size: 10px; color: #6e6e73; font-weight: 500;
+    white-space: nowrap;
+  }
+  .alergen-chip span { font-size: 12px; line-height: 1; }
+    display: flex; align-items: center; gap: 4px;
+    margin-bottom: 12px;
+    font-size: 12px; font-weight: 500; color: #16a34a;
+  }
+  .shipping-badge svg { flex-shrink: 0; } border-radius: 50px; padding: 8px 18px; font-size: 13px; cursor: pointer; background: white; transition: all .2s; }
+  .filter-btn:hover, .filter-btn.active { background: #1d1d1f; color: white; border-color: #1d1d1f; }
+  .wa-btn { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 58px; height: 58px; border-radius: 50%; background: #25D366; box-shadow: 0 4px 20px rgba(37,211,102,0.45); display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform .2s; }
+  .wa-btn:hover { transform: scale(1.08); }
+  /* Modal */
+  .modal-overlay { position: fixed; inset: 0; z-index: 900; background: rgba(0,0,0,0.55); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity .3s ease; padding: 20px; }
+  .modal-overlay.open { opacity: 1; pointer-events: all; }
+  .modal-box { background: white; border-radius: 24px; max-width: 680px; width: 100%; max-height: 90vh; overflow-y: auto; transform: translateY(20px); transition: transform .35s cubic-bezier(.25,.46,.45,.94); }
+  .modal-overlay.open .modal-box { transform: translateY(0); }
+  .thumb { cursor: pointer; border-radius: 8px; overflow: hidden; aspect-ratio: 3/4; flex-shrink: 0; width: 72px; transition: opacity .2s; }
+  .thumb:hover { opacity: 0.8; }
+  .thumb.active { outline: 2px solid #1d1d1f; outline-offset: 2px; }
+</style>
+</head>
+<body class="bg-white text-[#1d1d1f]">
+
+<!-- WhatsApp -->
+<a class="wa-btn" href="https://wa.me/34657677038?text=Hola!%20Me%20gustar%C3%ADa%20obtener%20informaci%C3%B3n%20sobre%20vuestros%20pasteles" target="_blank" rel="noopener">
+  <svg width="30" height="30" viewBox="0 0 32 32" fill="none"><path d="M16 2C8.27 2 2 8.27 2 16c0 2.44.65 4.73 1.79 6.71L2 30l7.5-1.96A13.94 13.94 0 0 0 16 30c7.73 0 14-6.27 14-14S23.73 2 16 2z" fill="white"/><path d="M21.3 18.37c-.28-.14-1.65-.81-1.9-.91-.26-.1-.44-.14-.63.14-.19.28-.72.91-.88 1.1-.16.19-.33.21-.6.07-.28-.14-1.17-.43-2.23-1.37-.82-.73-1.38-1.63-1.54-1.9-.16-.28-.02-.43.12-.57.12-.12.28-.33.42-.49.14-.16.19-.28.28-.46.1-.19.05-.35-.02-.49-.07-.14-.63-1.52-.86-2.08-.23-.55-.46-.47-.63-.48h-.54c-.19 0-.49.07-.74.35-.26.28-1 .98-1 2.39s1.02 2.77 1.17 2.96c.14.19 2.01 3.07 4.87 4.3.68.29 1.21.47 1.62.6.68.22 1.3.19 1.79.11.55-.08 1.68-.69 1.92-1.35.23-.67.23-1.24.16-1.35-.07-.1-.26-.16-.54-.3z" fill="#25D366"/></svg>
+</a>
+
+<!-- NAV -->
+<nav class="nav-blur fixed top-0 left-0 right-0 z-50 border-b border-[#d2d2d7]">
+  <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+    <a href="index.html" class="text-[15px] font-semibold tracking-tight">iconic<span class="font-light">pasteleria</span></a>
+    <div class="hidden md:flex items-center gap-8 text-[13px] text-[#6e6e73]">
+      <a href="index.html#productos" class="hover:text-[#1d1d1f] transition-colors">Inicio</a>
+      <a href="index.html#contacto" class="hover:text-[#1d1d1f] transition-colors">Contacto</a>
+    </div>
+    <a href="index.html#contacto" class="btn-primary text-[13px] px-4 py-2 rounded-full font-medium">Pedir ahora</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<div class="pt-28 pb-12 px-6 text-center bg-[#fbfbfd] border-b border-[#e5e5ea]">
+  <a href="index.html" class="inline-flex items-center gap-1 text-[13px] text-[#6e6e73] hover:text-[#1d1d1f] transition-colors mb-6">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+    Volver al inicio
+  </a>
+  <p class="text-[13px] uppercase tracking-widest text-[#6e6e73] mb-2 font-medium">Iconic Pasteleria · Barcelona</p>
+  <h1 class="text-[42px] md:text-[52px] font-semibold tracking-tight mb-3">Catálogo completo</h1>
+  <p class="text-[17px] text-[#6e6e73] font-light">Tartas y entremets artesanales · Disponibilidad en 48h · Envío gratis en Barcelona</p>
+</div>
+
+<!-- FILTROS -->
+<div class="sticky top-14 bg-white border-b border-[#e5e5ea] z-40">
+  <div class="max-w-5xl mx-auto px-6 py-3 flex items-center gap-3 overflow-x-auto">
+    <button class="filter-btn active" onclick="filterProducts('todos', this)">Todos</button>
+    <button class="filter-btn" onclick="filterProducts('entremet', this)">Entremets</button>
+    <button class="filter-btn" onclick="filterProducts('tarta', this)">Tartas</button>
+    <button class="filter-btn" onclick="filterProducts('proximo', this)">Próximamente</button>
+  </div>
+</div>
+
+<!-- GRID PRODUCTOS -->
+<section class="py-16 px-6">
+  <div class="max-w-5xl mx-auto">
+    <div id="products-grid" class="grid md:grid-cols-3 gap-6">
+
+      <!-- Rouge Velvet -->
+      <div class="product-card bg-white rounded-2xl overflow-hidden border border-[#e5e5ea] cursor-pointer" data-category="entremet" onclick="openModal(0)">
+        <div class="aspect-[3/4] overflow-hidden"><img src="https://i.ibb.co/6J4CN3xv/IMG-20260405-153055.jpg" alt="Rouge Velvet" class="w-full h-full object-cover"/></div>
+        <div class="p-5">
+          <p class="text-[11px] uppercase tracking-widest text-[#6e6e73] mb-1">Entremet</p>
+          <h3 class="text-[17px] font-semibold mb-1">Rouge Velvet</h3>
+          <p class="text-[14px] text-[#6e6e73] mb-3">Mousse de frambuesa, crujiente de almendra y cobertura velvet rojo intenso.</p>
+          <div class="flex items-center gap-1 mb-3">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <span class="text-[12px] font-medium text-green-600">Envío gratis en Barcelona</span>
+          </div>
+          <div class="flex items-center justify-between"><span class="text-[17px] font-semibold">48 €</span><span class="text-[13px] text-[#6e6e73] flex items-center gap-1">Ver más <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></span></div>
+        </div>
+      </div>
+
+      <!-- Matcha Sublime -->
+      <div class="product-card bg-white rounded-2xl overflow-hidden border border-[#e5e5ea] cursor-pointer" data-category="tarta" onclick="openModal(1)">
+        <div class="aspect-[3/4] overflow-hidden"><img src="https://i.ibb.co/Lh9Mwj36/IMG-20260310-160811.jpg" alt="Matcha Sublime" class="w-full h-full object-cover"/></div>
+        <div class="p-5">
+          <p class="text-[11px] uppercase tracking-widest text-[#6e6e73] mb-1">Tarta</p>
+          <h3 class="text-[17px] font-semibold mb-1">Matcha Sublime</h3>
+          <p class="text-[14px] text-[#6e6e73] mb-3">Bizcocho de té matcha ceremonial, ganache de yuzu y acabado velvet verde jade.</p>
+          <div class="flex items-center gap-1 mb-3">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <span class="text-[12px] font-medium text-green-600">Envío gratis en Barcelona</span>
+          </div>
+          <div class="flex items-center justify-between"><span class="text-[17px] font-semibold">52 €</span><span class="text-[13px] text-[#6e6e73] flex items-center gap-1">Ver más <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></span></div>
+        </div>
+      </div>
+
+      <!-- Caramel Noir -->
+      <div class="product-card bg-white rounded-2xl overflow-hidden border border-[#e5e5ea] cursor-pointer" data-category="entremet" onclick="openModal(2)">
+        <div class="aspect-[3/4] overflow-hidden"><img src="https://i.ibb.co/KxyFRWPd/Picsart-26-04-07-12-28-09-757.jpg" alt="Caramel Noir" class="w-full h-full object-cover"/></div>
+        <div class="p-5">
+          <p class="text-[11px] uppercase tracking-widest text-[#6e6e73] mb-1">Entremet</p>
+          <h3 class="text-[17px] font-semibold mb-1">Caramel Noir</h3>
+          <p class="text-[14px] text-[#6e6e73] mb-3">Caramelo salado, chocolate 72% Callebaut y textura velvet marrón oscuro aterciopelado.</p>
+          <div class="flex items-center gap-1 mb-3">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <span class="text-[12px] font-medium text-green-600">Envío gratis en Barcelona</span>
+          </div>
+          <div class="flex items-center justify-between"><span class="text-[17px] font-semibold">55 €</span><span class="text-[13px] text-[#6e6e73] flex items-center gap-1">Ver más <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></span></div>
+        </div>
+      </div>
+
+      <!-- Próximo 1 -->
+      <div class="product-card bg-white rounded-2xl overflow-hidden border border-[#e5e5ea]" data-category="proximo">
+        <div class="aspect-[3/4] bg-[#f5f5f7] flex items-center justify-center"><span class="text-[13px] text-[#8e8e93]">Próximamente</span></div>
+        <div class="p-5">
+          <p class="text-[11px] uppercase tracking-widest text-[#6e6e73] mb-1">Tarta</p>
+          <h3 class="text-[17px] font-semibold mb-1">Nuevo producto</h3>
+          <p class="text-[14px] text-[#6e6e73] mb-3">Próximamente disponible en nuestra colección.</p>
+          <div class="flex items-center gap-1 mb-3">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <span class="text-[12px] font-medium text-green-600">Envío gratis en Barcelona</span>
+          </div>
+          <span class="text-[17px] font-semibold">— €</span>
+        </div>
+      </div>
+
+      <!-- Próximo 2 -->
+      <div class="product-card bg-white rounded-2xl overflow-hidden border border-[#e5e5ea]" data-category="proximo">
+        <div class="aspect-[3/4] bg-[#f5f5f7] flex items-center justify-center"><span class="text-[13px] text-[#8e8e93]">Próximamente</span></div>
+        <div class="p-5">
+          <p class="text-[11px] uppercase tracking-widest text-[#6e6e73] mb-1">Entremet</p>
+          <h3 class="text-[17px] font-semibold mb-1">Nuevo producto</h3>
+          <p class="text-[14px] text-[#6e6e73] mb-3">Próximamente disponible en nuestra colección.</p>
+          <div class="flex items-center gap-1 mb-3">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <span class="text-[12px] font-medium text-green-600">Envío gratis en Barcelona</span>
+          </div>
+          <span class="text-[17px] font-semibold">— €</span>
+        </div>
+      </div>
+
+      <!-- Próximo 3 -->
+      <div class="product-card bg-white rounded-2xl overflow-hidden border border-[#e5e5ea]" data-category="proximo">
+        <div class="aspect-[3/4] bg-[#f5f5f7] flex items-center justify-center"><span class="text-[13px] text-[#8e8e93]">Próximamente</span></div>
+        <div class="p-5">
+          <p class="text-[11px] uppercase tracking-widest text-[#6e6e73] mb-1">Tarta</p>
+          <h3 class="text-[17px] font-semibold mb-1">Nuevo producto</h3>
+          <p class="text-[14px] text-[#6e6e73] mb-3">Próximamente disponible en nuestra colección.</p>
+          <div class="flex items-center gap-1 mb-3">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <span class="text-[12px] font-medium text-green-600">Envío gratis en Barcelona</span>
+          </div>
+          <span class="text-[17px] font-semibold">— €</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#f5f5f7] border-t border-[#d2d2d7] py-10 px-6">
+  <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-[13px] text-[#6e6e73]">
+    <a href="index.html" class="font-semibold text-[#1d1d1f]">iconic<span class="font-light">pasteleria</span></a>
+    <span>© 2025 Iconic Pasteleria · Barcelona, España</span>
+    <div class="flex gap-6">
+      <a href="index.html" class="hover:text-[#1d1d1f] transition-colors">Inicio</a>
+      <a href="index.html#contacto" class="hover:text-[#1d1d1f] transition-colors">Contacto</a>
+      <a href="https://instagram.com/iconicpasteleria" target="_blank" rel="noopener" class="hover:text-[#1d1d1f] transition-colors">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL GALERÍA -->
+<div id="modal-overlay" class="modal-overlay" onclick="closeModalOutside(event)">
+  <div class="modal-box">
+    <div class="flex items-center justify-between px-6 pt-6 pb-4 border-b border-[#e5e5ea]">
+      <div>
+        <p id="modal-category" class="text-[11px] uppercase tracking-widest text-[#6e6e73] font-medium mb-0.5"></p>
+        <h3 id="modal-title" class="text-[22px] font-semibold"></h3>
+      </div>
+      <button onclick="closeModal()" class="w-9 h-9 flex items-center justify-center rounded-full bg-[#f5f5f7] hover:bg-[#e5e5ea] transition-colors">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1d1d1f" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="px-6 pt-5">
+      <div class="rounded-2xl overflow-hidden bg-[#f5f5f7] mx-auto" style="aspect-ratio:3/4;max-width:300px;">
+        <img id="modal-main-img" src="" alt="" class="w-full h-full object-cover"/>
+      </div>
+    </div>
+    <div id="modal-thumbs" class="flex gap-3 px-6 pt-3 justify-center"></div>
+    <div class="px-6 pt-4 pb-6">
+      <p id="modal-desc" class="text-[15px] text-[#6e6e73] leading-relaxed mb-4"></p>
+      <div class="flex items-center gap-2 mb-4">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        <span class="text-[13px] font-medium text-green-600">Envío gratis en Barcelona</span>
+      </div>
+      <div class="flex items-center justify-between">
+        <span id="modal-price" class="text-[22px] font-semibold"></span>
+        <a href="index.html#contacto" class="btn-primary px-6 py-3 rounded-full text-[14px] font-medium">Encargar ahora</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ── Alérgenos — solo en modal ──
+  const ALERGENOS = [
+    { emoji: '🌾', label: 'Gluten'         },
+    { emoji: '🥛', label: 'Lácteos'        },
+    { emoji: '🥚', label: 'Huevo'          },
+    { emoji: '🥜', label: 'Cacahuetes'     },
+    { emoji: '🌰', label: 'Frutos secos'   },
+    { emoji: '🫘', label: 'Soja'           },
+    { emoji: '🐚', label: 'Sulfitos'       },
+    { emoji: '🌿', label: 'Cáscara f.secos'},
+  ];
+
+
+
+  const products=[
+    {category:'Entremet',title:'Rouge Velvet',price:'48 €',
+     desc:'Una composición de mousse de frambuesa de textura sedosa, sobre una base de crujiente de almendra tostada. Cubierto con nuestro acabado velvet rojo intenso. Ideal para ocasiones especiales.',
+     images:['https://i.ibb.co/6J4CN3xv/IMG-20260405-153055.jpg','FOTO_ROUGE_2','FOTO_ROUGE_3']},
+    {category:'Tarta',title:'Matcha Sublime',price:'52 €',
+     desc:'Bizcocho de té matcha ceremonial de origen japonés, relleno de ganache de yuzu para un contraste cítrico. Acabado velvet verde jade de presencia elegante y única.',
+     images:['https://i.ibb.co/Lh9Mwj36/IMG-20260310-160811.jpg','FOTO_MATCHA_2','FOTO_MATCHA_3']},
+    {category:'Entremet',title:'Caramel Noir',price:'55 €',
+     desc:'Mousse de caramelo salado sobre ganache de chocolate negro 72% Callebaut. Acabado velvet marrón oscuro aterciopelado. Sofisticado, profundo e irresistible.',
+     images:['https://i.ibb.co/KxyFRWPd/Picsart-26-04-07-12-28-09-757.jpg','FOTO_CARAMEL_2','FOTO_CARAMEL_3']}
+  ];
+
+  function filterProducts(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('#products-grid > div').forEach(card=>{
+      const c=card.dataset.category||'';
+      card.style.display=(cat==='todos'||c===cat)?'':'none';
+    });
+  }
+
+  const $=id=>document.getElementById(id);
+  function openModal(idx){
+    const p=products[idx];
+    $('modal-category').textContent=p.category;
+    $('modal-title').textContent=p.title;
+    $('modal-price').textContent=p.price;
+    $('modal-desc').textContent=p.desc;
+
+    // Inject allergens
+    let alergenosEl = $('modal-alergenos');
+    if (!alergenosEl) {
+      alergenosEl = document.createElement('div');
+      alergenosEl.id = 'modal-alergenos';
+      alergenosEl.style.marginBottom = '16px';
+      $('modal-desc').insertAdjacentElement('afterend', alergenosEl);
+    }
+    alergenosEl.innerHTML = `
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#8e8e93;font-weight:600;margin-bottom:8px;">Alérgenos</p>
+      <div class="alergenos-row">${ALERGENOS.map(a=>`<div class="alergen-chip"><span>${a.emoji}</span>${a.label}</div>`).join('')}</div>`;
+
+    setMainImage(p.images[0]);renderThumbs(p.images,0);
+    $('modal-overlay').classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function setMainImage(src,idx){
+    $('modal-main-img').src=src.startsWith('FOTO_')?'':src;
+    if(idx!==undefined) document.querySelectorAll('.thumb').forEach((t,i)=>t.classList.toggle('active',i===idx));
+  }
+  function renderThumbs(images,activeIdx){
+    $('modal-thumbs').innerHTML=images.map((src,i)=>{
+      const ph=src.startsWith('FOTO_');
+      return `<div class="thumb ${i===activeIdx?'active':''}" style="background:${ph?'#e5e5ea':'transparent'}" onclick="setMainImage('${src}',${i})">
+        ${ph?`<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:10px;color:#8e8e93;text-align:center;">Foto<br/>próx.</div>`
+           :`<img src="${src}" style="width:100%;height:100%;object-fit:cover;"/>`}
+      </div>`;
+    }).join('');
+  }
+  function closeModal(){$('modal-overlay').classList.remove('open');document.body.style.overflow='';}
+  function closeModalOutside(e){if(e.target.id==='modal-overlay')closeModal();}
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+</script>
+</body>
+</html>
