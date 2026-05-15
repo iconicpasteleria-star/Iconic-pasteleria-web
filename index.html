@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<!-- SEO Primary -->
+<title>Iconic Pasteleria | Tartas &amp; Entremets en Barcelona</title>
+<meta name="description" content="Las mejores tartas minimalistas con efecto velvet y entremets en Barcelona. 5 estrellas en Google. Pedidos personalizados y alta pastelería con ingredientes premium."/>
+<meta name="keywords" content="pasteleria barcelona, tartas barcelona, entremets barcelona, tartas de diseño, pasteles a domicilio barcelona, tartas efecto velvet en barcelona"/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="Iconic Pasteleria"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://iconicpasteleria.com"/>
+<meta property="og:title" content="Iconic Pasteleria | Alta Pastelería en Barcelona"/>
+<meta property="og:description" content="Diseño, sabor y tradición artesanal. Tartas y entremets con efecto velvet. ¡5 estrellas en Google!"/>
+<meta property="og:image" content="https://i.ibb.co/6J4CN3xv/IMG-20260405-153055.jpg"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Iconic Pasteleria | Alta Pastelería en Barcelona"/>
+<meta name="twitter:description" content="Diseño, sabor y tradición artesanal. Tartas y entremets con efecto velvet. ¡5 estrellas en Google!"/>
+<meta name="twitter:image" content="https://i.ibb.co/6J4CN3xv/IMG-20260405-153055.jpg"/>
+
+<!-- Schema JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Bakery",
+  "name": "Iconic Pasteleria",
+  "image": "https://i.ibb.co/6J4CN3xv/IMG-20260405-153055.jpg",
+  "@id": "https://iconicpasteleria.com",
+  "url": "https://iconicpasteleria.com",
+  "telephone": "+34657677038",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Sarrià",
+    "addressLocality": "Barcelona",
+    "postalCode": "08034",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 41.3851,
+    "longitude": 2.1734
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "09:00",
+    "closes": "20:00"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "6"
+  },
+  "priceRange": "$$",
+  "servesCuisine": "Pastelería artesanal",
+  "hasMap": "https://maps.google.com/?q=Sarrià,Barcelona",
+  "sameAs": ["https://instagram.com/iconicpasteleria"]
+}
+</script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  * { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  .nav-blur { background: rgba(255,255,255,0.85); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); }
+  .gradient-text { background: linear-gradient(135deg, #1d1d1f 0%, #6e6e73 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .btn-primary { background: #1d1d1f; color: #fff; transition: background .2s, transform .15s; }
+  .btn-primary:hover { background: #3a3a3c; transform: scale(1.02); }
+  .btn-primary:active { transform: scale(0.98); }
+  .product-card { transition: transform .35s cubic-bezier(.25,.46,.45,.94), box-shadow .35s ease; }
+  .product-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+  .icon-wrap { width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; }
+  .divider { height: 1px; background: #d2d2d7; }
+  input:focus, textarea:focus { outline: none; border-color: #1d1d1f; box-shadow: 0 0 0 3px rgba(29,29,31,0.1); }
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; } .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; } .reveal-delay-4 { transition-delay: 0.45s; }
+  .form-step { background: white; border: 1.5px solid #e5e5ea; border-radius: 18px; padding: 20px; transition: opacity .4s, filter .4s; }
+  .form-step.locked { opacity: 0.35; pointer-events: none; filter: grayscale(0.3); user-select: none; }
+  .step-badge { width: 26px; height: 26px; border-radius: 50%; background: #1d1d1f; color: white; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .option-pill { display: flex; align-items: center; justify-content: center; border: 1.5px solid #d2d2d7; border-radius: 12px; padding: 10px 12px; cursor: pointer; font-size: 14px; background: white; transition: all .2s; user-select: none; text-align: center; }
+  .option-pill:hover { border-color: #1d1d1f; background: #f5f5f7; }
+  .option-pill:has(input:checked) { border-color: #1d1d1f; background: #1d1d1f; color: white; }
+  .inp:focus { outline: none; border-color: #1d1d1f; box-shadow: 0 0 0 3px rgba(29,29,31,0.1); }
+  .cal-day { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 13px; cursor: pointer; transition: all .15s; color: #1d1d1f; }
+  .cal-day:hover:not(.disabled) { background: #f5f5f7; }
+  .cal-day.selected { background: #1d1d1f !important; color: white !important; }
+  .cal-day.disabled { color: #d2d2d7; cursor: default; pointer-events: none; }
+  .cal-day.today { font-weight: 700; }
+  .modal-overlay { position: fixed; inset: 0; z-index: 900; background: rgba(0,0,0,0.55); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity .3s ease; padding: 20px; }
+  .modal-overlay.open { opacity: 1; pointer-events: all; }
+  .modal-box { background: white; border-radius: 24px; max-width: 680px; width: 100%; max-height: 90vh; overflow-y: auto; transform: translateY(20px); transition: transform .35s cubic-bezier(.25,.46,.45,.94); }
+  .modal-overlay.open .modal-box { transform: translateY(0); }
+  .thumb { cursor: pointer; border-radius: 8px; overflow: hidden; transition: opacity .2s; aspect-ratio: 3/4; flex-shrink: 0; width: 72px; }
+  .thumb:hover { opacity: 0.8; }
+  .thumb.active { outline: 2px solid #1d1d1f; outline-offset: 2px; }
+  .wa-btn { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 58px; height: 58px; border-radius: 50%; background: #25D366; box-shadow: 0 4px 20px rgba(37,211,102,0.45); display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform .2s; }
+  .wa-btn:hover { transform: scale(1.08); }
+</style>
+</head>
+<body class="bg-white text-[#1d1d1f]">
+
+<div id="custom-cursor"></div>
+
+<a class="wa-btn" href="https://wa.me/34657677038?text=Hola!%20Me%20gustar%C3%ADa%20obtener%20informaci%C3%B3n%20sobre%20vuestros%20pasteles" target="_blank" rel="noopener">
+  <svg width="30" height="30" viewBox="0 0 32 32" fill="none"><path d="M16 2C8.27 2 2 8.27 2 16c0 2.44.65 4.73 1.79 6.71L2 30l7.5-1.96A13.94 13.94 0 0 0 16 30c7.73 0 14-6.27 14-14S23.73 2 16 2z" fill="white"/><path d="M21.3 18.37c-.28-.14-1.65-.81-1.9-.91-.26-.1-.44-.14-.63.14-.19.28-.72.91-.88 1.1-.16.19-.33.21-.6.07-.28-.14-1.17-.43-2.23-1.37-.82-.73-1.38-1.63-1.54-1.9-.16-.28-.02-.43.12-.57.12-.12.28-.33.42-.49.14-.16.19-.28.28-.46.1-.19.05-.35-.02-.49-.07-.14-.63-1.52-.86-2.08-.23-.55-.46-.47-.63-.48h-.54c-.19 0-.49.07-.74.35-.26.28-1 .98-1 2.39s1.02 2.77 1.17 2.96c.14.19 2.01 3.07 4.87 4.3.68.29 1.21.47 1.62.6.68.22 1.3.19 1.79.11.55-.08 1.68-.69 1.92-1.35.23-.67.23-1.24.16-1.35-.07-.1-.26-.16-.54-.3z" fill="#25D366"/></svg>
+</a>
+
+<nav class="nav-blur fixed top-0 left-0 right-0 z-50 border-b border-[#d2d2d7]">
+  <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+    <span class="text-[15px] font-semibold tracking-tight">iconic<span class="font-light">pasteleria</span></span>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#productos" class="nav-link">Productos</a>
+      <a href="#caracteristicas" class="nav-link">Nosotros</a>
+      <a href="#contacto" class="nav-link">Contacto</a>
+    </div>
+    <a href="#contacto" class="btn-primary text-[13px] px-4 py-2 rounded-full font-medium">Pedir ahora</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="pt-20 pb-0 bg-[#fbfbfd] overflow-hidden">
+  <div class="max-w-6xl mx-auto px-6 min-h-[92vh] grid md:grid-cols-2 gap-0 items-center">
+
+    <!-- Columna izquierda: texto -->
+    <div class="py-24 md:py-0 flex flex-col justify-center text-center md:text-left">
+      <div class="inline-flex items-center gap-2 bg-white border border-[#e5e5ea] rounded-full px-4 py-2 mb-8 w-fit mx-auto md:mx-0 reveal">
+        <span class="text-[#f5a623] text-[13px]">★★★★★</span>
+        <span class="text-[12px] text-[#6e6e73] font-medium">+50 pedidos entregados en Barcelona</span>
+      </div>
+
+      <p class="text-[13px] uppercase tracking-widest text-[#6e6e73] mb-4 font-medium reveal">Barcelona · Artisan Bakery</p>
+
+      <h1 class="text-[48px] md:text-[62px] lg:text-[72px] font-semibold leading-[1.05] tracking-tight mb-6 reveal reveal-delay-1">
+        <span class="gradient-text">Tartas y<br/>entremets</span><br/>
+        <span class="font-light text-[#6e6e73]">que no olvidarás.</span>
+      </h1>
+
+      <p class="text-[17px] text-[#6e6e73] font-light leading-relaxed mb-10 max-w-md mx-auto md:mx-0 reveal reveal-delay-2">
+        Elaborados a mano con ingredientes de primera calidad. Cada pieza, una experiencia de textura y sabor única.
+      </p>
+
+      <div class="flex items-center gap-4 reveal reveal-delay-3 justify-center md:justify-start">
+        <a href="#productos" class="btn-primary inline-flex items-center gap-2 px-8 py-4 rounded-full text-[15px] font-medium">
+          Ver productos
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </a>
+        <a href="#contacto" class="inline-flex items-center gap-2 px-8 py-4 rounded-full text-[15px] font-medium border border-[#d2d2d7] text-[#1d1d1f] hover:bg-[#f5f5f7] transition-all">
+          Hacer pedido
+        </a>
+      </div>
+
+      <div class="flex items-center gap-8 mt-12 pt-8 border-t border-[#e5e5ea] reveal reveal-delay-4 justify-center md:justify-start">
+        <div>
+          <p class="text-[24px] font-semibold text-[#1d1d1f]">8+</p>
+          <p class="text-[12px] text-[#6e6e73] font-medium uppercase tracking-wide">Años de experiencia</p>
+        </div>
+        <div class="w-px h-10 bg-[#e5e5ea]"></div>
+        <div>
+          <p class="text-[24px] font-semibold text-[#1d1d1f]">3K+</p>
+          <p class="text-[12px] text-[#6e6e73] font-medium uppercase tracking-wide">Estudiantes online</p>
+        </div>
+        <div class="w-px h-10 bg-[#e5e5ea]"></div>
+        <div>
+          <p class="text-[24px] font-semibold text-[#1d1d1f]">5★</p>
+          <p class="text-[12px] text-[#6e6e73] font-medium uppercase tracking-wide">En Google</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna derecha: foto (solo desktop) -->
+    <div class="relative h-full min-h-[600px] md:min-h-screen items-stretch reveal reveal-delay-2 hidden md:flex">
+      <div class="relative w-full overflow-hidden md:rounded-l-[48px]" style="margin-right:-24px;">
+        <img src="https://i.ibb.co/23qcYR91/IMG-20260514-173125-2-1.jpg" alt="Tarta artesanal Iconic Pasteleria" class="w-full h-full object-cover" style="min-height:600px;"/>
+        <div class="absolute inset-0" style="background:linear-gradient(to right,rgba(251,251,253,0.15) 0%,transparent 40%);"></div>
+        <div class="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-md rounded-2xl px-5 py-4 border border-white/60" style="box-shadow:0 8px 32px rgba(0,0,0,0.08);">
+          <p class="text-[11px] uppercase tracking-widest text-[#6e6e73] mb-1">Colección destacada</p>
+          <p class="text-[16px] font-semibold text-[#1d1d1f]">Rouge Velvet</p>
+          <div class="flex items-center justify-between mt-2">
+            <p class="text-[13px] text-[#6e6e73]">Mousse de frambuesa · Efecto velvet</p>
+            <span class="text-[15px] font-semibold text-[#1d1d1f]">48 €</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="pt-20 pb-0 bg-[#fbfbfd] overflow-hidden">
+  <div class="max-w-6xl mx-auto px-6 min-h-[92vh] grid md:grid-cols-2 gap-0 items-center">
+
+    <!-- Columna izquierda: texto -->
+    <div class="py-24 md:py-0 flex flex-col justify-center text-center md:text-left">
+      <!-- Badge reseñas -->
+      <div class="inline-flex items-center gap-2 bg-white border border-[#e5e5ea] rounded-full px-4 py-2 mb-8 w-fit mx-auto md:mx-0 reveal">
+        <span class="text-[#f5a623] text-[13px]">★★★★★</span>
+        <span class="text-[12px] text-[#6e6e73] font-medium">+50 pedidos entregados en Barcelona</span>
+      </div>
+
+      <p class="text-[13px] uppercase tracking-widest text-[#6e6e73] mb-4 font-medium reveal">Barcelona · Artisan Bakery</p>
+
+      <h1 class="text-[48px] md:text-[62px] lg:text-[72px] font-semibold leading-[1.05] tracking-tight mb-6 reveal reveal-delay-1">
+        <span class="gradient-text">Tartas y<br/>entremets</span><br/>
+        <span class="font-light text-[#6e6e73]">que no olvidarás.</span>
+      </h1>
+
+      <p class="text-[17px] text-[#6e6e73] font-light leading-relaxed mb-10 max-w-md reveal reveal-delay-2">
+        Elaborados a mano con ingredientes de primera calidad. Cada pieza, una experiencia de textura y sabor única.
+      </p>
+
+      <div class="flex items-center gap-4 reveal reveal-delay-3 justify-center md:justify-start">
+        <a href="#productos" class="btn-primary inline-flex items-center gap-2 px-8 py-4 rounded-full text-[15px] font-medium">
+          Ver productos
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </a>
+        <a href="#contacto" class="inline-flex items-center gap-2 px-8 py-4 rounded-full text-[15px] font-medium border border-[#d2d2d7] text-[#1d1d1f] hover:bg-[#f5f5f7] transition-all">
+          Hacer pedido
+        </a>
+      </div>
+
+      <!-- Stats row -->
+      <div class="flex items-center gap-8 mt-12 pt-8 border-t border-[#e5e5ea] reveal reveal-delay-4">
+        <div>
+          <p class="text-[24px] font-semibold text-[#1d1d1f]">8+</p>
+          <p class="text-[12px] text-[#6e6e73] font-medium uppercase tracking-wide">Años de experiencia</p>
+        </div>
+        <div class="w-px h-10 bg-[#e5e5ea]"></div>
+        <div>
+          <p class="text-[24px] font-semibold text-[#1d1d1f]">3K+</p>
+          <p class="text-[12px] text-[#6e6e73] font-medium uppercase tracking-wide">Estudiantes online</p>
+        </div>
+        <div class="w-px h-10 bg-[#e5e5ea]"></div>
+        <div>
+          <p class="text-[24px] font-semibold text-[#1d1d1f]">5★</p>
+          <p class="text-[12px] text-[#6e6e73] font-medium uppercase tracking-wide">En Google</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna derecha: foto (solo desktop) -->
+    <div class="relative h-full min-h-[600px] md:min-h-screen items-stretch reveal reveal-delay-2 hidden md:flex">
+      <!-- Foto principal -->
+      <div class="relative w-full overflow-hidden md:rounded-l-[48px]" style="margin-right:-24px;">
+        <img src="https://i.ibb.co/nNzVNNXK/IMG-20260419-143743.jpg" alt="Tarta artesanal Iconic Pasteleria" class="w-full h-full object-cover" style="min-height:600px;"/>
+        <!-- Overlay sutil -->
+        <div class="absolute inset-0" style="background:linear-gradient(to right, rgba(251,251,253,0.15) 0%, transparent 40%);"></div>
+        <!-- Floating card -->
+        <div class="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-md rounded-2xl px-5 py-4 border border-white/60" style="box-shadow:0 8px 32px rgba(0,0,0,0.08);">
+          <p class="text-[11px] uppercase tracking-widest text-[#6e6e73] mb-1">Colección destacada</p>
+          <p class="text-[16px] font-semibold text-[#1d1d1f]">Rouge Velvet</p>
+          <div class="flex items-center justify-between mt-2">
+            <p class="text-[13px] text-[#6e6e73]">Mousse de frambuesa · Efecto velvet</p>
+            <span class="text-[15px] font-semibold text-[#1d1d1f]">48 €</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider max-w-5xl mx-auto"></div>
+
+<!-- PRODUCTOS -->
+<section id="productos" class="py-24 px-6 bg-[#fbfbfd]">
+  <div class="max-w-5xl mx-auto">
+    <p class="text-center text-[13px] uppercase tracking-widest text-[#6e6e73] mb-3 font-medium">Nuestra selección</p>
+    <h2 class="text-center text-[36px] md:text-[44px] font-semibold tracking-tight mb-4">Productos</h2>
+    <p class="text-center text-[17px] text-[#6e6e73] mb-16 font-light">Colección limitada, disponibilidad en 48hrs.</p>
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <div class="product-card bg-white rounded-2xl overflow-hidden border border-[#e5e5ea] cursor-pointer" onclick="openModal(0)">
+        <div class="img-wrap aspect-[3/4]"><img src="https://i.ibb.co/6J4CN3xv/IMG-20260405-153055.jpg" alt="Rouge Velvet — Entremet de frambuesa" class="w-full h-full object-cover"/></div>
+        <div class="p-5">
+          <p class="text-[11px] uppercase tracking-widest text-[#6e6e73] mb-1">Entremet</p>
+          <h3 class="text-[17px] font-semibold mb-1">Rouge Velvet</h3>
+          <p class="text-[14px] text-[#6e6e73] mb-3">Mousse de frambuesa, crujiente de almendra y cobertura velvet rojo intenso.</p>
+          <div class="flex items-center gap-1 mb-3"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><span class="text-[12px] font-medium text-green-600">Envío gratis según tu zona</span></div>
+          <div class="flex items-center justify-between"><span class="text-[17px] font-semibold">48 €</span><span class="text-[13px] text-[#6e6e73] flex items-center gap-1">Ver más <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></span></div>
+        </div>
+      </div>
+
+      <div class="product-card bg-white rounded-2xl overflow-hidden border border-[#e5e5ea] cursor-pointer" onclick="openModal(1)">
+        <div class="img-wrap aspect-[3/4]"><img src="https://i.ibb.co/Lh9Mwj36/IMG-20260310-160811.jpg" alt="Matcha Sublime — Tarta de matcha y yuzu" class="w-full h-full object-cover"/></div>
+        <div class="p-5">
+          <p class="text-[11px] uppercase tracking-widest text-[#6e6e73] mb-1">Tarta</p>
+          <h3 class="text-[17px] font-semibold mb-1">Matcha Sublime</h3>
+          <p class="text-[14px] text-[#6e6e73] mb-3">Bizcocho de té matcha ceremonial, ganache de yuzu y acabado velvet verde jade.</p>
+          <div class="flex items-center gap-1 mb-3"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><span class="text-[12px] font-medium text-green-600">Envío gratis según tu zona</span></div>
+          <div class="flex items-center justify-between"><span class="text-[17px] font-semibold">52 €</span><span class="text-[13px] text-[#6e6e73] flex items-center gap-1">Ver más <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></span></div>
+        </div>
+      </div>
+
+      <div class="product-card bg-white rounded-2xl overflow-hidden border border-[#e5e5ea] cursor-pointer" onclick="openModal(2)">
+        <div class="img-wrap aspect-[3/4]"><img src="https://i.ibb.co/KxyFRWPd/Picsart-26-04-07-12-28-09-757.jpg" alt="Caramel Noir — Entremet de caramelo y chocolate" class="w-full h-full object-cover"/></div>
+        <div class="p-5">
+          <p class="text-[11px] uppercase tracking-widest text-[#6e6e73] mb-1">Entremet</p>
+          <h3 class="text-[17px] font-semibold mb-1">Caramel Noir</h3>
+          <p class="text-[14px] text-[#6e6e73] mb-3">Caramelo salado, chocolate 72% Callebaut y textura velvet marrón oscuro aterciopelado.</p>
+          <div class="flex items-center gap-1 mb-3"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><span class="text-[12px] font-medium text-green-600">Envío gratis según tu zona</span></div>
+          <div class="flex items-center justify-between"><span class="text-[17px] font-semibold">55 €</span><span class="text-[13px] text-[#6e6e73] flex items-center gap-1">Ver más <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></span></div>
+        </div>
+      </div>
+
+      <div class="product-card bg-white rounded-2xl overflow-hidden border border-[#e5e5ea]">
+        <div class="aspect-[3/4] bg-[#f5f5f7] flex items-center justify-center"><span class="text-[13px] text-[#8e8e93]">Próximamente</span></div>
+        <div class="p-5"><p class="text-[11px] uppercase tracking-widest text-[#6e6e73] mb-1">Tarta</p><h3 class="text-[17px] font-semibold mb-1">Nuevo producto</h3><p class="text-[14px] text-[#6e6e73] mb-3">Próximamente disponible.</p><div class="flex items-center gap-1 mb-3"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><span class="text-[12px] font-medium text-green-600">Envío gratis en Barcelona</span></div><span class="text-[17px] font-semibold">— €</span></div>
+      </div>
+      <div class="product-card bg-white rounded-2xl overflow-hidden border border-[#e5e5ea]">
+        <div class="aspect-[3/4] bg-[#f5f5f7] flex items-center justify-center"><span class="text-[13px] text-[#8e8e93]">Próximamente</span></div>
+        <div class="p-5"><p class="text-[11px] uppercase tracking-widest text-[#6e6e73] mb-1">Entremet</p><h3 class="text-[17px] font-semibold mb-1">Nuevo producto</h3><p class="text-[14px] text-[#6e6e73] mb-3">Próximamente disponible.</p><div class="flex items-center gap-1 mb-3"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><span class="text-[12px] font-medium text-green-600">Envío gratis en Barcelona</span></div><span class="text-[17px] font-semibold">— €</span></div>
+      </div>
+      <div class="product-card bg-white rounded-2xl overflow-hidden border border-[#e5e5ea]">
+        <div class="aspect-[3/4] bg-[#f5f5f7] flex items-center justify-center"><span class="text-[13px] text-[#8e8e93]">Próximamente</span></div>
+        <div class="p-5"><p class="text-[11px] uppercase tracking-widest text-[#6e6e73] mb-1">Tarta</p><h3 class="text-[17px] font-semibold mb-1">Nuevo producto</h3><p class="text-[14px] text-[#6e6e73] mb-3">Próximamente disponible.</p><div class="flex items-center gap-1 mb-3"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><span class="text-[12px] font-medium text-green-600">Envío gratis en Barcelona</span></div><span class="text-[17px] font-semibold">— €</span></div>
+      </div>
+
+    </div>
+    <div class="text-center mt-12">
+      <a href="catalogo.html" class="inline-flex items-center gap-2 border-2 border-[#1d1d1f] text-[#1d1d1f] px-8 py-4 rounded-full text-[15px] font-medium hover:bg-[#1d1d1f] hover:text-white transition-all">
+        Ver todos los productos <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider max-w-5xl mx-auto"></div>
+
+<!-- CARACTERÍSTICAS -->
+<section id="caracteristicas" class="py-24 px-6 bg-white">
+  <div class="max-w-5xl mx-auto">
+    <p class="text-center text-[13px] uppercase tracking-widest text-[#6e6e73] mb-3 font-medium">Por qué elegirnos</p>
+    <h2 class="text-center text-[36px] md:text-[44px] font-semibold tracking-tight mb-16">Hecho diferente.<br/>Pensado para ti.</h2>
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="flex flex-col items-center text-center gap-4">
+        <div class="icon-wrap"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><ellipse cx="14" cy="15" rx="7" ry="10" fill="#1d1d1f"/><line x1="14" y1="6" x2="14" y2="24" stroke="white" stroke-width="1.2" stroke-linecap="round"/><line x1="14" y1="10" x2="9" y2="13" stroke="white" stroke-width="0.9" stroke-linecap="round"/><line x1="14" y1="10" x2="19" y2="13" stroke="white" stroke-width="0.9" stroke-linecap="round"/><line x1="14" y1="15" x2="9" y2="18" stroke="white" stroke-width="0.9" stroke-linecap="round"/><line x1="14" y1="15" x2="19" y2="18" stroke="white" stroke-width="0.9" stroke-linecap="round"/><path d="M14 6 Q15.5 3.5 14 2" stroke="#1d1d1f" stroke-width="1.4" stroke-linecap="round" fill="none"/><path d="M14 4 Q17 2 18 4 Q16 5.5 14 4Z" fill="#1d1d1f"/></svg></div>
+        <h3 class="text-[17px] font-semibold">Ingredientes premium</h3>
+        <p class="text-[15px] text-[#6e6e73] leading-relaxed">Seleccionamos materias primas de origen certificado: chocolate Callebaut, frutas de temporada y mantequilla AOP francesa.</p>
+      </div>
+      <div class="flex flex-col items-center text-center gap-4">
+        <div class="icon-wrap"><svg width="30" height="28" viewBox="0 0 30 28" fill="none"><rect x="2" y="13" width="26" height="9" rx="2.5" fill="#1d1d1f"/><path d="M7 13 Q8.5 7 13 7 H19 Q23 7 24 13Z" fill="#1d1d1f"/><rect x="9" y="9" width="4.5" height="4" rx="1" fill="white" opacity="0.2"/><rect x="15" y="9" width="5" height="4" rx="1" fill="white" opacity="0.2"/><circle cx="8" cy="22" r="3.2" fill="#3a3a3c"/><circle cx="8" cy="22" r="1.4" fill="#f5f5f7"/><circle cx="22" cy="22" r="3.2" fill="#3a3a3c"/><circle cx="22" cy="22" r="1.4" fill="#f5f5f7"/></svg></div>
+        <h3 class="text-[17px] font-semibold">Delivery gratis en Barcelona</h3>
+        <p class="text-[15px] text-[#6e6e73] leading-relaxed">Entregamos en mano en toda la ciudad de Barcelona, con packaging isotérmico para que tu pedido llegue perfecto.</p>
+      </div>
+      <div class="flex flex-col items-center text-center gap-4">
+        <div class="icon-wrap"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><line x1="20" y1="8" x2="26" y2="2" stroke="#1d1d1f" stroke-width="2" stroke-linecap="round"/><line x1="13" y1="15" x2="20" y2="8" stroke="#1d1d1f" stroke-width="1.8" stroke-linecap="round"/><path d="M13 15 Q7 10 8 5 Q11 1 13 5 Q15 9 13 15Z" stroke="#1d1d1f" stroke-width="1.4" fill="none" stroke-linecap="round"/><path d="M13 15 Q5 13 4 8 Q4 3 8 5 Q11 8 13 15Z" stroke="#1d1d1f" stroke-width="1.4" fill="none" stroke-linecap="round"/><path d="M13 15 Q8 18 7 23 Q9 27 13 24 Q16 20 13 15Z" stroke="#1d1d1f" stroke-width="1.4" fill="none" stroke-linecap="round"/><path d="M13 15 Q18 18 20 23 Q19 27 15 25 Q12 21 13 15Z" stroke="#1d1d1f" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg></div>
+        <h3 class="text-[17px] font-semibold">Experiencia & técnica</h3>
+        <p class="text-[15px] text-[#6e6e73] leading-relaxed">8 años de experiencia en pastelería artesanal y 4 impartiendo cursos online a más de 3.000 estudiantes de todo el mundo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider max-w-5xl mx-auto"></div>
+
+<!-- TESTIMONIOS -->
+<section id="testimonios" class="py-24 px-6 bg-[#fbfbfd]">
+  <div class="max-w-5xl mx-auto">
+    <p class="text-center text-[13px] uppercase tracking-widest text-[#6e6e73] mb-3 font-medium">Reseñas reales</p>
+    <h2 class="text-center text-[36px] md:text-[44px] font-semibold tracking-tight mb-4">Lo que dicen nuestros clientes</h2>
+    <p class="text-center text-[17px] text-[#6e6e73] mb-14 font-light">5 estrellas en Google · Barcelona</p>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl border border-[#e5e5ea] p-7 flex flex-col gap-4">
+        <div class="text-[#f5a623] text-lg">★★★★★</div>
+        <p class="text-[15px] text-[#1d1d1f] leading-relaxed flex-1">"Pedí un pastel para el cumpleaños de mi novia, y bueno, he tenido que compartir con todos los invitados esta Pastelería, jajaja. Ya tengo pastelería favorita ✨"</p>
+        <div class="flex items-center gap-3 pt-2 border-t border-[#e5e5ea]"><div class="w-9 h-9 rounded-full bg-[#e8e0d5] flex items-center justify-center text-[13px] font-semibold text-[#6e6e73]">L</div><div><p class="text-[14px] font-semibold">Leo Amado Montoya</p><p class="text-[12px] text-[#6e6e73]">9 reseñas · Hace un mes</p></div></div>
+      </div>
+      <div class="bg-white rounded-2xl border border-[#e5e5ea] p-7 flex flex-col gap-4">
+        <div class="text-[#f5a623] text-lg">★★★★★</div>
+        <p class="text-[15px] text-[#1d1d1f] leading-relaxed flex-1">"Pedí un bento cake personalizado en Barcelona y fue espectacular. Entrega a domicilio en Eixample y presentación premium."</p>
+        <div class="flex items-center gap-3 pt-2 border-t border-[#e5e5ea]"><div class="w-9 h-9 rounded-full bg-[#dce8f0] flex items-center justify-center text-[13px] font-semibold text-[#6e6e73]">P</div><div><p class="text-[14px] font-semibold">Paula Costa</p><p class="text-[12px] text-[#6e6e73]">Local Guide · 27 reseñas · Hace un mes</p></div></div>
+      </div>
+      <div class="bg-white rounded-2xl border border-[#e5e5ea] p-7 flex flex-col gap-4">
+        <div class="text-[#f5a623] text-lg">★★★★★</div>
+        <p class="text-[15px] text-[#1d1d1f] leading-relaxed flex-1">"Excelente experiencia. Pedimos un entremet a domicilio en Barcelona y todo estuvo bueno: atención rápida, entrega puntual y el entremet espectacular."</p>
+        <div class="flex items-center gap-3 pt-2 border-t border-[#e5e5ea]"><div class="w-9 h-9 rounded-full bg-[#e8ddf5] flex items-center justify-center text-[13px] font-semibold text-[#6e6e73]">S</div><div><p class="text-[14px] font-semibold">Saliha Tahiri</p><p class="text-[12px] text-[#6e6e73]">3 reseñas · Hace un mes</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider max-w-5xl mx-auto"></div>
+
+<!-- CONTACTO -->
+<section id="contacto" class="py-24 px-6 bg-[#fbfbfd]">
+  <div class="max-w-xl mx-auto">
+    <p class="text-center text-[13px] uppercase tracking-widest text-[#6e6e73] mb-3 font-medium">Encargos</p>
+    <h2 class="text-center text-[36px] md:text-[44px] font-semibold tracking-tight mb-4">Haz tu pedido</h2>
+    <p class="text-center text-[17px] text-[#6e6e73] mb-12 font-light">Cuéntanos qué deseas y te confirmamos disponibilidad en menos de 24 h.</p>
+    <!-- Horario de pedidos -->
+    <div id="horario-banner" class="rounded-2xl px-5 py-4 mb-2 flex items-start gap-3 bg-[#f5f5f7] border border-[#e5e5ea]">
+      <span class="text-[20px] mt-0.5">🕗</span>
+      <div>
+        <p class="text-[14px] font-semibold text-[#1d1d1f] mb-0.5">Horario de pedidos online</p>
+        <p class="text-[13px] text-[#6e6e73] leading-relaxed">Puedes realizar tu pedido de <strong class="text-[#1d1d1f]">lunes a sábado de 8:00 a 21:00 h</strong>. Fuera de este horario el formulario no estará disponible.</p>
+      </div>
+    </div>
+
+    <div id="form-fuera-horario" class="hidden rounded-2xl px-5 py-6 text-center bg-[#fff7ed] border border-[#fed7aa]">
+      <p class="text-[28px] mb-2">🌙</p>
+      <p class="text-[15px] font-semibold text-[#9a3412] mb-1">Fuera de horario</p>
+      <p class="text-[13px] text-[#c2410c] leading-relaxed">Ahora mismo no estamos disponibles para recibir pedidos.<br/>Vuelve entre las <strong>8:00 y las 21:00 h</strong> de lunes a sábado.</p>
+      <a href="https://wa.me/34657677038?text=Hola!%20Quer%C3%ADa%20hacer%20un%20pedido" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-4 px-5 py-2.5 rounded-full text-[13px] font-medium bg-[#25D366] text-white">
+        <svg width="14" height="14" viewBox="0 0 32 32" fill="none"><path d="M16 2C8.27 2 2 8.27 2 16c0 2.44.65 4.73 1.79 6.71L2 30l7.5-1.96A13.94 13.94 0 0 0 16 30c7.73 0 14-6.27 14-14S23.73 2 16 2z" fill="white"/><path d="M21.3 18.37c-.28-.14-1.65-.81-1.9-.91-.26-.1-.44-.14-.63.14-.19.28-.72.91-.88 1.1-.16.19-.33.21-.6.07-.28-.14-1.17-.43-2.23-1.37-.82-.73-1.38-1.63-1.54-1.9-.16-.28-.02-.43.12-.57.12-.12.28-.33.42-.49.14-.16.19-.28.28-.46.1-.19.05-.35-.02-.49-.07-.14-.63-1.52-.86-2.08-.23-.55-.46-.47-.63-.48h-.54c-.19 0-.49.07-.74.35-.26.28-1 .98-1 2.39s1.02 2.77 1.17 2.96c.14.19 2.01 3.07 4.87 4.3.68.29 1.21.47 1.62.6.68.22 1.3.19 1.79.11.55-.08 1.68-.69 1.92-1.35.23-.67.23-1.24.16-1.35-.07-.1-.26-.16-.54-.3z" fill="#25D366"/></svg>
+        Escríbenos por WhatsApp
+      </a>
+    </div>
+
+    <div id="form-contenido" class="space-y-4">
+
+      <!-- PASO 1 -->
+      <div class="form-step" id="step-producto">
+        <div class="flex items-center gap-3 mb-4"><div class="step-badge">1</div><span class="text-[14px] font-semibold">¿Qué deseas encargar?</span></div>
+        <div class="grid grid-cols-2 gap-2">
+          <label class="option-pill"><input type="radio" name="tipo" value="tarta" class="sr-only" onchange="handleTipo('tarta')"/><span>🎂 Tarta</span></label>
+          <label class="option-pill"><input type="radio" name="tipo" value="entremet" class="sr-only" onchange="handleTipo('entremet')"/><span>✨ Entremet</span></label>
+        </div>
+      </div>
+
+      <!-- TARTA -->
+      <div id="opciones-tarta" class="space-y-4 overflow-hidden transition-all duration-500" style="max-height:0;opacity:0;pointer-events:none;">
+        <div class="form-step">
+          <div class="flex items-center gap-3 mb-4"><div class="step-badge">2</div><span class="text-[14px] font-semibold">Personaliza tu tarta</span></div>
+          <div class="space-y-4">
+            <div><label class="block text-[13px] text-[#6e6e73] mb-1.5 font-medium">Tamaño *</label>
+              <div class="grid grid-cols-3 gap-2">
+                <label class="option-pill flex-col gap-1"><input type="radio" name="tamano" value="S" class="sr-only" onchange="validateProducto();calcTotal()"/><span class="font-semibold text-[15px]">S</span><span class="text-[11px] text-[#6e6e73] leading-tight text-center">10cm ⌀ × 10cm</span><span class="text-[12px] font-semibold text-[#1d1d1f]">40 €</span></label>
+                <label class="option-pill flex-col gap-1"><input type="radio" name="tamano" value="M" class="sr-only" onchange="validateProducto();calcTotal()"/><span class="font-semibold text-[15px]">M</span><span class="text-[11px] text-[#6e6e73] leading-tight text-center">15cm ⌀ × 10cm</span><span class="text-[12px] font-semibold text-[#1d1d1f]">60 €</span></label>
+                <label class="option-pill flex-col gap-1"><input type="radio" name="tamano" value="L" class="sr-only" onchange="validateProducto();calcTotal()"/><span class="font-semibold text-[15px]">L</span><span class="text-[11px] text-[#6e6e73] leading-tight text-center">20cm ⌀ × 15cm</span><span class="text-[12px] font-semibold text-[#1d1d1f]">100 €</span></label>
+              </div>
+            </div>
+            <div><label class="block text-[13px] text-[#6e6e73] mb-1.5 font-medium">Bizcocho *</label>
+              <div class="grid grid-cols-2 gap-2">
+                <label class="option-pill"><input type="radio" name="bizcocho" value="Chocolate" class="sr-only" onchange="validateProducto()"/><span>🍫 Chocolate</span></label>
+                <label class="option-pill"><input type="radio" name="bizcocho" value="Red Velvet" class="sr-only" onchange="validateProducto()"/><span>❤️ Red Velvet</span></label>
+                <label class="option-pill"><input type="radio" name="bizcocho" value="Zanahoria" class="sr-only" onchange="validateProducto()"/><span>🥕 Zanahoria</span></label>
+                <label class="option-pill"><input type="radio" name="bizcocho" value="Vainilla" class="sr-only" onchange="validateProducto()"/><span>🌿 Vainilla</span></label>
+              </div>
+            </div>
+            <div><label class="block text-[13px] text-[#6e6e73] mb-1.5 font-medium">Crema *</label>
+              <div class="grid grid-cols-2 gap-2">
+                <label class="option-pill"><input type="radio" name="crema" value="Chocolate" class="sr-only" onchange="validateProducto()"/><span>🍫 Chocolate</span></label>
+                <label class="option-pill"><input type="radio" name="crema" value="Fresas" class="sr-only" onchange="validateProducto()"/><span>🍓 Fresas</span></label>
+                <label class="option-pill"><input type="radio" name="crema" value="Limón" class="sr-only" onchange="validateProducto()"/><span>🍋 Limón</span></label>
+                <label class="option-pill"><input type="radio" name="crema" value="Coco" class="sr-only" onchange="validateProducto()"/><span>🥥 Coco</span></label>
+              </div>
+            </div>
+            <div><label class="block text-[13px] text-[#6e6e73] mb-1.5 font-medium">Color del efecto velvet *</label>
+              <div class="grid grid-cols-2 gap-2">
+                <label class="option-pill"><input type="radio" name="velvet-tarta" value="Azul" class="sr-only" onchange="validateProducto()"/><span class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-blue-400 inline-block"></span>Azul</span></label>
+                <label class="option-pill"><input type="radio" name="velvet-tarta" value="Amarillo" class="sr-only" onchange="validateProducto()"/><span class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-yellow-300 inline-block"></span>Amarillo</span></label>
+                <label class="option-pill"><input type="radio" name="velvet-tarta" value="Rojo" class="sr-only" onchange="validateProducto()"/><span class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>Rojo</span></label>
+                <label class="option-pill"><input type="radio" name="velvet-tarta" value="Negro" class="sr-only" onchange="validateProducto()"/><span class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-[#1d1d1f] inline-block"></span>Negro</span></label>
+              </div>
+            </div>
+            <!-- Decoración -->
+            <div>
+              <label class="block text-[13px] text-[#6e6e73] mb-1.5 font-medium">Decoración adicional <span class="text-[#8e8e93]">(opcional)</span></label>
+                              <div class="space-y-2">
+                  <!-- Velas normales -->
+                  <label class="flex items-center justify-between border border-[#d2d2d7] rounded-xl px-4 py-3 cursor-pointer hover:border-[#1d1d1f] hover:bg-[#f5f5f7] transition-all">
+                    <div class="flex items-center gap-3">
+                      <input type="checkbox" name="deco" value="velas" id="chk-velas" onchange="handleVelas();calcTotal()" class="w-4 h-4 accent-[#1d1d1f] cursor-pointer"/>
+                      <span class="text-[14px]">🕯️ Velas</span>
+                    </div>
+                    <span class="text-[13px] font-semibold text-green-600">+1,50 €</span>
+                  </label>
+
+                  <!-- Velas con números (se despliega) -->
+                  <div id="velas-tipo" class="overflow-hidden transition-all duration-400" style="max-height:0;opacity:0;pointer-events:none;">
+                    <div class="bg-[#fbfbfd] border border-[#e5e5ea] rounded-xl p-4 space-y-3">
+                      <p class="text-[13px] font-medium text-[#1d1d1f]">¿Quieres velas con número?</p>
+                      <div class="grid grid-cols-2 gap-2">
+                        <label class="option-pill"><input type="radio" name="vela-tipo" value="normales" class="sr-only" onchange="handleVelaTipo('normales')"/><span>🕯️ Velas sencillas <span class="text-[11px] text-[#8e8e93]">1 €/ud</span></span></label>
+                        <label class="option-pill"><input type="radio" name="vela-tipo" value="numeros" class="sr-only" onchange="handleVelaTipo('numeros')"/><span>🔢 Con números <span class="text-[11px] text-[#8e8e93]">1,50 €/ud</span></span></label>
+                      </div>
+
+                      <!-- Selector de números (se despliega si eligen números) -->
+                      <div id="velas-numeros" class="overflow-hidden transition-all duration-400" style="max-height:0;opacity:0;pointer-events:none;">
+                        <p class="text-[12px] text-[#6e6e73] mb-2">Elige hasta 2 dígitos (ej: para el número 25, elige 2 y 5)</p>
+                        <div class="space-y-2">
+                          <div>
+                            <label class="block text-[12px] text-[#6e6e73] mb-1.5 font-medium">1ª vela *</label>
+                            <div class="grid grid-cols-5 gap-1.5">
+                              ${[0,1,2,3,4,5,6,7,8,9].map(n=>`<label class="option-pill text-[13px] !py-2"><input type="radio" name="vela-num1" value="${n}" class="sr-only" onchange="calcTotal()"/><span>${n}</span></label>`).join('')}
+                            </div>
+                          </div>
+                          <div>
+                            <label class="block text-[12px] text-[#6e6e73] mb-1.5 font-medium">2ª vela <span class="text-[#8e8e93]">(opcional)</span></label>
+                            <div class="grid grid-cols-5 gap-1.5">
+                              ${[0,1,2,3,4,5,6,7,8,9].map(n=>`<label class="option-pill text-[13px] !py-2"><input type="radio" name="vela-num2" value="${n}" class="sr-only" onchange="calcTotal()"/><span>${n}</span></label>`).join('')}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Corona -->
+                  <label class="flex items-center justify-between border border-[#d2d2d7] rounded-xl px-4 py-3 cursor-pointer hover:border-[#1d1d1f] hover:bg-[#f5f5f7] transition-all">
+                    <div class="flex items-center gap-3">
+                      <input type="checkbox" name="deco" value="corona" onchange="calcTotal()" class="w-4 h-4 accent-[#1d1d1f] cursor-pointer"/>
+                      <span class="text-[14px]">👑 Corona decorativa</span>
+                    </div>
+                    <span class="text-[13px] font-semibold text-green-600">+12 €</span>
+                  </label>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ENTREMET -->
+      <div id="opciones-entremet" class="space-y-4 overflow-hidden transition-all duration-500" style="max-height:0;opacity:0;pointer-events:none;">
+        <div class="form-step">
+          <div class="flex items-center gap-3 mb-4"><div class="step-badge">2</div><span class="text-[14px] font-semibold">Personaliza tu entremet</span></div>
+          <div class="space-y-4">
+            <div><label class="block text-[13px] text-[#6e6e73] mb-1.5 font-medium">Forma *</label>
+              <div class="grid grid-cols-2 gap-2">
+                <label class="option-pill"><input type="radio" name="forma" value="Corazón" class="sr-only" onchange="validateProducto()"/><span>🤍 Corazón</span></label>
+                <label class="option-pill"><input type="radio" name="forma" value="Circular" class="sr-only" onchange="validateProducto()"/><span>⭕ Circular</span></label>
+              </div>
+            </div>
+            <div><label class="block text-[13px] text-[#6e6e73] mb-1.5 font-medium">Efecto *</label>
+              <div class="grid grid-cols-2 gap-2">
+                <label class="option-pill"><input type="radio" name="efecto" value="Terciopelo" class="sr-only" onchange="handleEfecto('terciopelo')"/><span>🪶 Terciopelo</span></label>
+                <label class="option-pill"><input type="radio" name="efecto" value="Glaseado espejo" class="sr-only" onchange="handleEfecto('espejo')"/><span>🪞 Glaseado espejo</span></label>
+              </div>
+            </div>
+            <div id="colores-terciopelo" class="overflow-hidden transition-all duration-500" style="max-height:0;opacity:0;">
+              <label class="block text-[13px] text-[#6e6e73] mb-1.5 font-medium">Color del terciopelo *</label>
+              <div class="grid grid-cols-3 gap-2">
+                <label class="option-pill"><input type="radio" name="velvet-entremet" value="Negro" class="sr-only" onchange="validateProducto()"/><span class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-[#1d1d1f] inline-block"></span>Negro</span></label>
+                <label class="option-pill"><input type="radio" name="velvet-entremet" value="Rojo" class="sr-only" onchange="validateProducto()"/><span class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>Rojo</span></label>
+                <label class="option-pill"><input type="radio" name="velvet-entremet" value="Verde" class="sr-only" onchange="validateProducto()"/><span class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-green-500 inline-block"></span>Verde</span></label>
+                <label class="option-pill"><input type="radio" name="velvet-entremet" value="Azul" class="sr-only" onchange="validateProducto()"/><span class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-blue-400 inline-block"></span>Azul</span></label>
+                <label class="option-pill"><input type="radio" name="velvet-entremet" value="Amarillo" class="sr-only" onchange="validateProducto()"/><span class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-yellow-300 inline-block"></span>Amarillo</span></label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESUMEN TOTAL -->
+      <div id="resumen-total" class="hidden rounded-2xl border border-[#e5e5ea] bg-white overflow-hidden">
+        <div class="px-5 py-4 border-b border-[#f5f5f7] flex items-center justify-between">
+          <span class="text-[14px] font-semibold text-[#1d1d1f]">Resumen del pedido</span>
+          <span class="text-[11px] uppercase tracking-widest text-[#6e6e73]">Desglose</span>
+        </div>
+        <div id="resumen-lineas" class="px-5 py-3 space-y-2 text-[13px] text-[#3a3a3c]"></div>
+        <div class="px-5 py-4 bg-[#1d1d1f] flex items-center justify-between">
+          <span class="text-[14px] font-medium text-white">Total estimado</span>
+          <span id="total-precio" class="text-[20px] font-bold text-white">0 €</span>
+        </div>
+      </div>
+
+      <!-- PASO 3: Entrega -->
+      <div class="form-step locked" id="step-entrega">
+        <div class="flex items-center gap-3 mb-4"><div class="step-badge">3</div><span class="text-[14px] font-semibold">¿Cómo prefieres recibirlo?</span></div>
+        <div class="grid grid-cols-2 gap-2">
+          <label class="option-pill flex-col gap-1" onclick="handleEntrega('delivery')">
+            <input type="radio" name="entrega" value="delivery" class="sr-only"/>
+            <span class="text-[20px]">🛵</span><span class="font-medium">Delivery</span>
+            <span class="text-[11px] text-[#6e6e73]">Entrega en domicilio</span>
+          </label>
+          <label class="option-pill flex-col gap-1" onclick="handleEntrega('recogida')">
+            <input type="radio" name="entrega" value="recogida" class="sr-only"/>
+            <span class="text-[20px]">🏪</span><span class="font-medium">Recogida</span>
+            <span class="text-[11px] text-[#6e6e73]">Recoge en el obrador</span>
+          </label>
+        </div>
+        <div id="aviso-recogida" class="hidden mt-4 bg-[#f5f5f7] rounded-xl p-4">
+          <p class="text-[13px] text-[#3a3a3c] leading-relaxed">📍 <span class="font-semibold">Recogida en obrador.</span> Una vez finalices el pedido te enviaremos la dirección exacta y todos los detalles por WhatsApp.</p>
+        </div>
+      </div>
+
+      <!-- PASO 4: Datos -->
+      <div class="form-step locked" id="step-personal">
+        <div class="flex items-center gap-3 mb-4"><div class="step-badge">4</div><span class="text-[14px] font-semibold">Tus datos</span></div>
+        <div class="space-y-3">
+          <div class="grid grid-cols-2 gap-3">
+            <div><label class="block text-[13px] text-[#6e6e73] mb-1.5 font-medium">Nombre *</label><input id="inp-nombre" type="text" placeholder="Tu nombre" oninput="validateStep3()" class="inp w-full border border-[#d2d2d7] rounded-xl px-4 py-3 text-[15px] bg-white transition-all"/></div>
+            <div><label class="block text-[13px] text-[#6e6e73] mb-1.5 font-medium">Apellido *</label><input id="inp-apellido" type="text" placeholder="Tu apellido" oninput="validateStep3()" class="inp w-full border border-[#d2d2d7] rounded-xl px-4 py-3 text-[15px] bg-white transition-all"/></div>
+          </div>
+          <div><label class="block text-[13px] text-[#6e6e73] mb-1.5 font-medium">Email *</label><input id="inp-email" type="email" placeholder="nombre@email.com" oninput="validateStep3()" class="inp w-full border border-[#d2d2d7] rounded-xl px-4 py-3 text-[15px] bg-white transition-all"/></div>
+          <div><label class="block text-[13px] text-[#6e6e73] mb-1.5 font-medium">Teléfono *</label><input id="inp-telefono" type="tel" placeholder="+34 600 000 000" oninput="validateStep3()" class="inp w-full border border-[#d2d2d7] rounded-xl px-4 py-3 text-[15px] bg-white transition-all"/></div>
+        </div>
+      </div>
+
+      <!-- PASO 5: Dirección (solo delivery) -->
+      <div class="form-step locked" id="step-direccion" style="display:none;">
+        <div class="flex items-center gap-3 mb-4"><div class="step-badge">5</div><span class="text-[14px] font-semibold">Dirección de entrega</span></div>
+        <div class="space-y-3">
+          <div><label class="block text-[13px] text-[#6e6e73] mb-1.5 font-medium">Calle *</label><input id="inp-calle" type="text" placeholder="Ej: Carrer de Mallorca" oninput="validateStep4()" class="inp w-full border border-[#d2d2d7] rounded-xl px-4 py-3 text-[15px] bg-white transition-all"/></div>
+          <div>
+            <label class="block text-[13px] text-[#6e6e73] mb-1.5 font-medium">Código postal *</label>
+            <input id="inp-cp" type="text" inputmode="numeric" maxlength="5" placeholder="08001"
+              oninput="this.value=this.value.replace(/\D/g,'').slice(0,5);handleCP(this)"
+              class="inp w-full border border-[#d2d2d7] rounded-xl px-4 py-3 text-[15px] bg-white transition-all"/>
+            <div id="cp-feedback" class="hidden mt-2 items-center gap-2 text-[13px] font-medium rounded-xl px-3 py-2"></div>
+          </div>
+          <div class="grid grid-cols-3 gap-3">
+            <div><label class="block text-[13px] text-[#6e6e73] mb-1.5 font-medium">Número *</label><input id="inp-numero" type="text" placeholder="123" oninput="validateStep4()" class="inp w-full border border-[#d2d2d7] rounded-xl px-4 py-3 text-[15px] bg-white transition-all"/></div>
+            <div><label class="block text-[13px] text-[#6e6e73] mb-1.5 font-medium">Piso</label><input type="text" placeholder="3º" class="inp w-full border border-[#d2d2d7] rounded-xl px-4 py-3 text-[15px] bg-white transition-all"/></div>
+            <div><label class="block text-[13px] text-[#6e6e73] mb-1.5 font-medium">Puerta</label><input type="text" placeholder="2ª" class="inp w-full border border-[#d2d2d7] rounded-xl px-4 py-3 text-[15px] bg-white transition-all"/></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PASO 5/6: Fecha y hora -->
+      <div class="form-step locked" id="step-fecha">
+        <div class="flex items-center gap-3 mb-4"><div class="step-badge" id="badge-fecha">6</div><span class="text-[14px] font-semibold">Fecha y hora</span></div>
+        <p class="text-[13px] text-[#6e6e73] mb-4">Selecciona el día. Mínimo 48h de antelación.</p>
+        <div class="select-none">
+          <div class="flex items-center justify-between mb-4">
+            <button type="button" onclick="prevMonth()" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-[#f5f5f7]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg></button>
+            <span id="cal-title" class="text-[15px] font-semibold"></span>
+            <button type="button" onclick="nextMonth()" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-[#f5f5f7]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></button>
+          </div>
+          <div class="grid grid-cols-7 mb-2">
+            <span class="text-center text-[11px] font-semibold text-[#6e6e73] uppercase py-1">Lu</span>
+            <span class="text-center text-[11px] font-semibold text-[#6e6e73] uppercase py-1">Ma</span>
+            <span class="text-center text-[11px] font-semibold text-[#6e6e73] uppercase py-1">Mi</span>
+            <span class="text-center text-[11px] font-semibold text-[#6e6e73] uppercase py-1">Ju</span>
+            <span class="text-center text-[11px] font-semibold text-[#6e6e73] uppercase py-1">Vi</span>
+            <span class="text-center text-[11px] font-semibold text-[#6e6e73] uppercase py-1">Sá</span>
+            <span class="text-center text-[11px] font-semibold text-[#6e6e73] uppercase py-1">Do</span>
+          </div>
+          <div id="cal-grid" class="grid grid-cols-7 gap-y-1"></div>
+          <p id="cal-selected" class="text-[13px] text-[#1d1d1f] font-medium mt-4 text-center hidden"></p>
+        </div>
+        <div id="hora-section" class="mt-5 hidden">
+          <p class="text-[13px] text-[#6e6e73] mb-3 font-medium">Franja horaria *</p>
+          <div class="grid grid-cols-3 gap-2">
+            <label class="option-pill"><input type="radio" name="hora" value="12:00–14:00" class="sr-only" onchange="validateFecha()"/><span>🕛 12:00–14:00</span></label>
+            <label class="option-pill"><input type="radio" name="hora" value="14:00–16:00" class="sr-only" onchange="validateFecha()"/><span>🕑 14:00–16:00</span></label>
+            <label class="option-pill"><input type="radio" name="hora" value="16:00–18:00" class="sr-only" onchange="validateFecha()"/><span>🕓 16:00–18:00</span></label>
+          </div>
+        </div>
+      </div>
+
+      <!-- PASO 6/7: Comentarios -->
+      <div class="form-step locked" id="step-mensaje">
+        <div class="flex items-center gap-3 mb-4"><div class="step-badge" id="badge-mensaje">7</div><span class="text-[14px] font-semibold">Comentarios adicionales</span></div>
+        <textarea id="inp-mensaje" rows="4" placeholder="Cuéntanos la ocasión, alergias u otras indicaciones..." class="w-full border border-[#d2d2d7] rounded-xl px-4 py-3 text-[15px] bg-white resize-none transition-all"></textarea>
+      </div>
+
+      <div class="bg-[#fbfbfd] border border-[#e5e5ea] rounded-2xl p-5">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="text-[18px]">💬</span>
+          <p class="text-[12px] text-[#3a3a3c] leading-relaxed"><span class="font-semibold text-[#1d1d1f]">Confirmación por WhatsApp.</span> Tras recibir tu solicitud, nuestro equipo se pondrá en contacto contigo a través de WhatsApp en un plazo máximo de 24 horas para confirmar los detalles del pedido, comunicarte el importe total y coordinar la entrega.</p>
+        </div>
+        <button onclick="openTerms()" class="w-full mt-1 flex items-center justify-center gap-2 border border-[#d2d2d7] rounded-xl py-3 text-[13px] font-medium text-[#1d1d1f] hover:bg-[#f5f5f7] transition-colors">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          Leer términos y condiciones del pedido
+        </button>
+      </div>
+
+      <p class="text-[11px] text-[#8e8e93] leading-relaxed px-1"><span class="font-semibold">Información sobre alérgenos:</span> Nuestros productos pueden contener o haber estado en contacto con gluten, huevo, leche, frutos secos (incluido cacahuete), soja, sésamo y sulfitos. Se producen en un obrador donde se manipulan estos alérgenos. Indícanoslo en los comentarios si tienes alguna alergia.</p>
+
+      <label id="chk-label" class="flex items-start gap-3" style="opacity:0.4;cursor:not-allowed;">
+        <div class="relative mt-0.5 flex-shrink-0">
+          <input type="checkbox" id="chk-politicas" disabled onchange="validatePoliticas()" class="sr-only peer"/>
+          <div class="w-5 h-5 rounded-md border-2 border-[#d2d2d7] bg-white peer-checked:bg-[#1d1d1f] peer-checked:border-[#1d1d1f] transition-all flex items-center justify-center">
+            <svg id="chk-icon" class="hidden w-3 h-3 text-white" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6 5,9 10,3"/></svg>
+          </div>
+        </div>
+        <span class="text-[13px] text-[#3a3a3c] leading-relaxed">He leído y acepto los <span class="underline text-[#1d1d1f] font-medium">términos y condiciones</span>. <span class="text-[#8e8e93]">(Debes leer los términos antes de aceptar)</span></span>
+      </label>
+
+      <button id="btn-submit" onclick="submitForm()" disabled class="w-full py-4 rounded-full text-[15px] font-medium mt-2 bg-[#d2d2d7] text-[#6e6e73] cursor-not-allowed">Enviar solicitud</button>
+      <p class="text-center text-[13px] text-[#6e6e73]">Respondemos en menos de 24 horas · Delivery gratis en Barcelona</p>
+    </div><!-- /form-contenido -->
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#f5f5f7] border-t border-[#d2d2d7] py-10 px-6">
+  <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-[13px] text-[#6e6e73]">
+    <div class="flex flex-col items-center md:items-start gap-1">
+      <span class="font-semibold text-[#1d1d1f] text-[15px]">iconic<span class="font-light">pasteleria</span></span>
+      <span class="footer-tagline">Hecho con amor en Barcelona</span>
+    </div>
+    <span>© 2025 Iconic Pasteleria · Barcelona, España</span>
+    <div class="flex items-center gap-3 text-[#6e6e73]">
+      <a href="#productos" class="hover:text-[#1d1d1f] transition-colors">Productos</a>
+      <span class="text-[#d2d2d7]">·</span>
+      <a href="#contacto" class="hover:text-[#1d1d1f] transition-colors">Contacto</a>
+      <span class="text-[#d2d2d7]">·</span>
+      <a href="https://instagram.com/iconicpasteleria" target="_blank" rel="noopener" class="hover:text-[#1d1d1f] transition-colors">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL TÉRMINOS -->
+<div id="terms-overlay" style="position:fixed;inset:0;z-index:950;background:rgba(0,0,0,0.55);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s ease;">
+  <div id="terms-box" style="background:white;border-radius:24px;max-width:560px;width:100%;max-height:85vh;display:flex;flex-direction:column;transform:translateY(20px);transition:transform .35s cubic-bezier(.25,.46,.45,.94);">
+    <div style="padding:24px 24px 16px;border-bottom:1px solid #e5e5ea;flex-shrink:0;">
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#6e6e73;font-weight:600;margin-bottom:4px;">Iconic Pasteleria</p>
+      <h3 style="font-size:20px;font-weight:600;color:#1d1d1f;margin:0;">Términos y condiciones del pedido</h3>
+    </div>
+    <div style="overflow-y:auto;padding:20px 24px;flex:1;font-size:13px;color:#3a3a3c;line-height:1.7;display:flex;flex-direction:column;gap:16px;">
+      <div><p style="font-weight:600;color:#1d1d1f;margin-bottom:4px;">💳 Método de pago — Bizum</p><p>Todos los pagos se realizan exclusivamente mediante Bizum. El pago deberá efectuarse el mismo día de la confirmación para garantizar la fecha de entrega.</p></div>
+      <div><p style="font-weight:600;color:#1d1d1f;margin-bottom:4px;">🚫 Cancelaciones y devoluciones</p><p>En caso de cancelación una vez abonado, no se realizará devolución. El cliente podrá reprogramar la fecha una sola vez. No se aceptan cancelaciones con menos de 48h de antelación.</p></div>
+      <div><p style="font-weight:600;color:#1d1d1f;margin-bottom:4px;">✏️ Modificaciones</p><p>Modificaciones estéticas hasta 24h antes de la entrega. No se permite modificar elementos internos (sabores, rellenos) una vez iniciada la elaboración.</p></div>
+      <div><p style="font-weight:600;color:#1d1d1f;margin-bottom:4px;">📦 Responsabilidad tras la entrega</p><p>Una vez entregado el pedido, no nos hacemos responsables de daños por manejo inadecuado. No se realizan devoluciones. En caso de error por nuestra parte, contacta por WhatsApp de inmediato.</p></div>
+      <div><p style="font-weight:600;color:#1d1d1f;margin-bottom:4px;">⚠️ Alérgenos</p><p>Productos elaborados en obrador con gluten, huevo, leche, frutos secos, soja, sésamo y sulfitos. Comunícanos cualquier alergia antes de realizar el pedido.</p></div>
+    </div>
+    <div style="padding:16px 24px;border-top:1px solid #e5e5ea;flex-shrink:0;display:flex;gap:10px;">
+      <button onclick="closeTerms()" style="flex:1;padding:12px;border-radius:50px;border:1.5px solid #d2d2d7;background:white;font-size:14px;font-weight:500;color:#1d1d1f;cursor:pointer;" onmouseover="this.style.background='#f5f5f7'" onmouseout="this.style.background='white'">Cerrar</button>
+      <button onclick="acceptTerms()" style="flex:2;padding:12px;border-radius:50px;border:none;background:#1d1d1f;color:white;font-size:14px;font-weight:500;cursor:pointer;" onmouseover="this.style.background='#3a3a3c'" onmouseout="this.style.background='#1d1d1f'">He leído y acepto los términos</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL GALERÍA -->
+<div id="modal-overlay" class="modal-overlay" onclick="closeModalOutside(event)">
+  <div class="modal-box">
+    <div class="flex items-center justify-between px-6 pt-6 pb-4 border-b border-[#e5e5ea]">
+      <div><p id="modal-category" class="text-[11px] uppercase tracking-widest text-[#6e6e73] font-medium mb-0.5"></p><h3 id="modal-title" class="text-[22px] font-semibold"></h3></div>
+      <button onclick="closeModal()" class="w-9 h-9 flex items-center justify-center rounded-full bg-[#f5f5f7] hover:bg-[#e5e5ea]"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1d1d1f" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    </div>
+    <div class="px-6 pt-5"><div class="rounded-2xl overflow-hidden bg-[#f5f5f7] mx-auto" style="aspect-ratio:3/4;max-width:300px;"><img id="modal-main-img" src="" alt="" class="w-full h-full object-cover"/></div></div>
+    <div id="modal-thumbs" class="flex gap-3 px-6 pt-3 justify-center"></div>
+    <div class="px-6 pt-4 pb-6">
+      <p id="modal-desc" class="text-[15px] text-[#6e6e73] leading-relaxed mb-4"></p>
+      <div class="flex items-center justify-between">
+        <span id="modal-price" class="text-[22px] font-semibold"></span>
+        <button onclick="closeModal();setTimeout(()=>document.getElementById('contacto').scrollIntoView({behavior:'smooth'}),200)" class="btn-primary px-6 py-3 rounded-full text-[14px] font-medium">Encargar ahora</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ── Códigos postales con envío gratis ──
+  const ZIPS_GRATIS = new Set(['08002','08007','08003','08004','08015','08029','08038']);
+  const PRECIO_DELIVERY = 7;
+
+  function handleCP(input) {
+    input.value = input.value.replace(/\D/g, '').slice(0, 5);
+    const cp = input.value;
+    const fb = $('cp-feedback');
+    if (cp.length === 5) {
+      fb.style.display = 'flex';
+      fb.classList.remove('hidden');
+      if (ZIPS_GRATIS.has(cp)) {
+        fb.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> ¡Envío gratis para tu zona! 🎉`;
+        fb.className = 'mt-2 items-center gap-2 text-[13px] font-medium rounded-xl px-3 py-2 bg-green-50 text-green-700 border border-green-200';
+        fb.style.display = 'flex';
+        input.classList.remove('border-orange-300');
+        input.classList.add('border-green-400');
+      } else {
+        fb.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c2410c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Zona con coste de envío: <strong>+7 €</strong>`;
+        fb.className = 'mt-2 items-center gap-2 text-[13px] font-medium rounded-xl px-3 py-2 bg-orange-50 text-orange-700 border border-orange-200';
+        fb.style.display = 'flex';
+        input.classList.remove('border-green-400');
+        input.classList.add('border-orange-300');
+      }
+    } else {
+      fb.style.display = 'none';
+      input.classList.remove('border-green-400','border-orange-300');
+    }
+    validateStep4();
+    calcTotal();
+  }
+  (function checkHorario(){
+    const now = new Date();
+    const day = now.getDay(); // 0=Dom, 6=Sab
+    const h = now.getHours() + now.getMinutes()/60;
+    const abierto = day >= 1 && day <= 6 && h >= 8 && h < 21;
+    if (!abierto) {
+      $('form-contenido').classList.add('hidden');
+      $('horario-banner').classList.add('hidden');
+      $('form-fuera-horario').classList.remove('hidden');
+    }
+  })();
+
+  // ── Cálculo de total ──
+  const PRECIOS_TAMANO = { S: 40, M: 60, L: 100 };
+  const PRECIOS_DECO = { velas: 1.5, corona: 12 };
+
+  function calcTotal() {
+    const tipo = radio('tipo')?.value;
+    const tamano = radio('tamano')?.value;
+    let base = 0; const lineas = [];
+
+    if (tipo === 'tarta' && tamano) {
+      base = PRECIOS_TAMANO[tamano] || 0;
+      lineas.push({ label: `Tarta tamaño ${tamano}`, precio: base });
+    } else if (tipo === 'entremet') {
+      base = 48;
+      lineas.push({ label: 'Entremet', precio: base });
+    }
+
+    let extra = 0;
+    // Velas
+    const velasChk = document.getElementById('chk-velas')?.checked;
+    if (velasChk) {
+      const velaTipo = radio('vela-tipo')?.value;
+      if (velaTipo === 'numeros') {
+        const n1 = radio('vela-num1');
+        const n2 = radio('vela-num2');
+        const count = (n1 ? 1 : 0) + (n2 ? 1 : 0);
+        const velaCost = count * 1.5;
+        extra += velaCost;
+        const nums = [n1?.value, n2?.value].filter(v=>v!==undefined&&v!==null&&v!=='').join(' y ');
+        lineas.push({ label: `🔢 Velas con número (${nums||'pendiente'})`, precio: velaCost });
+      } else if (velaTipo === 'normales') {
+        extra += 1;
+        lineas.push({ label: '🕯️ Velas sencillas', precio: 1 });
+      } else {
+        extra += 1;
+        lineas.push({ label: '🕯️ Velas', precio: 1 });
+      }
+    }
+
+    // Corona
+    if (document.querySelector('input[name="deco"][value="corona"]:checked')) {
+      extra += 12;
+      lineas.push({ label: '👑 Corona decorativa', precio: 12 });
+    }
+    let deliveryCost = 0;
+    if (tipoEntrega === 'delivery') {
+      const cp = val('inp-cp');
+      if (cp.length === 5) {
+        if (!ZIPS_GRATIS.has(cp)) {
+          deliveryCost = PRECIO_DELIVERY;
+          lineas.push({ label: '🛵 Coste de envío', precio: deliveryCost });
+        } else {
+          lineas.push({ label: '🛵 Envío gratis', precio: 0, gratis: true });
+        }
+      }
+    }
+
+    const total = base + extra + deliveryCost;
+    const resumen = $('resumen-total');
+    const lineasEl = $('resumen-lineas');
+
+    if (tipo && (tamano || tipo === 'entremet')) {
+      resumen.classList.remove('hidden');
+      lineasEl.innerHTML = lineas.map(l =>
+        `<div class="flex items-center justify-between py-1 border-b border-[#f5f5f7] last:border-0">
+          <span>${l.label}</span>
+          <span class="font-medium ${l.gratis ? 'text-green-600' : ''}">${l.gratis ? 'Gratis' : l.precio.toFixed(2).replace('.',',') + ' €'}</span>
+        </div>`
+      ).join('');
+      $('total-precio').textContent = total.toFixed(2).replace('.',',') + ' €';
+    } else {
+      resumen.classList.add('hidden');
+    }
+  }
+
+  // ── 6. Cursor personalizado ──
+  const cursor = document.getElementById('custom-cursor');
+  if (cursor) {
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top  = e.clientY + 'px';
+    });
+    document.querySelectorAll('a,button,label,.product-card,.option-pill,.thumb,.cal-day:not(.disabled)').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+    });
+  }
+
+  // ── 5. Pop al desbloquear paso ──
+  function animateBadge(id) {
+    const b = document.querySelector(`#${id} .step-badge`);
+    if (!b) return;
+    b.classList.remove('badge-pop');
+    void b.offsetWidth;
+    b.classList.add('badge-pop');
+    setTimeout(() => b.classList.remove('badge-pop'), 400);
+  }
+
+  const revealObs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');});},{threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(el=>revealObs.observe(el));
+  const $=id=>document.getElementById(id);
+  const radio=n=>document.querySelector(`input[name="${n}"]:checked`);
+  const val=id=>($( id)?.value||'').trim();
+  const unlock=id=>{$(id)?.classList.remove('locked');animateBadge(id);};
+  const lock=id=>$(id)?.classList.add('locked');
+
+  function handleTipo(tipo){['tamano','bizcocho','crema','velvet-tarta','forma','efecto','velvet-entremet'].forEach(n=>document.querySelectorAll(`input[name="${n}"]`).forEach(r=>r.checked=false));$('colores-terciopelo').style.maxHeight='0';$('colores-terciopelo').style.opacity='0';const t=$('opciones-tarta'),e=$('opciones-entremet');if(tipo==='tarta'){t.style.maxHeight='900px';t.style.opacity='1';t.style.pointerEvents='auto';e.style.maxHeight='0';e.style.opacity='0';e.style.pointerEvents='none';}else{e.style.maxHeight='700px';e.style.opacity='1';e.style.pointerEvents='auto';t.style.maxHeight='0';t.style.opacity='0';t.style.pointerEvents='none';}validateProducto();}
+  function handleEfecto(tipo){const c=$('colores-terciopelo');document.querySelectorAll('input[name="velvet-entremet"]').forEach(r=>r.checked=false);c.style.maxHeight=tipo==='terciopelo'?'200px':'0';c.style.opacity=tipo==='terciopelo'?'1':'0';validateProducto();}
+  function validateProducto(){const tipo=radio('tipo')?.value;let ok=false;if(tipo==='tarta')ok=!!(radio('tamano')&&radio('bizcocho')&&radio('crema')&&radio('velvet-tarta'));else if(tipo==='entremet'){const ef=radio('efecto')?.value;if(ef==='Glaseado espejo')ok=!!radio('forma');else if(ef==='Terciopelo')ok=!!(radio('forma')&&radio('velvet-entremet'));}ok?unlock('step-entrega'):lock('step-entrega');if(!ok){lock('step-personal');lock('step-direccion');lock('step-fecha');lock('step-mensaje');disableSubmit();}}
+
+  let tipoEntrega=null;
+  function handleEntrega(tipo){tipoEntrega=tipo;document.querySelectorAll('input[name="entrega"]').forEach(r=>r.checked=r.value===tipo);const aviso=$('aviso-recogida'),stepDir=$('step-direccion');if(tipo==='recogida'){aviso.classList.remove('hidden');stepDir.style.display='none';$('badge-fecha').textContent='5';$('badge-mensaje').textContent='6';}else{aviso.classList.add('hidden');stepDir.style.display='block';$('badge-fecha').textContent='6';$('badge-mensaje').textContent='7';}    unlock('step-personal');validateStep3();calcTotal();}
+
+  function validateStep3(){const ok=val('inp-nombre')&&val('inp-apellido')&&val('inp-email').includes('@')&&val('inp-telefono');if(tipoEntrega==='delivery'){ok?unlock('step-direccion'):lock('step-direccion');if(!ok){lock('step-fecha');lock('step-mensaje');disableSubmit();}else validateStep4();}else if(tipoEntrega==='recogida'){ok?unlock('step-fecha'):lock('step-fecha');if(!ok){lock('step-mensaje');disableSubmit();}else validateFecha();}}
+  function validateStep4(){
+    const ok=val('inp-calle')&&val('inp-numero')&&val('inp-cp').length===5;
+    ok?unlock('step-fecha'):lock('step-fecha');
+    if(!ok){lock('step-mensaje');disableSubmit();}else validateFecha();
+  }
+
+  let selectedDate=null;
+  function validateFecha(){const horaOk=!!radio('hora');if(selectedDate&&horaOk){unlock('step-mensaje');checkSubmit();}else{lock('step-mensaje');disableSubmit();}}
+  function selectDay(y,m,d){selectedDate=new Date(y,m,d);$('cal-selected').textContent='📅 '+selectedDate.toLocaleDateString('es-ES',{weekday:'long',year:'numeric',month:'long',day:'numeric'});$('cal-selected').classList.remove('hidden');$('hora-section').classList.remove('hidden');document.querySelectorAll('input[name="hora"]').forEach(r=>r.checked=false);renderCalendar();validateFecha();}
+
+  function checkSubmit(){const allDone=selectedDate&&radio('hora')&&$('chk-politicas')?.checked;const b=$('btn-submit');if(allDone){b.disabled=false;b.className='btn-primary w-full py-4 rounded-full text-[15px] font-medium mt-2';}else disableSubmit();}
+  function disableSubmit(){const b=$('btn-submit');b.disabled=true;b.className='w-full py-4 rounded-full text-[15px] font-medium mt-2 bg-[#d2d2d7] text-[#6e6e73] cursor-not-allowed';}
+  function validatePoliticas(){$('chk-icon').classList.toggle('hidden',!$('chk-politicas').checked);checkSubmit();}
+
+  function submitForm(){const tipo=radio('tipo')?.value||'';const fecha=selectedDate?selectedDate.toLocaleDateString('es-ES',{weekday:'long',year:'numeric',month:'long',day:'numeric'}):'';const hora=radio('hora')?.value||'';let producto=tipo==='tarta'?`Tarta · Tamaño: ${radio('tamano')?.value} · Bizcocho: ${radio('bizcocho')?.value} · Crema: ${radio('crema')?.value} · Velvet: ${radio('velvet-tarta')?.value}`:`Entremet · Forma: ${radio('forma')?.value} · Efecto: ${radio('efecto')?.value}${radio('velvet-entremet')?' · Color: '+radio('velvet-entremet').value:''}`;const entrega=tipoEntrega==='delivery'?`Delivery · ${val('inp-calle')} ${val('inp-numero')}, CP ${val('inp-cp')}`:'Recogida en obrador';const data={nombre:`${val('inp-nombre')} ${val('inp-apellido')}`,email:val('inp-email'),telefono:val('inp-telefono'),producto,tipo_entrega:entrega,fecha_y_hora:`${fecha} · ${hora}`,comentarios:val('inp-mensaje')||'—'};const btn=$('btn-submit');btn.textContent='Enviando...';btn.disabled=true;fetch('https://formspree.io/f/mjglwvpa',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)}).then(r=>r.json()).then(res=>{if(res.ok||res.next){btn.textContent='✅ ¡Pedido enviado!';btn.className='w-full py-4 rounded-full text-[15px] font-medium mt-2 bg-green-600 text-white cursor-default';const notice=document.createElement('div');notice.innerHTML=`<div style="display:flex;align-items:flex-start;gap:12px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:16px;padding:16px;margin-top:12px;"><svg width="22" height="22" viewBox="0 0 32 32" fill="none" style="flex-shrink:0"><path d="M16 2C8.27 2 2 8.27 2 16c0 2.44.65 4.73 1.79 6.71L2 30l7.5-1.96A13.94 13.94 0 0 0 16 30c7.73 0 14-6.27 14-14S23.73 2 16 2z" fill="#25D366"/><path d="M21.3 18.37c-.28-.14-1.65-.81-1.9-.91-.26-.1-.44-.14-.63.14-.19.28-.72.91-.88 1.1-.16.19-.33.21-.6.07-.28-.14-1.17-.43-2.23-1.37-.82-.73-1.38-1.63-1.54-1.9-.16-.28-.02-.43.12-.57.12-.12.28-.33.42-.49.14-.16.19-.28.28-.46.1-.19.05-.35-.02-.49-.07-.14-.63-1.52-.86-2.08-.23-.55-.46-.47-.63-.48h-.54c-.19 0-.49.07-.74.35-.26.28-1 .98-1 2.39s1.02 2.77 1.17 2.96c.14.19 2.01 3.07 4.87 4.3.68.29 1.21.47 1.62.6.68.22 1.3.19 1.79.11.55-.08 1.68-.69 1.92-1.35.23-.67.23-1.24.16-1.35-.07-.1-.26-.16-.54-.3z" fill="white"/></svg><div><p style="font-size:14px;font-weight:600;color:#15803d;margin:0 0 3px;">¡Gracias por tu pedido!</p><p style="font-size:13px;color:#166534;margin:0;line-height:1.5;">Nos pondremos en contacto contigo vía <strong>WhatsApp</strong> lo antes posible.</p></div></div>`;btn.parentNode.insertBefore(notice,btn.nextSibling);}else{btn.textContent='Enviar solicitud';btn.disabled=false;btn.className='btn-primary w-full py-4 rounded-full text-[15px] font-medium mt-2';alert('Hubo un problema. Inténtalo de nuevo.');}}).catch(()=>{btn.textContent='Enviar solicitud';btn.disabled=false;btn.className='btn-primary w-full py-4 rounded-full text-[15px] font-medium mt-2';alert('Error de conexión.');});}
+
+  const months=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  let calDate=new Date();calDate.setDate(1);
+  function renderCalendar(){const now=new Date();const minDate=new Date(now.getFullYear(),now.getMonth(),now.getDate()+2);const year=calDate.getFullYear(),month=calDate.getMonth();$('cal-title').textContent=months[month]+' '+year;const firstDay=new Date(year,month,1).getDay();const offset=firstDay===0?6:firstDay-1;const days=new Date(year,month+1,0).getDate();let html='';for(let i=0;i<offset;i++)html+='<div></div>';for(let d=1;d<=days;d++){const date=new Date(year,month,d);const disabled=date<minDate;const selected=selectedDate&&date.toDateString()===selectedDate.toDateString();const today=date.toDateString()===now.toDateString();let cls='cal-day';if(disabled)cls+=' disabled';if(selected)cls+=' selected';if(today&&!selected)cls+=' today';html+=`<div class="${cls}" onclick="selectDay(${year},${month},${d})">${d}</div>`;}$('cal-grid').innerHTML=html;}
+  function prevMonth(){calDate.setMonth(calDate.getMonth()-1);renderCalendar();}
+  function nextMonth(){calDate.setMonth(calDate.getMonth()+1);renderCalendar();}
+  renderCalendar();
+
+  function openTerms(){const o=$('terms-overlay'),b=$('terms-box');o.style.opacity='1';o.style.pointerEvents='all';b.style.transform='translateY(0)';document.body.style.overflow='hidden';}
+  function closeTerms(){const o=$('terms-overlay'),b=$('terms-box');o.style.opacity='0';o.style.pointerEvents='none';b.style.transform='translateY(20px)';document.body.style.overflow='';}
+  function acceptTerms(){closeTerms();const chk=$('chk-politicas'),lbl=$('chk-label');chk.disabled=false;chk.checked=true;lbl.style.opacity='1';lbl.style.cursor='pointer';$('chk-icon').classList.remove('hidden');validatePoliticas();}
+  $('terms-overlay').addEventListener('click',e=>{if(e.target.id==='terms-overlay')closeTerms();});
+
+  const products=[{category:'Entremet',title:'Rouge Velvet',price:'48 €',desc:'Mousse de frambuesa sedosa sobre crujiente de almendra. Acabado velvet rojo intenso. Ideal para ocasiones especiales.',images:['https://i.ibb.co/6J4CN3xv/IMG-20260405-153055.jpg','FOTO_ROUGE_2','FOTO_ROUGE_3']},{category:'Tarta',title:'Matcha Sublime',price:'52 €',desc:'Bizcocho de matcha ceremonial japonés con ganache de yuzu. Acabado velvet verde jade elegante y único.',images:['https://i.ibb.co/Lh9Mwj36/IMG-20260310-160811.jpg','FOTO_MATCHA_2','FOTO_MATCHA_3']},{category:'Entremet',title:'Caramel Noir',price:'55 €',desc:'Mousse de caramelo salado sobre ganache de chocolate 72% Callebaut. Acabado velvet marrón oscuro. Sofisticado e irresistible.',images:['https://i.ibb.co/KxyFRWPd/Picsart-26-04-07-12-28-09-757.jpg','FOTO_CARAMEL_2','FOTO_CARAMEL_3']}];
+  function openModal(idx){
+    if(idx>2)return;
+    const p=products[idx];
+    $('modal-category').textContent=p.category;
+    $('modal-title').textContent=p.title;
+    $('modal-price').textContent=p.price;
+    $('modal-desc').textContent=p.desc;
+
+    // Inject allergens into modal
+    let alergenosEl = $('modal-alergenos');
+    if (!alergenosEl) {
+      alergenosEl = document.createElement('div');
+      alergenosEl.id = 'modal-alergenos';
+      alergenosEl.style.marginBottom = '16px';
+      const descEl = $('modal-desc');
+      descEl.insertAdjacentElement('afterend', alergenosEl);
+    }
+    alergenosEl.innerHTML = `
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#8e8e93;font-weight:600;margin-bottom:8px;">Alérgenos</p>
+      <div class="alergenos-row">${ALERGENOS.map(a=>`<div class="alergen-chip"><span>${a.emoji}</span>${a.label}</div>`).join('')}</div>`;
+
+    setMainImage(p.images[0]);renderThumbs(p.images,0);
+    $('modal-overlay').classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function setMainImage(src,idx){$('modal-main-img').src=src.startsWith('FOTO_')?'':src;if(idx!==undefined)document.querySelectorAll('.thumb').forEach((t,i)=>t.classList.toggle('active',i===idx));}
+  function renderThumbs(images,activeIdx){$('modal-thumbs').innerHTML=images.map((src,i)=>{const ph=src.startsWith('FOTO_');return`<div class="thumb ${i===activeIdx?'active':''}" style="background:${ph?'#e5e5ea':'transparent'}" onclick="setMainImage('${src}',${i})">${ph?`<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:10px;color:#8e8e93;text-align:center;">Foto<br/>próx.</div>`:`<img src="${src}" style="width:100%;height:100%;object-fit:cover;"/>`}</div>`;}).join('');}
+  function closeModal(){$('modal-overlay').classList.remove('open');document.body.style.overflow='';}
+  function closeModalOutside(e){if(e.target.id==='modal-overlay')closeModal();}
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeTerms();}});
+</script>
+</body>
+</html>
