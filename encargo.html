@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Encarga tu tarta · Iconic Pasteleria</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f5f5f7;--text:#1d1d1f;--text2:#6e6e73;--border:#d2d2d7;--accent:#1d1d1f;--card:#fff;--radius:16px;--err:#ff3b30}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+
+/* HEADER */
+header{background:rgba(245,245,247,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(210,210,215,.5);position:sticky;top:0;z-index:100;height:52px;display:flex;align-items:center;padding:0 24px;justify-content:space-between}
+.logo{font-size:15px;font-weight:600;color:var(--text);text-decoration:none}
+.header-right{font-size:13px;color:var(--text2)}
+
+/* TOAST */
+.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(90px);background:var(--err);color:#fff;padding:12px 22px;border-radius:980px;font-size:14px;font-weight:500;z-index:300;transition:transform .35s cubic-bezier(.25,.46,.45,.94);white-space:nowrap;box-shadow:0 8px 32px rgba(255,59,48,.3)}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+/* VIEWS */
+.view{display:none}.view.active{display:block}
+
+/* ══ CATALOGUE ══ */
+.cat-page{max-width:980px;margin:0 auto;padding:56px 24px 80px}
+.cat-header{text-align:center;margin-bottom:56px}
+.cat-tag{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--text2);font-weight:500;margin-bottom:12px}
+.cat-title{font-size:clamp(30px,5vw,48px);font-weight:600;letter-spacing:-.025em;line-height:1.08;margin-bottom:14px}
+.cat-sub{font-size:16px;color:var(--text2);font-weight:300;line-height:1.65;max-width:480px;margin:0 auto}
+.filter-tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:48px}
+.ftab{padding:9px 20px;border-radius:980px;border:1.5px solid var(--border);font-size:14px;font-weight:500;color:var(--text2);cursor:pointer;transition:all .2s;background:#fff}
+.ftab:hover{border-color:var(--accent);color:var(--text)}
+.ftab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.prod-card{background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:transform .3s cubic-bezier(.25,.46,.45,.94),box-shadow .3s;cursor:pointer}
+.prod-card:hover{transform:translateY(-6px);box-shadow:0 20px 56px rgba(0,0,0,.1)}
+.prod-img{aspect-ratio:3/4;width:100%;display:flex;align-items:center;justify-content:center;font-size:52px;position:relative;overflow:hidden}
+.prod-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.18) 0%,transparent 55%)}
+.prod-badge{position:absolute;top:14px;left:14px;z-index:2;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-radius:980px;padding:4px 12px;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--text)}
+.prod-body{padding:20px 22px 22px}
+.prod-type{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--text2);font-weight:500;margin-bottom:5px}
+.prod-name{font-size:18px;font-weight:600;letter-spacing:-.02em;margin-bottom:6px;line-height:1.2}
+.prod-desc{font-size:13px;color:var(--text2);line-height:1.6;font-weight:300;margin-bottom:18px}
+.prod-footer{display:flex;align-items:center;justify-content:space-between}
+.prod-price{font-size:15px;font-weight:600}
+.prod-price small{font-size:11px;color:var(--text2);font-weight:400;margin-left:3px}
+.btn-order{background:var(--accent);color:#fff;border:none;padding:10px 20px;border-radius:980px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:opacity .2s,transform .2s}
+.btn-order:hover{opacity:.85;transform:scale(1.04)}
+
+/* ══ FORM ══ */
+.form-page{max-width:760px;margin:0 auto;padding:40px 24px 80px}
+
+/* PRODUCT BAR */
+.form-header{display:flex;align-items:center;gap:12px;margin-bottom:36px}
+.back-btn{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--border);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;transition:all .2s;flex-shrink:0}
+.back-btn:hover{border-color:var(--accent);background:var(--accent);color:#fff}
+.spbar{flex:1;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.spbar-left{display:flex;align-items:center;gap:12px}
+.spb-img{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.spb-name{font-size:13px;font-weight:600;letter-spacing:-.01em}
+.spb-type{font-size:11px;color:var(--text2);margin-top:1px}
+.spbar-price{text-align:right;flex-shrink:0}
+.price-amount{font-size:18px;font-weight:700;letter-spacing:-.02em;transition:all .3s}
+.price-amount.bump{transform:scale(1.15);color:#1d1d1f}
+.price-label{font-size:10px;color:var(--text2);text-transform:uppercase;letter-spacing:.06em;margin-top:1px}
+
+/* STEPS */
+.progress-wrap{background:var(--border);border-radius:4px;height:3px;margin-bottom:32px;overflow:hidden}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .5s cubic-bezier(.25,.46,.45,.94)}
+.steps{display:flex;align-items:center;justify-content:center;gap:4px;margin-bottom:36px;flex-wrap:wrap}
+.step-dot{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:var(--text2);padding:6px 12px;border-radius:980px;transition:all .3s;white-space:nowrap}
+.step-dot.active{background:var(--accent);color:#fff}
+.step-dot.done{color:var(--text)}
+.step-num{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;background:var(--border);color:var(--text2);transition:all .3s;flex-shrink:0}
+.step-dot.active .step-num{background:#fff;color:var(--accent)}
+.step-dot.done .step-num{background:var(--accent);color:#fff}
+
+/* CARD */
+.card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:26px;margin-bottom:14px;transition:border-color .3s}
+.card.has-error{border-color:var(--err)}
+.card-title{font-size:16px;font-weight:600;letter-spacing:-.01em;margin-bottom:5px;display:flex;align-items:center;gap:8px}
+.req{font-size:11px;font-weight:500;color:var(--err);opacity:0;transition:opacity .3s}
+.card.has-error .req{opacity:1}
+.card-sub{font-size:13px;color:var(--text2);font-weight:300;margin-bottom:20px}
+
+/* TILES */
+.tile-group{display:grid;gap:10px}
+.tile-group.c2{grid-template-columns:1fr 1fr}
+.tile-group.c3{grid-template-columns:1fr 1fr 1fr}
+.tile-group.c4{grid-template-columns:1fr 1fr 1fr 1fr}
+.tile{border:1.5px solid var(--border);border-radius:var(--radius);padding:15px 12px;cursor:pointer;transition:all .2s;background:#fff;display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;user-select:none}
+.tile:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.07)}
+.tile.selected{border-color:var(--accent);background:#f5f5f7}
+.tile-icon{font-size:24px;margin-bottom:2px}
+.tile-name{font-size:13px;font-weight:600;letter-spacing:-.01em}
+.tile-desc{font-size:11px;color:var(--text2);line-height:1.4}
+.tile-price{font-size:12px;font-weight:600;margin-top:2px}
+
+/* SABOR CARDS */
+.flavor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.flavor-card{border:1.5px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:all .25s;background:#fff;user-select:none;position:relative}
+.flavor-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.09)}
+.flavor-card.selected{border-color:var(--accent);background:#f5f5f7}
+.flavor-card.selected .flavor-check{opacity:1;transform:scale(1)}
+.flavor-img{aspect-ratio:3/4;width:100%;display:flex;align-items:center;justify-content:center;font-size:36px;position:relative;overflow:hidden}
+.flavor-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.flavor-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.22) 0%,transparent 55%)}
+.flavor-check{position:absolute;top:10px;right:10px;z-index:3;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;opacity:0;transform:scale(.5);transition:all .25s}
+.flavor-name{font-size:13px;font-weight:600;padding:10px 12px 4px;letter-spacing:-.01em;line-height:1.3}
+.flavor-sub{font-size:11px;color:var(--text2);padding:0 12px 12px;line-height:1.4}
+
+/* COLOR SWATCHES */
+.swatch-group{display:flex;flex-wrap:wrap;gap:10px}
+.swatch{width:38px;height:38px;border-radius:50%;cursor:pointer;border:3px solid transparent;transition:all .2s;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.swatch:hover{transform:scale(1.12)}
+.swatch.selected{border-color:var(--accent);box-shadow:0 0 0 2px #fff,0 0 0 4px var(--accent)}
+.swatch-label{font-size:13px;color:var(--text2);margin-top:10px;font-weight:500;min-height:18px}
+
+/* PILLS */
+.pill-group{display:flex;flex-wrap:wrap;gap:8px}
+.pill{padding:9px 16px;border-radius:980px;border:1.5px solid var(--border);font-size:13px;font-weight:500;color:var(--text);cursor:pointer;transition:all .2s;background:#fff;user-select:none;display:flex;align-items:center;gap:5px}
+.pill:hover{border-color:var(--accent)}
+.pill.selected{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* CANDLES QTY */
+.candle-qty{display:flex;align-items:center;gap:14px;margin-top:16px;padding:14px 18px;background:#f5f5f7;border-radius:12px;border:1.5px solid var(--border)}
+.qty-btn{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--border);background:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;line-height:1;color:var(--text);font-family:inherit}
+.qty-btn:hover:not(:disabled){border-color:var(--accent);background:var(--accent);color:#fff}
+.qty-btn:disabled{opacity:.3;cursor:not-allowed}
+.qty-num{font-size:20px;font-weight:700;min-width:28px;text-align:center;letter-spacing:-.02em}
+.qty-info{margin-left:6px;font-size:13px;color:var(--text2)}
+.qty-info strong{color:var(--text);font-weight:600}
+
+/* CALENDAR */
+.cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.cal-nav button{background:none;border:1.5px solid var(--border);border-radius:8px;width:34px;height:34px;cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;transition:all .2s;color:var(--text)}
+.cal-nav button:hover{border-color:var(--accent);background:var(--accent);color:#fff}
+.cal-month{font-size:14px;font-weight:600}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
+.cal-day-name{font-size:10px;font-weight:600;text-align:center;color:var(--text2);padding:5px 0;text-transform:uppercase;letter-spacing:.05em}
+.cal-day{aspect-ratio:1;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;border:1.5px solid transparent}
+.cal-day:hover:not(.disabled):not(.empty){background:#f0f0f2}
+.cal-day.disabled{color:var(--border);cursor:not-allowed;pointer-events:none}
+.cal-day.empty{pointer-events:none}
+.cal-day.today{color:var(--accent);font-weight:700}
+.cal-day.selected{background:var(--accent);color:#fff}
+.cal-note{font-size:11px;color:var(--text2);margin-top:10px;display:flex;align-items:center;gap:6px}
+
+/* TIME */
+.time-group{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.time-slot{border:1.5px solid var(--border);border-radius:var(--radius);padding:13px 8px;text-align:center;cursor:pointer;transition:all .2s;background:#fff;user-select:none}
+.time-slot:hover{border-color:var(--accent)}
+.time-slot.selected{background:var(--accent);color:#fff;border-color:var(--accent)}
+.time-range{font-size:13px;font-weight:600}
+.time-label{font-size:11px;margin-top:2px;opacity:.65}
+
+/* DELIVERY */
+.delivery-group{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.delivery-opt{border:1.5px solid var(--border);border-radius:var(--radius);padding:18px;cursor:pointer;transition:all .2s;background:#fff;user-select:none}
+.delivery-opt:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.07)}
+.delivery-opt.selected{border-color:var(--accent);background:#f5f5f7}
+.delivery-icon{font-size:26px;margin-bottom:8px}
+.delivery-name{font-size:14px;font-weight:600;margin-bottom:3px}
+.delivery-desc{font-size:12px;color:var(--text2);line-height:1.5}
+
+/* NOTES */
+.notes-area{width:100%;border:1.5px solid var(--border);border-radius:var(--radius);padding:13px 15px;font-size:14px;font-family:inherit;resize:vertical;min-height:72px;outline:none;transition:border-color .2s;color:var(--text);background:#fff}
+.notes-area:focus{border-color:var(--accent)}
+.notes-area::placeholder{color:var(--text2)}
+
+/* BUTTONS */
+.btn-next{background:var(--accent);color:#fff;border:none;padding:14px 30px;border-radius:980px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .25s;opacity:.3;pointer-events:none}
+.btn-next.ready{opacity:1;pointer-events:all}
+.btn-next.ready:hover{transform:scale(1.03);opacity:.9}
+.btn-prev{background:none;border:1.5px solid var(--border);color:var(--text);padding:14px 26px;border-radius:980px;font-size:15px;font-weight:500;cursor:pointer;font-family:inherit;transition:all .2s}
+.btn-prev:hover{border-color:var(--accent)}
+
+/* SUMMARY */
+.summary-row{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid var(--border)}
+.summary-row:last-child{border:none}
+.summary-row.total{padding-top:16px;margin-top:4px}
+.sum-label{font-size:13px;color:var(--text2)}
+.sum-val{font-size:13px;font-weight:500;text-align:right;max-width:60%}
+.sum-total-label{font-size:15px;font-weight:700}
+.sum-total-val{font-size:20px;font-weight:700;letter-spacing:-.02em}
+
+/* CTA */
+.cta-card{background:var(--accent);border-radius:20px;padding:30px;text-align:center;color:#fff;margin-top:20px}
+.cta-card h3{font-size:20px;font-weight:600;letter-spacing:-.02em;margin-bottom:8px}
+.cta-card p{font-size:13px;opacity:.65;margin-bottom:22px;line-height:1.65}
+.btn-wa{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:14px 28px;border-radius:980px;font-size:15px;font-weight:600;border:none;cursor:pointer;transition:transform .2s,opacity .2s;font-family:inherit}
+.btn-wa:hover{transform:scale(1.03);opacity:.95}
+.btn-wa svg{width:20px;height:20px;fill:#fff;flex-shrink:0}
+.wa-note{font-size:11px;opacity:.45;margin-top:12px}
+
+@media(max-width:680px){
+  .prod-grid,.flavor-grid{grid-template-columns:1fr 1fr}
+  .tile-group.c3,.tile-group.c4{grid-template-columns:1fr 1fr}
+  .time-group{grid-template-columns:1fr 1fr}
+  .delivery-group{grid-template-columns:1fr}
+  .steps .step-dot span:not(.step-num){display:none}
+  .card{padding:18px}
+  .spbar{flex-direction:column;align-items:flex-start;gap:6px}
+  .spbar-price{text-align:left}
+}
+@media(max-width:420px){
+  .prod-grid{grid-template-columns:1fr}
+  .flavor-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="toast" id="toast"></div>
+
+<header>
+  <a href="#" class="logo" onclick="showView('catalogue');return false">iconic·</a>
+  <span class="header-right" id="header-right">Colección 2025</span>
+</header>
+
+<!-- ══ CATALOGUE ══ -->
+<div class="view active" id="view-catalogue">
+<div class="cat-page">
+  <div class="cat-header">
+    <div class="cat-tag">Pedidos online · Listo en 48h</div>
+    <h1 class="cat-title">Elige tu tarta<br>y la hacemos tuya</h1>
+    <p class="cat-sub">Selecciona la elaboración que más te inspire y personaliza cada detalle a tu gusto.</p>
+  </div>
+  <div class="filter-tabs">
+    <div class="ftab active" onclick="filterCat('all',this)">Todas</div>
+    <div class="ftab" onclick="filterCat('tarta',this)">Tartas</div>
+    <div class="ftab" onclick="filterCat('entremet',this)">Entremets</div>
+  </div>
+  <div class="prod-grid" id="prod-grid"></div>
+</div>
+</div>
+
+<!-- ══ FORM ══ -->
+<div class="view" id="view-form">
+<div class="form-page">
+
+  <div class="form-header">
+    <button class="back-btn" onclick="showView('catalogue')" title="Volver al catálogo">←</button>
+    <div class="spbar">
+      <div class="spbar-left">
+        <div class="spb-img" id="spb-img"></div>
+        <div>
+          <div class="spb-name" id="spb-name">—</div>
+          <div class="spb-type" id="spb-type">—</div>
+        </div>
+      </div>
+      <div class="spbar-price">
+        <div class="price-amount" id="price-amount">—</div>
+        <div class="price-label">precio estimado</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="progress-wrap"><div class="progress-bar" id="progressBar" style="width:12%"></div></div>
+
+  <div class="steps">
+    <div class="step-dot active" id="sd1"><span class="step-num">1</span><span>Tamaño</span></div>
+    <div class="step-dot" id="sd2"><span class="step-num">2</span><span>Sabor</span></div>
+    <div class="step-dot" id="sd3"><span class="step-num">3</span><span>Extras</span></div>
+    <div class="step-dot" id="sd4"><span class="step-num">4</span><span>Entrega</span></div>
+    <div class="step-dot" id="sd5"><span class="step-num">5</span><span>Resumen</span></div>
+  </div>
+
+  <!-- STEP 1: TAMAÑO -->
+  <div id="fs1">
+    <div class="card" id="c-tamaño">
+      <div class="card-title">Tamaño <span class="req">Obligatorio</span></div>
+      <div class="card-sub">¿Para cuántas personas es?</div>
+      <div class="tile-group c3">
+        <div class="tile" onclick="selSize(this,'Pequeña (4–6 p.)',0)">
+          <div class="tile-icon">🍰</div>
+          <div class="tile-name">Pequeña</div>
+          <div class="tile-desc">4–6 personas</div>
+          <div class="tile-price" id="tp-s">—</div>
+        </div>
+        <div class="tile" onclick="selSize(this,'Mediana (8–10 p.)',1)">
+          <div class="tile-icon">🎂</div>
+          <div class="tile-name">Mediana</div>
+          <div class="tile-desc">8–10 personas</div>
+          <div class="tile-price" id="tp-m">—</div>
+        </div>
+        <div class="tile" onclick="selSize(this,'Grande (12–16 p.)',2)">
+          <div class="tile-icon">🏆</div>
+          <div class="tile-name">Grande</div>
+          <div class="tile-desc">12–16 personas</div>
+          <div class="tile-price" id="tp-l">—</div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:flex-end;margin-top:8px">
+      <button class="btn-next" id="bn1" onclick="goFS(2)">Continuar →</button>
+    </div>
+  </div>
+
+  <!-- STEP 2: SABOR + COLOR -->
+  <div id="fs2" style="display:none">
+    <div class="card" id="c-sabor">
+      <div class="card-title">Sabor <span class="req">Obligatorio</span></div>
+      <div class="card-sub">Elige el relleno de tu tarta</div>
+      <div class="flavor-grid">
+        <div class="flavor-card" onclick="selFlavor(this,'Fresas con crema')">
+          <div class="flavor-img" style="background:linear-gradient(160deg,#f0d0c8,#d4607a)">
+            <img src="img/sabor-fresas.jpg" alt="Fresas con crema" onerror="this.style.display='none'"/>
+            <span style="position:relative;z-index:1">🍓</span>
+          </div>
+          <div class="flavor-check">✓</div>
+          <div class="flavor-name">Fresas con crema</div>
+          <div class="flavor-sub">Mousse de nata, confit de fresa y bizcocho tierno</div>
+        </div>
+        <div class="flavor-card" onclick="selFlavor(this,'Chocolate y avellanas')">
+          <div class="flavor-img" style="background:linear-gradient(160deg,#c8a878,#5a3010)">
+            <img src="img/sabor-chocolate.jpg" alt="Chocolate y avellanas" onerror="this.style.display='none'"/>
+            <span style="position:relative;z-index:1">🍫</span>
+          </div>
+          <div class="flavor-check">✓</div>
+          <div class="flavor-name">Chocolate & Avellanas</div>
+          <div class="flavor-sub">Ganache intenso, praliné crunchy y bizcocho húmedo</div>
+        </div>
+        <div class="flavor-card" onclick="selFlavor(this,'Maracuyá & arándanos')">
+          <div class="flavor-img" style="background:linear-gradient(160deg,#e8d070,#6040c0)">
+            <img src="https://i.ibb.co/hFQD5yTd/IMG-20260513-234951-2.jpg" alt="Maracuyá y arándanos" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0"/>
+            <span style="position:relative;z-index:1;display:none">🫐</span>
+          </div>
+          <div class="flavor-check">✓</div>
+          <div class="flavor-name">Maracuyá & arándanos</div>
+          <div class="flavor-sub">Curd de maracuyá, gel de arándanos y base crujiente</div>
+        </div>
+      </div>
+    </div>
+    <div class="card" id="c-color">
+      <div class="card-title">Color del acabado <span class="req">Obligatorio</span></div>
+      <div class="card-sub">Tono principal de la decoración exterior</div>
+      <div class="swatch-group">
+        <div class="swatch" style="background:#f9f0e8" onclick="selSwatch(this,'Crema / Nude')"></div>
+        <div class="swatch" style="background:#f2c4ce" onclick="selSwatch(this,'Rosa pastel')"></div>
+        <div class="swatch" style="background:#e8a0b0" onclick="selSwatch(this,'Rosa palo')"></div>
+        <div class="swatch" style="background:#c084a0" onclick="selSwatch(this,'Malva')"></div>
+        <div class="swatch" style="background:#a8c5da" onclick="selSwatch(this,'Azul cielo')"></div>
+        <div class="swatch" style="background:#b8d8be" onclick="selSwatch(this,'Verde salvia')"></div>
+        <div class="swatch" style="background:#e8d5a8" onclick="selSwatch(this,'Dorado suave')"></div>
+        <div class="swatch" style="background:#2d2d2d" onclick="selSwatch(this,'Negro elegante')"></div>
+        <div class="swatch" style="background:linear-gradient(135deg,#f9f0e8,#f2c4ce,#a8c5da)" onclick="selSwatch(this,'Sorpresa del chef')"></div>
+      </div>
+      <div class="swatch-label" id="swatch-lbl">Elige un color</div>
+    </div>
+    <div style="display:flex;justify-content:space-between;margin-top:8px">
+      <button class="btn-prev" onclick="goFS(1)">← Anterior</button>
+      <button class="btn-next" id="bn2" onclick="goFS(3)">Continuar →</button>
+    </div>
+  </div>
+
+  <!-- STEP 3: EXTRAS -->
+  <div id="fs3" style="display:none">
+    <div class="card" id="c-velas">
+      <div class="card-title">Velas <span class="req">Obligatorio</span></div>
+      <div class="card-sub">Elige el tipo de velas para tu tarta</div>
+      <div class="tile-group c4">
+        <div class="tile" onclick="selVelas(this,'Sin velas',0)">
+          <div class="tile-icon">🚫</div>
+          <div class="tile-name">Sin velas</div>
+          <div class="tile-price" style="color:var(--text2);font-weight:400">Gratis</div>
+        </div>
+        <div class="tile" onclick="selVelas(this,'Velas plateadas',1)">
+          <div class="tile-icon">🥈</div>
+          <div class="tile-name">Plateadas</div>
+          <div class="tile-desc">Estándar</div>
+          <div class="tile-price">1 € c/u</div>
+        </div>
+        <div class="tile" onclick="selVelas(this,'Velas doradas',1)">
+          <div class="tile-icon">🥇</div>
+          <div class="tile-name">Doradas</div>
+          <div class="tile-desc">Estándar</div>
+          <div class="tile-price">1 € c/u</div>
+        </div>
+        <div class="tile" onclick="selVelas(this,'Velas de número',1.5)">
+          <div class="tile-icon">🔢</div>
+          <div class="tile-name">Número</div>
+          <div class="tile-desc">Decorativas</div>
+          <div class="tile-price">1,50 € c/u</div>
+        </div>
+      </div>
+
+      <!-- Cantidad velas estándar -->
+      <div id="qty-std" style="display:none">
+        <div class="candle-qty">
+          <button class="qty-btn" id="std-minus" onclick="changeQty('std',-1)">−</button>
+          <span class="qty-num" id="std-num">1</span>
+          <button class="qty-btn" id="std-plus" onclick="changeQty('std',1)">+</button>
+          <span class="qty-info">vela<span id="std-plural"></span> · <strong id="std-total">1 €</strong></span>
+        </div>
+      </div>
+
+      <!-- Cantidad velas de número (máx 2) -->
+      <div id="qty-num-wrap" style="display:none">
+        <div class="candle-qty">
+          <button class="qty-btn" id="num-minus" onclick="changeQty('num',-1)">−</button>
+          <span class="qty-num" id="num-num">1</span>
+          <button class="qty-btn" id="num-plus" onclick="changeQty('num',1)">+</button>
+          <span class="qty-info">dígito<span id="num-plural"></span> · <strong id="num-total">1,50 €</strong></span>
+        </div>
+        <div style="font-size:11px;color:var(--text2);margin-top:8px;padding-left:4px">Máximo 2 velas de número por tarta</div>
+        <!-- Input número 1 digit -->
+        <div id="num-inputs" style="display:flex;gap:12px;margin-top:16px;align-items:flex-start">
+          <div style="flex:1">
+            <div style="font-size:12px;font-weight:600;margin-bottom:6px;color:var(--text2);letter-spacing:.03em">DÍGITO 1</div>
+            <input id="num-d1" type="number" min="0" max="9" placeholder="0–9" oninput="clampDigit(this)" class="notes-area" style="min-height:52px;resize:none;font-size:22px;font-weight:700;text-align:center;letter-spacing:.05em"/>
+          </div>
+          <div id="num-d2-wrap" style="flex:1;display:none">
+            <div style="font-size:12px;font-weight:600;margin-bottom:6px;color:var(--text2);letter-spacing:.03em">DÍGITO 2</div>
+            <input id="num-d2" type="number" min="0" max="9" placeholder="0–9" oninput="clampDigit(this)" class="notes-area" style="min-height:52px;resize:none;font-size:22px;font-weight:700;text-align:center;letter-spacing:.05em"/>
+          </div>
+        </div>
+        <div style="font-size:12px;color:var(--text2);margin-top:8px">Cada dígito es una vela independiente — p. ej. para el número 29 elige 2 dígitos: <strong>2</strong> y <strong>9</strong></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Notas adicionales</div>
+      <div class="card-sub">Alergias, preferencias o cualquier detalle especial (opcional)</div>
+      <textarea class="notes-area" id="notas" placeholder="Ej: alergia a los frutos secos, colores del evento, flores específicas..."></textarea>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;margin-top:8px">
+      <button class="btn-prev" onclick="goFS(2)">← Anterior</button>
+      <button class="btn-next" id="bn3" onclick="goFS(4)">Continuar →</button>
+    </div>
+  </div>
+
+  <!-- STEP 4: ENTREGA -->
+  <div id="fs4" style="display:none">
+
+    <!-- DATOS PERSONALES -->
+    <div class="card" id="c-datos">
+      <div class="card-title">Tus datos <span class="req">Obligatorio</span></div>
+      <div class="card-sub">Para confirmar tu pedido y mantenerte informado</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+        <div>
+          <div style="font-size:12px;font-weight:600;color:var(--text2);letter-spacing:.04em;margin-bottom:6px">NOMBRE</div>
+          <input id="inp-nombre" type="text" placeholder="Laura" class="notes-area" style="min-height:44px;resize:none" oninput="chk4()"/>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:600;color:var(--text2);letter-spacing:.04em;margin-bottom:6px">APELLIDO</div>
+          <input id="inp-apellido" type="text" placeholder="García" class="notes-area" style="min-height:44px;resize:none" oninput="chk4()"/>
+        </div>
+      </div>
+      <div style="margin-bottom:12px">
+        <div style="font-size:12px;font-weight:600;color:var(--text2);letter-spacing:.04em;margin-bottom:6px">CORREO ELECTRÓNICO</div>
+        <input id="inp-email" type="email" placeholder="laura@email.com" class="notes-area" style="min-height:44px;resize:none" oninput="chk4()"/>
+      </div>
+      <div>
+        <div style="font-size:12px;font-weight:600;color:var(--text2);letter-spacing:.04em;margin-bottom:6px">WHATSAPP</div>
+        <input id="inp-wa" type="tel" placeholder="+34 600 000 000" class="notes-area" style="min-height:44px;resize:none" oninput="chk4()"/>
+      </div>
+    </div>
+
+    <div class="card" id="c-delivery">
+      <div class="card-title">¿Cómo quieres recibirlo? <span class="req">Obligatorio</span></div>
+      <div class="card-sub">Recogida en tienda o entrega a domicilio</div>
+      <div class="delivery-group">
+        <div class="delivery-opt" id="opt-tienda" onclick="selDelivery('tienda')">
+          <div class="delivery-icon">🏪</div>
+          <div class="delivery-name">Recoger en tienda</div>
+          <div class="delivery-desc">Carrer de Salvà 50 · Mar–Dom 9:00–17:00</div>
+        </div>
+        <div class="delivery-opt" id="opt-del" onclick="selDelivery('delivery')">
+          <div class="delivery-icon">🛵</div>
+          <div class="delivery-name">Delivery</div>
+          <div class="delivery-desc">A domicilio en Barcelona</div>
+        </div>
+      </div>
+
+      <!-- Dirección + CP -->
+      <div id="addr-block" style="display:none;margin-top:14px">
+        <div style="margin-bottom:12px">
+          <div style="font-size:12px;font-weight:600;color:var(--text2);letter-spacing:.04em;margin-bottom:6px">DIRECCIÓN</div>
+          <input type="text" id="direccion" placeholder="Calle, número, piso..." class="notes-area" style="min-height:44px;resize:none" oninput="chk4()"/>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:600;color:var(--text2);letter-spacing:.04em;margin-bottom:6px">CÓDIGO POSTAL</div>
+          <input type="text" id="inp-cp" placeholder="08004" maxlength="5" class="notes-area" style="min-height:44px;resize:none" oninput="onCPInput()"/>
+          <div id="cp-feedback" style="margin-top:8px;font-size:13px;font-weight:500;display:none"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card" id="c-fecha">
+      <div class="card-title">Fecha de entrega <span class="req">Obligatorio</span></div>
+      <div class="card-sub">Pedidos listos en 48 h · Hoy y mañana no disponibles</div>
+      <div class="cal-nav">
+        <button onclick="prevM()">‹</button>
+        <span class="cal-month" id="calMonth"></span>
+        <button onclick="nextM()">›</button>
+      </div>
+      <div class="cal-grid" id="calGrid"></div>
+      <div class="cal-note">
+        <span style="width:10px;height:10px;border-radius:50%;background:var(--accent);display:inline-block;flex-shrink:0"></span>Seleccionado &nbsp;·&nbsp;
+        <span style="width:10px;height:10px;border-radius:50%;background:var(--border);display:inline-block;flex-shrink:0"></span>No disponible
+      </div>
+    </div>
+    <div class="card" id="c-hora" style="display:none">
+      <div class="card-title">Franja horaria <span class="req">Obligatorio</span></div>
+      <div class="card-sub">¿Cuándo prefieres recibir o recoger tu pedido?</div>
+      <div class="time-group">
+        <div class="time-slot" onclick="selTime(this,'10:00 – 12:00')"><div class="time-range">10:00 – 12:00</div><div class="time-label">Mañana</div></div>
+        <div class="time-slot" onclick="selTime(this,'12:00 – 14:00')"><div class="time-range">12:00 – 14:00</div><div class="time-label">Mediodía</div></div>
+        <div class="time-slot" onclick="selTime(this,'14:00 – 16:00')"><div class="time-range">14:00 – 16:00</div><div class="time-label">Tarde</div></div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;margin-top:8px">
+      <button class="btn-prev" onclick="goFS(3)">← Anterior</button>
+      <button class="btn-next" id="bn4" onclick="goFS(5)">Ver resumen →</button>
+    </div>
+  </div>
+
+  <!-- STEP 5: RESUMEN -->
+  <div id="fs5" style="display:none">
+    <div class="card">
+      <div class="card-title" style="margin-bottom:18px">Resumen de tu pedido</div>
+      <div id="summary-content"></div>
+    </div>
+    <div class="cta-card">
+      <h3>¡Todo listo! 🎂</h3>
+      <p>Te redirigiremos a WhatsApp con todos los detalles. Nuestro equipo te confirmará disponibilidad y te enviará el enlace de pago.</p>
+      <button class="btn-wa" onclick="sendWA()">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.849L.057 23.852l6.188-1.448A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.79 9.79 0 01-5.001-1.374l-.36-.213-3.667.858.898-3.58-.234-.369A9.786 9.786 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+        Encargar por WhatsApp
+      </button>
+      <div class="wa-note">Te responderemos en menos de 24 h · El pago se realiza tras confirmar disponibilidad</div>
+    </div>
+    <div style="margin-top:14px"><button class="btn-prev" onclick="goFS(4)">← Editar entrega</button></div>
+  </div>
+
+</div>
+</div>
+
+<script>
+/* ── DATA ── */
+const products = [
+  {id:'fraise',type:'tarta',name:'Fraise & Vanille',desc:'Mousse de vainilla de Madagascar, coulis de fresa fresca y crujiente de almendra.',emoji:'🍓',bg:'linear-gradient(160deg,#f0d0c8,#d4907a)',badge:'Más vendida',p:[38,54,78]},
+  {id:'violette',type:'entremet',name:'Entremet Violette',desc:'Chocolate 40%, bizcocho de violeta y gel de moras silvestres.',emoji:'🫐',bg:'linear-gradient(160deg,#d4c0dc,#9b7fc0)',badge:'Nuevo',p:[42,60,86]},
+  {id:'matcha',type:'tarta',name:'Matcha & Yuzu',desc:'Cremoso de matcha ceremonial con gelée de yuzu y base de arroz tostado.',emoji:'🍃',bg:'linear-gradient(160deg,#c8d8c8,#7a9e7a)',badge:'Sin gluten',p:[40,58,84]},
+  {id:'caramel',type:'entremet',name:'Caramel & Fleur de Sel',desc:'Caramelo toffee artesanal, mousse de vainilla y crujiente de praliné.',emoji:'🍮',bg:'linear-gradient(160deg,#e8d0a0,#c0902a)',badge:'',p:[44,62,90]},
+  {id:'rojo',type:'tarta',name:'Terciopelo Rojo',desc:'Bizcocho red velvet, cream cheese y cobertura de chocolate blanco.',emoji:'❤️',bg:'linear-gradient(160deg,#e8a0a0,#9b2020)',badge:'Clásica',p:[36,52,76]},
+  {id:'limon',type:'entremet',name:'Limón & Albahaca',desc:'Curd de limón siciliano, gelée de albahaca fresca y galleta de mantequilla.',emoji:'🍋',bg:'linear-gradient(160deg,#f0e888,#c8b820)',badge:'Temporada',p:[40,56,82]},
+];
+
+let order = {product:null,tamañoIdx:-1,tamaño:'',sabor:'',color:'',velas:'',velasPrecioUnit:0,velasQty:1,velaD1:'',velaD2:'',notas:'',nombre:'',apellido:'',email:'',waPhone:'',delivery:'',direccion:'',cp:'',cpFree:false,fecha:'',hora:''};
+let calDate = new Date();
+const MONTHS=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+const WDAYS=['L','M','X','J','V','S','D'];
+
+/* ── PRICE ENGINE ── */
+function calcPrice(){
+  if(!order.product||order.tamañoIdx<0) return null;
+  const base = order.product.p[order.tamañoIdx];
+  const velas = order.velasPrecioUnit * order.velasQty;
+  return base + (order.velas&&order.velas!=='Sin velas' ? velas : 0);
+}
+function fmtPrice(n){ return n!=null ? n.toFixed(2).replace('.',',') + ' €' : '—'; }
+function updatePriceBar(){
+  const p = calcPrice();
+  const el = document.getElementById('price-amount');
+  if(!el) return;
+  const txt = p!=null ? fmtPrice(p) : '—';
+  if(el.textContent!==txt){
+    el.textContent=txt;
+    el.classList.add('bump');
+    setTimeout(()=>el.classList.remove('bump'),300);
+  }
+}
+
+/* ── VIEWS ── */
+function showView(v){
+  document.querySelectorAll('.view').forEach(e=>e.classList.remove('active'));
+  document.getElementById('view-'+v).classList.add('active');
+  document.getElementById('header-right').textContent=v==='catalogue'?'Colección 2025':'Personalizando tu tarta';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ── CATALOGUE ── */
+function renderCatalogue(filter='all'){
+  const grid=document.getElementById('prod-grid');
+  grid.innerHTML='';
+  products.filter(p=>filter==='all'||p.type===filter).forEach(p=>{
+    const d=document.createElement('div');
+    d.className='prod-card';
+    d.innerHTML=`
+      <div class="prod-img" style="background:${p.bg}">
+        <span style="font-size:52px;position:relative;z-index:1">${p.emoji}</span>
+        ${p.badge?`<div class="prod-badge">${p.badge}</div>`:''}
+      </div>
+      <div class="prod-body">
+        <div class="prod-type">${p.type==='tarta'?'Tarta':'Entremet'}</div>
+        <div class="prod-name">${p.name}</div>
+        <div class="prod-desc">${p.desc}</div>
+        <div class="prod-footer">
+          <div class="prod-price">desde ${p.p[0]} € <small>· 4–6 p.</small></div>
+          <button class="btn-order" onclick="startOrder('${p.id}')">Personalizar</button>
+        </div>
+      </div>`;
+    grid.appendChild(d);
+  });
+}
+function filterCat(cat,el){
+  document.querySelectorAll('.ftab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  renderCatalogue(cat);
+}
+renderCatalogue();
+
+/* ── START ORDER ── */
+function startOrder(id){
+  const p=products.find(x=>x.id===id);
+  order={product:p,tamañoIdx:-1,tamaño:'',sabor:'',color:'',velas:'',velasPrecioUnit:0,velasQty:1,notas:'',delivery:'',direccion:'',fecha:'',hora:''};
+
+  document.getElementById('spb-img').style.background=p.bg;
+  document.getElementById('spb-img').textContent=p.emoji;
+  document.getElementById('spb-name').textContent=p.name;
+  document.getElementById('spb-type').textContent=(p.type==='tarta'?'Tarta':'Entremet')+' · desde '+p.p[0]+' €';
+  document.getElementById('tp-s').textContent=p.p[0]+' €';
+  document.getElementById('tp-m').textContent=p.p[1]+' €';
+  document.getElementById('tp-l').textContent=p.p[2]+' €';
+  document.getElementById('price-amount').textContent='—';
+
+  // Reset UI
+  document.querySelectorAll('.tile,.flavor-card,.time-slot').forEach(e=>e.classList.remove('selected'));
+  document.querySelectorAll('.swatch').forEach(e=>e.classList.remove('selected'));
+  document.getElementById('swatch-lbl').textContent='Elige un color';
+  document.getElementById('qty-std').style.display='none';
+  document.getElementById('qty-num-wrap').style.display='none';
+  document.getElementById('std-num').textContent='1';
+  document.getElementById('num-num').textContent='1';
+  document.getElementById('num-d2-wrap').style.display='none';
+  if(document.getElementById('num-d1')) document.getElementById('num-d1').value='';
+  if(document.getElementById('num-d2')) document.getElementById('num-d2').value='';
+  document.getElementById('c-hora').style.display='none';
+  document.getElementById('addr-block').style.display='none';
+  document.getElementById('opt-tienda').classList.remove('selected');
+  document.getElementById('opt-del').classList.remove('selected');
+  document.getElementById('cp-feedback').style.display='none';
+  ['inp-nombre','inp-apellido','inp-email','inp-wa','direccion','inp-cp'].forEach(id=>{
+    const el=document.getElementById(id); if(el) el.value='';
+  });
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('has-error'));
+  ['bn1','bn2','bn3','bn4'].forEach(id=>document.getElementById(id)?.classList.remove('ready'));
+  if(document.getElementById('notas')) document.getElementById('notas').value='';
+  if(document.getElementById('direccion')) document.getElementById('direccion').value='';
+
+  goFS(1,true);
+  showView('form');
+}
+
+/* ── FORM STEPS ── */
+function goFS(n,skip=false){
+  if(!skip){
+    if(n===2&&!chk1(true)) return;
+    if(n===3&&!chk2(true)) return;
+    if(n===4&&!chk3(true)) return;
+    if(n===5&&!chk4(true)) return;
+  }
+  [1,2,3,4,5].forEach(i=>{
+    document.getElementById('fs'+i).style.display=i===n?'block':'none';
+    const sd=document.getElementById('sd'+i);
+    sd.classList.remove('active','done');
+    if(i===n) sd.classList.add('active');
+    else if(i<n) sd.classList.add('done');
+  });
+  document.getElementById('progressBar').style.width={1:12,2:36,3:60,4:80,5:100}[n]+'%';
+  if(n===5) buildSummary();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ── VALIDATION ── */
+let toastTimer;
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>t.classList.remove('show'),2800);
+}
+function chk1(a=false){
+  const ok=order.tamañoIdx>=0;
+  if(a&&!ok){document.getElementById('c-tamaño').classList.add('has-error');showToast('Elige un tamaño para continuar')}
+  document.getElementById('bn1')?.classList.toggle('ready',ok);
+  return ok;
+}
+function chk2(a=false){
+  const ok=!!order.sabor&&!!order.color;
+  if(a&&!ok){
+    if(!order.sabor) document.getElementById('c-sabor').classList.add('has-error');
+    if(!order.color) document.getElementById('c-color').classList.add('has-error');
+    showToast('Elige sabor y color antes de continuar');
+  }
+  document.getElementById('bn2')?.classList.toggle('ready',ok);
+  return ok;
+}
+function chk3(a=false){
+  const ok=!!order.velas;
+  if(a&&!ok){document.getElementById('c-velas').classList.add('has-error');showToast('Elige una opción de velas para continuar')}
+  document.getElementById('bn3')?.classList.toggle('ready',ok);
+  return ok;
+}
+function chk4(a=false){
+  const nombre=(document.getElementById('inp-nombre')?.value||'').trim();
+  const apellido=(document.getElementById('inp-apellido')?.value||'').trim();
+  const email=(document.getElementById('inp-email')?.value||'').trim();
+  const wa=(document.getElementById('inp-wa')?.value||'').trim();
+  const datosOk=nombre&&apellido&&email&&wa;
+  const dOk=order.delivery&&(
+    order.delivery==='tienda'||(
+      order.delivery==='delivery'&&
+      (document.getElementById('direccion')?.value||'').trim()&&
+      (document.getElementById('inp-cp')?.value||'').trim().length===5
+    )
+  );
+  const ok=!!(datosOk&&dOk&&order.fecha&&order.hora);
+  if(a&&!ok){
+    if(!datosOk) document.getElementById('c-datos').classList.add('has-error');
+    if(!dOk) document.getElementById('c-delivery').classList.add('has-error');
+    if(!order.fecha) document.getElementById('c-fecha').classList.add('has-error');
+    if(!order.hora&&document.getElementById('c-hora').style.display!=='none') document.getElementById('c-hora').classList.add('has-error');
+    showToast('Completa todos los campos antes de continuar');
+  }
+  document.getElementById('bn4')?.classList.toggle('ready',ok);
+  return ok;
+}
+
+const FREE_CP=['08007','08004','08029','08036'];
+function onCPInput(){
+  const cp=(document.getElementById('inp-cp')?.value||'').trim();
+  const fb=document.getElementById('cp-feedback');
+  order.cp=cp;
+  if(cp.length===5){
+    order.cpFree=FREE_CP.includes(cp);
+    fb.style.display='block';
+    if(order.cpFree){
+      fb.innerHTML='✅ <strong>¡Delivery gratuito</strong> en tu zona!';
+      fb.style.color='#1a7a3a';
+    } else {
+      fb.innerHTML='ℹ️ Tu código postal no está en la zona de envío gratuito. Consulta condiciones al confirmar.';
+      fb.style.color='var(--text2)';
+    }
+  } else {
+    fb.style.display='none';
+    order.cpFree=false;
+  }
+  chk4();
+}
+
+function clampDigit(el){
+  let v=el.value.replace(/[^0-9]/g,'');
+  if(v.length>1) v=v.slice(-1);
+  el.value=v;
+  if(el.id==='num-d1') order.velaD1=v;
+  if(el.id==='num-d2') order.velaD2=v;
+}
+
+/* ── SELECTORS ── */
+function selSize(el,label,idx){
+  el.closest('.tile-group').querySelectorAll('.tile').forEach(t=>t.classList.remove('selected'));
+  el.classList.add('selected');
+  order.tamaño=label; order.tamañoIdx=idx;
+  document.getElementById('c-tamaño').classList.remove('has-error');
+  updatePriceBar(); chk1();
+}
+function selFlavor(el,name){
+  document.querySelectorAll('.flavor-card').forEach(f=>f.classList.remove('selected'));
+  el.classList.add('selected');
+  order.sabor=name;
+  document.getElementById('c-sabor').classList.remove('has-error');
+  chk2();
+}
+function selSwatch(el,label){
+  document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('selected'));
+  el.classList.add('selected');
+  order.color=label;
+  document.getElementById('swatch-lbl').textContent=label;
+  document.getElementById('c-color').classList.remove('has-error');
+  chk2();
+}
+function selVelas(el,name,priceUnit){
+  el.closest('.tile-group').querySelectorAll('.tile').forEach(t=>t.classList.remove('selected'));
+  el.classList.add('selected');
+  order.velas=name; order.velasPrecioUnit=priceUnit; order.velasQty=1;
+  document.getElementById('qty-std').style.display='none';
+  document.getElementById('qty-num-wrap').style.display='none';
+  if(name==='Velas plateadas'||name==='Velas doradas'){
+    document.getElementById('qty-std').style.display='block';
+    updateStdQty();
+  } else if(name==='Velas de número'){
+    document.getElementById('qty-num-wrap').style.display='block';
+    updateNumQty();
+  }
+  document.getElementById('c-velas').classList.remove('has-error');
+  updatePriceBar(); chk3();
+}
+function changeQty(type,delta){
+  if(type==='std'){
+    const max=99, min=1;
+    order.velasQty=Math.min(max,Math.max(min,order.velasQty+delta));
+    updateStdQty();
+  } else {
+    order.velasQty=Math.min(2,Math.max(1,order.velasQty+delta));
+    updateNumQty();
+  }
+  updatePriceBar();
+}
+function updateStdQty(){
+  const q=order.velasQty;
+  document.getElementById('std-num').textContent=q;
+  document.getElementById('std-plural').textContent=q>1?'s':'';
+  document.getElementById('std-total').textContent=fmtPrice(q*order.velasPrecioUnit);
+  document.getElementById('std-minus').disabled=q<=1;
+  document.getElementById('std-plus').disabled=false;
+}
+function updateNumQty(){
+  const q=order.velasQty;
+  document.getElementById('num-num').textContent=q;
+  document.getElementById('num-plural').textContent=q>1?'s':'';
+  document.getElementById('num-total').textContent=fmtPrice(q*order.velasPrecioUnit);
+  document.getElementById('num-minus').disabled=q<=1;
+  document.getElementById('num-plus').disabled=q>=2;
+  // Show/hide second digit input
+  document.getElementById('num-d2-wrap').style.display=q===2?'block':'none';
+  if(q===1){ document.getElementById('num-d2').value=''; order.velaD2=''; }
+}
+function selDelivery(type){
+  order.delivery=type;
+  document.getElementById('opt-tienda').classList.toggle('selected',type==='tienda');
+  document.getElementById('opt-del').classList.toggle('selected',type==='delivery');
+  document.getElementById('addr-block').style.display=type==='delivery'?'block':'none';
+  if(type==='tienda') order.direccion='';
+  document.getElementById('c-delivery').classList.remove('has-error');
+  chk4();
+}
+function selTime(el,val){
+  document.querySelectorAll('.time-slot').forEach(t=>t.classList.remove('selected'));
+  el.classList.add('selected'); order.hora=val;
+  document.getElementById('c-hora')?.classList.remove('has-error');
+  chk4();
+}
+
+/* ── CALENDAR ── */
+function renderCal(){
+  const y=calDate.getFullYear(),m=calDate.getMonth();
+  document.getElementById('calMonth').textContent=MONTHS[m]+' '+y;
+  const g=document.getElementById('calGrid'); g.innerHTML='';
+  WDAYS.forEach(d=>{const e=document.createElement('div');e.className='cal-day-name';e.textContent=d;g.appendChild(e)});
+  let s=new Date(y,m,1).getDay(); s=s===0?6:s-1;
+  for(let i=0;i<s;i++){const e=document.createElement('div');e.className='cal-day empty';g.appendChild(e)}
+  const today=new Date();today.setHours(0,0,0,0);
+  const minD=new Date(today);minD.setDate(minD.getDate()+2);
+  const dim=new Date(y,m+1,0).getDate();
+  for(let d=1;d<=dim;d++){
+    const el=document.createElement('div');el.className='cal-day';el.textContent=d;
+    const dt=new Date(y,m,d);
+    if(dt<minD){el.classList.add('disabled');}
+    else{
+      const ds=y+'-'+(m+1).toString().padStart(2,'0')+'-'+d.toString().padStart(2,'0');
+      if(order.fecha===ds) el.classList.add('selected');
+      el.onclick=()=>{
+        document.querySelectorAll('.cal-day').forEach(c=>c.classList.remove('selected'));
+        el.classList.add('selected'); order.fecha=ds;
+        document.getElementById('c-hora').style.display='block';
+        document.getElementById('c-fecha').classList.remove('has-error');
+        chk4();
+      };
+    }
+    if(dt.toDateString()===today.toDateString()) el.classList.add('today');
+    g.appendChild(el);
+  }
+}
+function prevM(){calDate.setMonth(calDate.getMonth()-1);renderCal()}
+function nextM(){calDate.setMonth(calDate.getMonth()+1);renderCal()}
+renderCal();
+
+/* ── SUMMARY ── */
+function buildSummary(){
+  order.notas=document.getElementById('notas')?.value||'';
+  order.nombre=document.getElementById('inp-nombre')?.value||'';
+  order.apellido=document.getElementById('inp-apellido')?.value||'';
+  order.email=document.getElementById('inp-email')?.value||'';
+  order.waPhone=document.getElementById('inp-wa')?.value||'';
+  order.direccion=document.getElementById('direccion')?.value||'';
+  order.cp=document.getElementById('inp-cp')?.value||'';
+  const velaDesc=order.velas==='Sin velas'?'Sin velas':
+    order.velas==='Velas de número'
+      ? `Velas de número × ${order.velasQty}: [${order.velaD1||'?'}${order.velasQty>1?', '+(order.velaD2||'?'):''}] (${fmtPrice(order.velasPrecioUnit*order.velasQty)})`
+      : `${order.velas} × ${order.velasQty} (${fmtPrice(order.velasPrecioUnit*order.velasQty)})`;
+  const basePrice=order.product?.p[order.tamañoIdx]||0;
+  const velaPrice=order.velas&&order.velas!=='Sin velas'?order.velasPrecioUnit*order.velasQty:0;
+  const total=basePrice+velaPrice;
+  const entregaStr=order.delivery==='tienda'?'Recogida en tienda'
+    :`Delivery · ${order.direccion}, ${order.cp}${order.cpFree?' (envío gratuito)':' (consultar tarifa)'}`;
+  const rows=[
+    ['Cliente',`${order.nombre} ${order.apellido}`],
+    ['Email',order.email],
+    ['WhatsApp',order.waPhone],
+    ['Tarta',order.product?.name],
+    ['Tamaño',order.tamaño],
+    ['Sabor',order.sabor],
+    ['Color',order.color],
+    ['Velas',velaDesc],
+    ['Entrega',entregaStr],
+    ['Fecha',order.fecha],
+    ['Franja',order.hora],
+    ['Notas',order.notas||'—'],
+  ];
+  document.getElementById('summary-content').innerHTML=
+    rows.map(([l,v])=>`<div class="summary-row"><span class="sum-label">${l}</span><span class="sum-val">${v}</span></div>`).join('')
+    +`<div class="summary-row total"><span class="sum-total-label">Total estimado</span><span class="sum-total-val">${fmtPrice(total)}</span></div>`;
+}
+
+/* ── WHATSAPP ── */
+function sendWA(){
+  order.notas=document.getElementById('notas')?.value||'';
+  order.direccion=document.getElementById('direccion')?.value||'';
+  const velaPrice=order.velas&&order.velas!=='Sin velas'?order.velasPrecioUnit*order.velasQty:0;
+  const total=(order.product?.p[order.tamañoIdx]||0)+velaPrice;
+  const msg=`¡Hola! Quiero hacer un encargo en Iconic Pasteleria 🎂\n\n`
+    +`*Tarta:* ${order.product?.name}\n`
+    +`*Tamaño:* ${order.tamaño}\n`
+    +`*Sabor:* ${order.sabor}\n`
+    +`*Color:* ${order.color}\n`
+    +`*Velas:* ${order.velas==='Sin velas'?'Sin velas':order.velas+' × '+order.velasQty}\n`
+    +`*Entrega:* ${order.delivery==='tienda'?'Recogida en tienda':'Delivery · '+order.direccion}\n`
+    +`*Fecha:* ${order.fecha}\n`
+    +`*Franja:* ${order.hora}\n`
+    +`*Notas:* ${order.notas||'Ninguna'}\n`
+    +`*Total estimado:* ${fmtPrice(total)}\n\n¡Gracias! 😊`;
+  window.open(`https://wa.me/34657677038?text=${encodeURIComponent(msg)}`,'_blank');
+}
+</script>
+</body>
+</html>
