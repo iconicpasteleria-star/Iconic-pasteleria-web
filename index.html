@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iconic Pasteleria | Tartas de Diseño con Acabado Velvet en Barcelona</title>
+<meta name="description" content="Tartas gourmet con exclusivo acabado velvet (terciopelo) y tartas vintage en Barcelona. Sin conservantes, ingredientes naturales y frutos secos premium. Delivery gratis en Sarrià, Sant Gervasi, Eixample y Pedralbes. Encarga tu tarta personalizada online.">
+<meta name="keywords" content="tartas Barcelona, tartas velvet, tartas de diseño Barcelona, pastelería Sant Gervasi, pastelería Sarrià, tartas personalizadas Barcelona, tartas sin conservantes, tartas cumpleaños Barcelona, pastelería Eixample, tartas a domicilio Barcelona">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --black: #0a0a0a; --white: #fafafa; --gray-light: #f4f4f4;
+    --gray-mid: #c8c8c8; --gray-dark: #555; --ink: #141414;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Outfit', sans-serif; background: var(--white); color: var(--black); overflow-x: hidden; }
+  h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+  ::selection { background: var(--black); color: var(--white); }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 26px 56px;
+    mix-blend-mode: difference;
+    transition: padding 0.4s cubic-bezier(.4,0,.2,1);
+  }
+  nav.scrolled { padding: 16px 56px; }
+  .nav-logo {
+    font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.15rem;
+    letter-spacing: 0.04em; text-transform: uppercase; color: #fff;
+    text-decoration: none;
+  }
+  .nav-logo span { font-weight: 200; }
+  .nav-links { display: flex; gap: 40px; list-style: none; align-items: center; }
+  .nav-links a {
+    font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 400;
+    color: #fff; text-decoration: none; letter-spacing: 0.04em;
+    position: relative; transition: opacity 0.2s;
+  }
+  .nav-links a:not(.nav-cta)::after {
+    content: ''; position: absolute; left: 0; bottom: -5px;
+    width: 0; height: 1px; background: #fff; transition: width 0.3s;
+  }
+  .nav-links a:not(.nav-cta):hover::after { width: 100%; }
+  .nav-cta {
+    border: 1px solid #fff; padding: 9px 22px; border-radius: 50px;
+    transition: background 0.3s, color 0.3s !important;
+  }
+  .nav-cta:hover { background: #fff; color: var(--black) !important; }
+  .nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .nav-burger span { width: 26px; height: 2px; background: #fff; transition: 0.3s; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center;
+    padding: 140px 40px 90px; background: var(--black);
+    position: relative; overflow: hidden;
+  }
+  .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.65) 100%); z-index: 1; }
+  .hero-content { position: relative; z-index: 2; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    border: 1px solid rgba(255,255,255,0.35);
+    color: #fff; font-family: 'Outfit', sans-serif; font-size: 0.72rem;
+    font-weight: 400; letter-spacing: 0.25em; text-transform: uppercase;
+    padding: 9px 22px; border-radius: 50px; margin-bottom: 40px;
+    animation: fadeUp 0.9s ease both;
+  }
+  .hero h1 {
+    font-size: clamp(3.2rem, 11vw, 9rem); font-weight: 700; line-height: 0.92;
+    letter-spacing: -0.04em; color: #fff;
+    animation: heroReveal 1.1s cubic-bezier(.16,1,.3,1) 0.1s both;
+  }
+  .hero h1 em { display: block; font-style: italic; font-weight: 200; color: rgba(255,255,255,0.85); }
+  .hero-sub {
+    font-family: 'Outfit', sans-serif; font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 300; color: rgba(255,255,255,0.75); max-width: 500px;
+    line-height: 1.75; margin: 32px auto 0;
+    animation: fadeUp 1s ease 0.35s both;
+  }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-top: 48px; animation: fadeUp 1s ease 0.5s both; }
+  .btn-primary {
+    background: #fff; color: var(--black); border: none; cursor: pointer;
+    font-family: 'Outfit', sans-serif; font-size: 0.95rem; font-weight: 500;
+    padding: 17px 44px; border-radius: 50px; letter-spacing: 0.02em;
+    transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(255,255,255,0.25); }
+  .btn-secondary {
+    background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.5);
+    cursor: pointer; font-family: 'Outfit', sans-serif; font-size: 0.95rem;
+    font-weight: 400; padding: 17px 44px; border-radius: 50px;
+    letter-spacing: 0.02em; transition: background 0.3s, color 0.3s, transform 0.3s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-secondary:hover { background: #fff; color: var(--black); transform: translateY(-3px); }
+  .hero-scroll {
+    position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+    font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: rgba(255,255,255,0.6); z-index: 2;
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+    animation: fadeUp 1.2s ease 0.8s both;
+  }
+  .scroll-line { width: 1px; height: 44px; background: linear-gradient(to bottom, rgba(255,255,255,0.6), transparent); animation: scrollPulse 2s ease infinite; }
+
+  /* MARQUEE */
+  .pills-strip { background: var(--black); color: #fff; padding: 22px 0; overflow: hidden; white-space: nowrap; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .pills-inner { display: inline-flex; gap: 60px; animation: marquee 28s linear infinite; }
+  .pill-item { font-family: 'Poppins', sans-serif; font-size: 1.05rem; font-weight: 300; letter-spacing: 0.04em; display: flex; align-items: center; gap: 22px; }
+  .pill-item em { font-style: italic; font-weight: 200; }
+  .pill-item::before { content: '✦'; font-size: 0.7rem; opacity: 0.5; }
+
+  /* SECTION BASE */
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 0 56px; }
+  .section-label {
+    font-family: 'Outfit', sans-serif; font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.28em; text-transform: uppercase; color: var(--gray-dark);
+    margin-bottom: 20px; display: flex; align-items: center; gap: 14px;
+  }
+  .section-label::before { content: ''; width: 32px; height: 1px; background: var(--black); }
+  .section-title { font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 600; line-height: 1.08; letter-spacing: -0.035em; color: var(--black); }
+  .section-title em { font-style: italic; font-weight: 300; }
+
+  /* PRODUCTOS — editorial */
+  .productos { padding: 130px 0 110px; }
+  .prod-head { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 24px; margin-bottom: 70px; }
+  .productos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
+  .product-card { cursor: pointer; }
+  .product-card:nth-child(2) { transform: translateY(48px); }
+  .product-img-wrap {
+    width: 100%; aspect-ratio: 4/5; overflow: hidden; background: var(--gray-light);
+    display: flex; align-items: center; justify-content: center; font-size: 4rem;
+    position: relative;
+  }
+  .product-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(.16,1,.3,1); }
+  .product-card:hover .product-img-wrap img { transform: scale(1.06); }
+  .product-num {
+    position: absolute; top: 18px; left: 20px; z-index: 2;
+    font-family: 'Poppins', sans-serif; font-size: 0.8rem; font-weight: 600;
+    color: #fff; mix-blend-mode: difference; letter-spacing: 0.1em;
+  }
+  .product-info { padding: 26px 4px 0; }
+  .product-tag { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-dark); margin-bottom: 10px; }
+  .product-info h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 12px; letter-spacing: -0.02em; }
+  .product-info p { font-size: 0.92rem; font-weight: 300; line-height: 1.7; color: var(--gray-dark); }
+  .product-price { margin-top: 18px; font-family: 'Poppins', sans-serif; font-size: 1.05rem; font-weight: 500; display: flex; align-items: center; gap: 10px; }
+  .productos-cta { text-align: center; margin-top: 110px; }
+  .link-arrow {
+    font-family: 'Poppins', sans-serif; font-size: 1.1rem; font-weight: 500;
+    color: var(--black); text-decoration: none; display: inline-flex;
+    align-items: center; gap: 12px; border-bottom: 1px solid var(--black);
+    padding-bottom: 6px; transition: gap 0.3s;
+  }
+  .link-arrow:hover { gap: 20px; }
+
+  /* DIFERENCIAL — editorial split */
+  .diferencial { background: var(--black); color: #fff; padding: 130px 0; }
+  .diferencial .section-label { color: rgba(255,255,255,0.5); }
+  .diferencial .section-label::before { background: #fff; }
+  .diferencial .section-title { color: #fff; max-width: 640px; margin-bottom: 80px; }
+  .dif-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.12); }
+  .dif-card { background: var(--black); padding: 54px 48px; transition: background 0.4s; }
+  .dif-card:hover { background: #161616; }
+  .dif-num { font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 500; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; margin-bottom: 32px; }
+  .dif-card h3 { font-size: 1.6rem; font-weight: 600; margin-bottom: 18px; letter-spacing: -0.02em; }
+  .dif-card p { font-size: 0.95rem; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.65); }
+
+  /* RESEÑAS */
+  .reviews { padding: 130px 0; }
+  .reviews-head { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 30px; margin-bottom: 64px; }
+  .reviews-score { display: flex; align-items: center; gap: 18px; }
+  .reviews-score-num { font-family: 'Poppins', sans-serif; font-size: 3.2rem; font-weight: 700; letter-spacing: -0.04em; line-height: 1; }
+  .reviews-score-meta { display: flex; flex-direction: column; gap: 4px; }
+  .reviews-stars { color: var(--black); font-size: 1rem; letter-spacing: 2px; }
+  .reviews-count { font-size: 0.85rem; color: var(--gray-dark); font-weight: 300; }
+  .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--gray-mid); border: 1px solid var(--gray-mid); }
+  .review-card { background: var(--white); padding: 36px 32px; display: flex; flex-direction: column; transition: background 0.4s; }
+  .review-card:hover { background: var(--gray-light); }
+  .review-stars { color: var(--black); font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 18px; }
+  .review-text { font-size: 0.94rem; font-weight: 300; line-height: 1.75; color: var(--ink); margin-bottom: 26px; flex-grow: 1; }
+  .review-author { display: flex; align-items: center; gap: 12px; }
+  .review-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--black); color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.85rem; flex-shrink: 0; }
+  .review-name { font-size: 0.86rem; font-weight: 600; letter-spacing: -0.01em; }
+  .review-sub { font-size: 0.76rem; color: var(--gray-dark); font-weight: 300; margin-top: 1px; }
+  @media (max-width: 760px) {
+    .reviews { padding: 80px 0; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .reviews-head { margin-bottom: 44px; }
+  }
+
+  /* DELIVERY — big statement */
+  .delivery { background: var(--black); color: #fff; padding: 0; }
+  .delivery-inner { max-width: 1280px; margin: 0 auto; padding: 130px 56px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 90px; align-items: center; }
+  .delivery .section-label { color: rgba(255,255,255,0.5); }
+  .delivery .section-label::before { background: #fff; }
+  .delivery-inner h2 { font-size: clamp(2.4rem, 6vw, 5rem); font-weight: 600; line-height: 1.0; letter-spacing: -0.04em; color: #fff; }
+  .delivery-inner h2 em { font-style: italic; font-weight: 200; }
+  .delivery-detail { font-size: 1rem; font-weight: 300; line-height: 1.85; color: rgba(255,255,255,0.65); margin-top: 28px; max-width: 460px; }
+  .delivery-features { margin-top: 44px; display: flex; flex-direction: column; gap: 0; }
+  .delivery-feat { display: flex; align-items: center; gap: 20px; font-size: 0.95rem; font-weight: 300; color: rgba(255,255,255,0.85); padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.12); }
+  .delivery-feat:last-child { border-bottom: 1px solid rgba(255,255,255,0.12); }
+  .delivery-feat-icon { font-size: 1.2rem; flex-shrink: 0; width: 28px; }
+  .delivery-cta-box { display: flex; flex-direction: column; align-items: flex-start; }
+  .delivery-cta-box .btn-primary { margin-top: 8px; }
+
+  /* FAQ */
+  .faq { padding: 130px 0; }
+  .faq-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 70px; align-items: start; }
+  .faq-intro { position: sticky; top: 120px; }
+  .faq-intro p { font-size: 0.98rem; font-weight: 300; line-height: 1.8; color: var(--gray-dark); margin-top: 24px; max-width: 320px; }
+  .faq-list { }
+  .faq-item { border-top: 1px solid var(--gray-mid); }
+  .faq-item:last-child { border-bottom: 1px solid var(--gray-mid); }
+  .faq-question {
+    width: 100%; background: none; border: none; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 30px 0; font-family: 'Poppins', sans-serif; font-size: 1.15rem;
+    font-weight: 500; color: var(--black); text-align: left; transition: color 0.3s;
+  }
+  .faq-question:hover { color: var(--gray-dark); }
+  .faq-icon { font-size: 1.5rem; font-weight: 200; transition: transform 0.4s; flex-shrink: 0; margin-left: 24px; }
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(.4,0,.2,1); }
+  .faq-answer p { font-size: 0.96rem; font-weight: 300; line-height: 1.85; color: var(--gray-dark); padding-bottom: 30px; max-width: 640px; }
+  .faq-item.open .faq-answer { max-height: 320px; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+  /* CTA FINAL */
+  .cta-final { padding: 160px 56px; text-align: center; background: var(--gray-light); display: flex; flex-direction: column; align-items: center; }
+  .cta-final h2 { font-size: clamp(2.6rem, 7vw, 6rem); font-weight: 600; line-height: 1.0; letter-spacing: -0.04em; max-width: 800px; }
+  .cta-final h2 em { font-style: italic; font-weight: 200; }
+  .cta-final p { font-size: 1.05rem; font-weight: 300; line-height: 1.8; color: var(--gray-dark); margin-top: 28px; max-width: 460px; }
+  .cta-final .btn-dark { background: var(--black); color: #fff; border: none; cursor: pointer; font-family: 'Outfit', sans-serif; font-size: 1rem; font-weight: 500; padding: 19px 56px; border-radius: 50px; margin-top: 48px; text-decoration: none; display: inline-block; transition: transform 0.3s, box-shadow 0.3s; }
+  .cta-final .btn-dark:hover { transform: translateY(-3px); box-shadow: 0 16px 44px rgba(0,0,0,0.2); }
+
+  /* FOOTER */
+  footer { background: var(--black); color: rgba(255,255,255,0.45); padding: 70px 56px 50px; }
+  .footer-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px; padding-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .footer-logo { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.6rem; letter-spacing: 0.02em; text-transform: uppercase; color: #fff; text-decoration: none; }
+  .footer-logo span { font-weight: 200; }
+  .footer-tag { font-size: 0.9rem; font-weight: 300; line-height: 1.7; max-width: 280px; margin-top: 16px; }
+  .footer-links { display: flex; gap: 60px; flex-wrap: wrap; }
+  .footer-col h5 { font-family: 'Poppins', sans-serif; color: #fff; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 18px; }
+  .footer-col a { display: block; font-size: 0.9rem; color: rgba(255,255,255,0.5); text-decoration: none; margin-bottom: 12px; transition: color 0.2s; }
+  .footer-col a:hover { color: #fff; }
+  .footer-bottom { padding-top: 30px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 0.8rem; font-weight: 300; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes heroReveal { from { opacity: 0; transform: translateY(40px); filter: blur(8px); } to { opacity: 1; transform: translateY(0); filter: blur(0); } }
+  @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  @keyframes scrollPulse { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
+  .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.9s cubic-bezier(.16,1,.3,1), transform 0.9s cubic-bezier(.16,1,.3,1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 1000px) {
+    .delivery-inner { grid-template-columns: 1fr; gap: 50px; padding: 90px 32px; }
+    .faq-grid { grid-template-columns: 1fr; gap: 40px; }
+    .faq-intro { position: static; }
+    .valores-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 760px) {
+    nav { padding: 18px 24px; }
+    nav.scrolled { padding: 14px 24px; }
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex; flex-direction: column; position: fixed; inset: 0;
+      background: var(--black); mix-blend-mode: normal; align-items: center;
+      justify-content: center; gap: 32px; z-index: 99;
+    }
+    .nav-links.open a { font-size: 1.4rem; }
+    .nav-burger { display: flex; }
+    .wrap { padding: 0 24px; }
+    .hero { padding: 120px 24px 80px; }
+    .productos { padding: 80px 0; }
+    .productos-grid { grid-template-columns: 1fr; gap: 48px; }
+    .product-card:nth-child(2) { transform: none; }
+    .product-img-wrap { aspect-ratio: 4/3; }
+    .productos-cta { margin-top: 60px; }
+    .prod-head { margin-bottom: 48px; }
+    .diferencial, .valores, .faq { padding: 80px 0; }
+    .dif-list { grid-template-columns: 1fr; }
+    .dif-card { padding: 40px 28px; }
+    .valores-grid { grid-template-columns: 1fr; }
+    .valor-item { padding: 36px 28px; }
+    .cta-final { padding: 90px 24px; }
+    footer { padding: 50px 24px 36px; }
+    .footer-links { gap: 36px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Iconic <span>Pasteleria</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#productos">Tartas</a></li>
+    <li><a href="#diferencial">Esencia</a></li>
+    <li><a href="#delivery">Delivery</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="encargo.html" class="nav-cta">Encargar</a></li>
+  </ul>
+  <div class="nav-burger" id="burger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="https://res.cloudinary.com/dfaj42afr/video/upload/nuevo_g8ykag.mp4" type="video/mp4">
+  </video>
+  <div class="hero-content">
+    <div class="hero-badge">Barcelona · Velvet · Sin conservantes</div>
+    <h1>El arte de la<em>pastelería pura</em></h1>
+    <p class="hero-sub">Tartas de diseño con nuestro exclusivo acabado velvet. Ingredientes naturales, sin conservantes. Delivery gratuito en Barcelona.</p>
+    <div class="hero-actions">
+      <a href="encargo.html" class="btn-primary">Encargar mi tarta</a>
+      <a href="#productos" class="btn-secondary">Ver colección</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div>Descubrir</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="pills-strip">
+  <div class="pills-inner">
+    <div class="pill-item">Efecto <em>Velvet</em></div>
+    <div class="pill-item">Sin <em>conservantes</em></div>
+    <div class="pill-item">Tartas <em>Vintage</em></div>
+    <div class="pill-item">Delivery <em>gratuito</em></div>
+    <div class="pill-item">Frutos secos <em>premium</em></div>
+    <div class="pill-item">Hecho <em>por encargo</em></div>
+    <div class="pill-item">Efecto <em>Velvet</em></div>
+    <div class="pill-item">Sin <em>conservantes</em></div>
+    <div class="pill-item">Tartas <em>Vintage</em></div>
+    <div class="pill-item">Delivery <em>gratuito</em></div>
+    <div class="pill-item">Frutos secos <em>premium</em></div>
+    <div class="pill-item">Hecho <em>por encargo</em></div>
+  </div>
+</div>
+
+<!-- PRODUCTOS -->
+<section id="productos" class="productos">
+  <div class="wrap">
+    <div class="prod-head">
+      <div>
+        <p class="section-label reveal">Colección</p>
+        <h2 class="section-title reveal">Nuestras <em>tartas</em></h2>
+      </div>
+      <a href="encargo.html" class="link-arrow reveal" style="margin-bottom:8px;">Ver toda la colección →</a>
+    </div>
+    <div class="productos-grid">
+      <div class="product-card reveal">
+        <div class="product-img-wrap">
+          <span class="product-num">01</span>
+          <img src="https://i.ibb.co/GfsnmS0P/IMG-20260616-204716.jpg" alt="Velvet Noir">
+        </div>
+        <div class="product-info">
+          <div class="product-tag">Signature</div>
+          <h3>Velvet Noir</h3>
+          <p>Chocolate negro 72% con acabado velvet aterciopelado. Relleno de ganache de avellanas tostadas y frambuesa fresca.</p>
+          <div class="product-price">desde 65 €</div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap" style="background:#ece4da;">
+          <span class="product-num">02</span>
+          🍰
+        </div>
+        <div class="product-info">
+          <div class="product-tag">Vintage</div>
+          <h3>Belle Époque</h3>
+          <p>Capas de bizcocho de vainilla bourbon, crema diplomática y mermelada de albaricoque. Decoración vintage con lazos y boquillas.</p>
+          <div class="product-price">desde 58 €</div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img-wrap" style="background:#e6ded5;">
+          <span class="product-num">03</span>
+          ✦
+        </div>
+        <div class="product-info">
+          <div class="product-tag">Velvet · Seasonal</div>
+          <h3>Velvet Blanc</h3>
+          <p>Mousse de chocolate blanco con cobertura velvet marfil. Pistachos de Bronte, lichi y flor de azahar. Etéreo y elegante.</p>
+          <div class="product-price">desde 70 €</div>
+        </div>
+      </div>
+    </div>
+    <div class="productos-cta reveal">
+      <a href="encargo.html" class="link-arrow">Configurar mi tarta →</a>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAL -->
+<section id="diferencial" class="diferencial">
+  <div class="wrap">
+    <p class="section-label reveal">Nuestra esencia</p>
+    <h2 class="section-title reveal">Lo que nos hace <em>diferentes</em></h2>
+    <div class="dif-list">
+      <div class="dif-card reveal">
+        <div class="dif-num">01 — Velvet</div>
+        <h3>El Efecto Velvet</h3>
+        <p>Una textura imposible de replicar. El acabado velvet, aterciopelado y suave al tacto, convierte cada tarta en una pieza de alta pastelería. No solo sabe extraordinario: es visualmente irresistible.</p>
+      </div>
+      <div class="dif-card reveal">
+        <div class="dif-num">02 — Vintage</div>
+        <h3>Tartas Vintage</h3>
+        <p>La esencia de lo romántico. Lazos, tonos pastel y detalles delicados con boquillas. Piezas que evocan la memoria y elevan cualquier celebración a un momento inolvidable.</p>
+      </div>
+      <div class="dif-card reveal">
+        <div class="dif-num">03 — Natural</div>
+        <h3>Cero Conservantes</h3>
+        <p>Solo ingredientes reales: frutos secos de primera, frutas de temporada, mantequilla auténtica, chocolate de origen único. Sin aditivos, sin atajos. Cada bocado es exactamente lo que parece.</p>
+      </div>
+      <div class="dif-card reveal">
+        <div class="dif-num">04 — Fresco</div>
+        <h3>Hecho para ti</h3>
+        <p>Cada tarta se elabora por encargo. Nada permanece en stock durante días. Cuando la recibes, fue hecha en las últimas horas. Eso es frescura real.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEÑAS -->
+<section class="reviews">
+  <div class="wrap">
+    <div class="reviews-head">
+      <div>
+        <p class="section-label reveal">Por qué elegirnos</p>
+        <h2 class="section-title reveal">Lo que dicen <em>de nosotros</em></h2>
+      </div>
+      <div class="reviews-score reveal">
+        <div class="reviews-score-num">5,0</div>
+        <div class="reviews-score-meta">
+          <div class="reviews-stars">★★★★★</div>
+          <div class="reviews-count">7 reseñas en Google</div>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Excelente experiencia. Pedimos un entremet a domicilio en Barcelona y todo estuvo bueno, atención rápida, entrega puntual y el entremet espectacular."</p>
+        <div class="review-author">
+          <div class="review-avatar">S</div>
+          <div><div class="review-name">Saliha Tahiri</div><div class="review-sub">3 reseñas · hace 3 meses</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Muy delicioso todo, el entremet es mi favorito. La decoración impecable y muy elegante."</p>
+        <div class="review-author">
+          <div class="review-avatar">K</div>
+          <div><div class="review-name">Keyri Orellana</div><div class="review-sub">9 reseñas · hace 3 meses</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Pedí un pastel para el cumpleaños de mi novia, y bueno, he tenido que compartir con todos los invitados esta pastelería. Ya tengo pastelería favorita."</p>
+        <div class="review-author">
+          <div class="review-avatar">L</div>
+          <div><div class="review-name">Leo Amado Montoya</div><div class="review-sub">11 reseñas · hace 3 meses</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Pedí un bento cake personalizado en Barcelona y fue espectacular. Entrega a domicilio en Eixample y presentación premium."</p>
+        <div class="review-author">
+          <div class="review-avatar">P</div>
+          <div><div class="review-name">Paula Costa</div><div class="review-sub">Local Guide · 29 reseñas</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Pedí un entremet de cheesecake para el cumpleaños de mi esposo, y estaba delicioso, la presentación estaba impecable. Los recomiendo."</p>
+        <div class="review-author">
+          <div class="review-avatar">N</div>
+          <div><div class="review-name">Natalia Armas</div><div class="review-sub">1 reseña · hace 2 meses</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal" style="align-items:center; justify-content:center; text-align:center;">
+        <div>
+          <p style="font-family:'Poppins',sans-serif; font-size:1.05rem; font-weight:500; margin-bottom:14px;">¿Ya nos probaste?</p>
+          <a href="https://maps.app.goo.gl/N8HD6eTmv8MawF5g9" target="_blank" rel="noopener" class="link-arrow">Déjanos tu reseña →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERY -->
+<section id="delivery" class="delivery">
+  <div class="delivery-inner">
+    <div class="reveal">
+      <p class="section-label">Delivery</p>
+      <h2>Llega a tu<br>puerta. <em>Gratis.</em></h2>
+      <p class="delivery-detail">Repartimos en toda Barcelona con cuidado especial en Sarrià, Sant Gervasi, l'Eixample, Pedralbes, Les Corts y Gràcia.</p>
+    </div>
+    <div class="reveal">
+      <div class="delivery-features">
+        <div class="delivery-feat"><span class="delivery-feat-icon">→</span>Delivery gratuito en ciertos códigos postales de Barcelona</div>
+        <div class="delivery-feat"><span class="delivery-feat-icon">→</span>Embalaje seguro y cómodo</div>
+        <div class="delivery-feat"><span class="delivery-feat-icon">→</span>Sarrià · Sant Gervasi · Eixample · Pedralbes</div>
+        <div class="delivery-feat"><span class="delivery-feat-icon">→</span>Entrega en franja horaria a elegir</div>
+      </div>
+      <div class="delivery-cta-box">
+        <a href="encargo.html" class="btn-primary" style="margin-top:36px;">Hacer un encargo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq">
+  <div class="wrap">
+    <div class="faq-grid">
+      <div class="faq-intro reveal">
+        <p class="section-label">FAQ</p>
+        <h2 class="section-title">Todo lo que<br>necesitas <em>saber</em></h2>
+        <p>¿Tienes otra duda? Escríbenos y te ayudamos a diseñar la tarta perfecta para tu ocasión.</p>
+      </div>
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-question">¿Con cuánta antelación debo encargar?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Recomendamos encargar con al menos 48–72 horas de antelación para garantizar la frescura y el tiempo de elaboración.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">¿El delivery es realmente gratuito?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Sí, completamente gratuito en varias zonas de Barcelona. Depende de tu código postal, el cual consultarás mientras haces el pedido.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">¿Qué es el acabado velvet?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Es una técnica de pastelería avanzada que consiste en aplicar una mezcla de chocolate y manteca de cacao, creando una textura visualmente aterciopelada y suave al tacto. Es nuestro sello diferenciador.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">¿Usáis conservantes o aditivos?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Nunca. Trabajamos exclusivamente con ingredientes naturales: mantequilla auténtica, chocolate de origen, frutos secos, frutas frescas y harinas de calidad.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">¿Hacéis tartas para alergias o intolerancias?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Por ahora no contamos con opciones específicas para personas con intolerancias o alergias. Preferimos ser honestos antes que arriesgar tu bienestar, así que estamos trabajando para poder ofrecerlas en el futuro. Gracias por tu comprensión.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">¿Puedo personalizar el diseño?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Puedes indicarnos colores, temática (vintage/velvet), tamaño y algún detalle especial sujeto a aprobación. Estaremos encantados de crear algo que se adapte a ti.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">¿Cuánto se conserva la tarta?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Al no llevar conservantes, recomendamos consumirla en 2–3 días conservada en nevera. La elaboramos en las horas previas a la entrega, por lo que la recibes en su punto óptimo de frescura.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <p class="section-label" style="justify-content:center;">¿Lista para encargar?</p>
+  <h2>Tu tarta perfecta,<em>a medida.</em></h2>
+  <p>Cuéntanos qué tienes en mente. Diseñamos, elaboramos y entregamos en tu puerta —gratis— en Barcelona.</p>
+  <a href="encargo.html" class="btn-dark">Configurar mi tarta →</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="#" class="footer-logo">Iconic <span>Pasteleria</span></a>
+      <p class="footer-tag">Tartas de diseño con acabado velvet. Sin conservantes, hechas por encargo en Barcelona.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h5>Explorar</h5>
+        <a href="#productos">Tartas</a>
+        <a href="#diferencial">Esencia</a>
+        <a href="#delivery">Delivery</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contacto</h5>
+        <a href="encargo.html">Encargar</a>
+        <a href="https://instagram.com/iconicpasteleria" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://wa.me/34657677038" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Iconic Pasteleria · Barcelona</span>
+    <span>Velvet · Vintage · Sin conservantes</span>
+  </div>
+</footer>
+
+<script>
+  // FAQ
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+  // REVEAL
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  // NAV scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
+  });
+  // BURGER
+  const burger = document.getElementById('burger');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+</script>
+</body>
+</html>
