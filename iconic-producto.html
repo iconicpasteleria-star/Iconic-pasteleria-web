@@ -1,0 +1,488 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,300..500&family=Herr+Von+Muellerhoff&family=Lora:ital,wght@0,400;0,500;1,400&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFFFFF; --cream-2:#F7F6F3; --wine:#380E10; --ink:#2B2620; --bronze:#A8834A; --bronze-soft:#C7A876;
+    --radius-sm:8px; --radius-lg:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--cream);color:var(--ink);font-family:'Lora',serif;line-height:1.7;-webkit-font-smoothing:antialiased;position:relative}
+  body::after{
+    content:'';position:fixed;inset:0;pointer-events:none;z-index:200;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size:180px;opacity:0.05;mix-blend-mode:multiply;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 32px}
+  a{color:inherit;text-decoration:none}
+  .eyebrow{font-family:'Jost',sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--bronze);font-weight:500}
+
+  nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.92);backdrop-filter:blur(6px);border-bottom:0.5px solid rgba(43,38,32,0.15)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .nav-mark{font-family:'Bodoni Moda',serif;font-weight:400;font-size:19px;letter-spacing:3px}
+  .back{font-family:'Jost',sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;opacity:0.7}
+  .back:hover{opacity:1}
+
+  .product{max-width:1080px;margin:0 auto;padding:56px 32px 100px;display:grid;grid-template-columns:1fr;gap:48px}
+  @media(min-width:860px){.product{grid-template-columns:1fr 1fr;gap:64px}}
+
+  .gallery .ph{aspect-ratio:3/4;background:var(--cream-2);border-radius:var(--radius-lg);overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center}
+  .gallery .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .gallery-thumbs{display:flex;gap:10px;margin-top:12px}
+  .gallery-thumbs .thumb{width:64px;height:64px;border-radius:var(--radius-sm);overflow:hidden;cursor:pointer;border:2px solid transparent;background:var(--cream-2);flex-shrink:0}
+  .gallery-thumbs .thumb.active{border-color:var(--wine)}
+  .gallery-thumbs .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+
+  .info .tag{font-family:'Jost',sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--bronze)}
+  .info h1{font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(28px,4vw,38px);margin:10px 0 18px}
+  .price{font-family:'Bodoni Moda',serif;font-weight:400;font-size:26px;color:var(--wine);margin-bottom:22px}
+  .info p.desc{font-size:14.5px;opacity:0.8;margin-bottom:32px}
+
+  .field{margin-bottom:26px}
+  .field label{display:block;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink);opacity:0.8;margin-bottom:10px}
+
+  .sizes{display:flex;gap:10px;flex-wrap:wrap}
+  .size-pill{font-family:'Jost',sans-serif;font-size:13px;padding:11px 18px;border:1px solid var(--ink);border-radius:999px;cursor:pointer;background:none;color:var(--ink);transition:all .2s}
+  .size-pill.active{background:var(--ink);color:var(--cream)}
+
+  select, textarea{width:100%;font-family:'Lora',serif;font-size:14.5px;color:var(--ink);border:1px solid rgba(43,38,32,0.25);border-radius:var(--radius-sm);padding:13px 14px;background:var(--cream)}
+  textarea{resize:vertical;min-height:80px}
+
+  .qty{display:inline-flex;align-items:center;gap:16px;border:1px solid rgba(43,38,32,0.25);border-radius:var(--radius-sm);padding:8px 16px}
+  .qty button{background:none;border:none;font-size:18px;cursor:pointer;color:var(--ink);width:24px}
+  .qty span{font-family:'Jost',sans-serif;font-size:14px;min-width:16px;text-align:center}
+
+  .colors{display:flex;gap:10px;flex-wrap:wrap}
+  .color-swatch{width:34px;height:34px;border-radius:50%;border:2px solid transparent;cursor:pointer;transition:all .2s;padding:0}
+  .color-swatch.active{border-color:var(--ink);box-shadow:0 0 0 2px var(--cream), 0 0 0 3.5px var(--ink)}
+  .color-selected{font-family:'Jost',sans-serif;font-size:12px;opacity:0.65;margin-top:10px}
+
+  .toggle-row{display:flex;gap:10px}
+  .toggle-pill{flex:1;font-family:'Jost',sans-serif;font-size:13px;padding:13px 16px;border:1px solid var(--ink);border-radius:var(--radius-sm);cursor:pointer;background:none;color:var(--ink);transition:all .2s}
+  .toggle-pill.active{background:var(--ink);color:var(--cream)}
+
+  input[type="text"]{width:100%;font-family:'Lora',serif;font-size:14.5px;color:var(--ink);border:1px solid rgba(43,38,32,0.25);border-radius:var(--radius-sm);padding:13px 14px;background:var(--cream)}
+  .cp-row{display:flex;gap:10px;align-items:center;margin-top:14px}
+  .cp-row input{max-width:140px}
+  .cp-msg{font-family:'Jost',sans-serif;font-size:12px;margin-top:10px}
+  .cp-msg.free{color:#3E6B4F}
+  .cp-msg.paid{color:var(--bronze)}
+  .cp-msg.warn{color:var(--wine)}
+  .delivery-fields{display:none;margin-top:18px;padding-top:18px;border-top:0.5px solid rgba(43,38,32,0.12)}
+  .delivery-fields.show{display:block}
+
+  .slots{display:flex;gap:10px;flex-wrap:wrap}
+  .slot-pill{font-family:'Jost',sans-serif;font-size:12.5px;padding:10px 16px;border:1px solid var(--ink);border-radius:var(--radius-sm);cursor:pointer;background:none;color:var(--ink);transition:all .2s}
+  .slot-pill.active{background:var(--ink);color:var(--cream)}
+
+  .cal{max-width:320px;background:var(--cream-2);border:0.5px solid rgba(43,38,32,0.15);border-radius:var(--radius-lg);padding:20px}
+  .cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+  .cal-head button{background:none;border:1px solid var(--ink);width:28px;height:28px;border-radius:50%;font-family:'Jost',sans-serif;font-size:13px;cursor:pointer;color:var(--ink);transition:all .25s}
+  .cal-head button:hover{background:var(--ink);color:var(--cream)}
+  .cal-head span{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase}
+  .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;text-align:center}
+  .cal-grid .dow{font-family:'Jost',sans-serif;font-size:9.5px;letter-spacing:0.5px;text-transform:uppercase;color:var(--ink);opacity:0.5;padding-bottom:6px}
+  .cal-grid .day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-family:'Lora',serif;font-size:12.5px;border-radius:50%;cursor:default;color:var(--ink);opacity:0.28}
+  .cal-grid .day.avail{opacity:1;cursor:pointer;border:0.5px solid var(--bronze);transition:all .2s}
+  .cal-grid .day.avail:hover{background:var(--bronze);color:var(--cream)}
+  .cal-grid .day.sel{background:var(--wine);color:var(--cream);border-color:var(--wine)}
+  .fecha-elegida{font-family:'Jost',sans-serif;font-size:12px;opacity:0.65;margin-top:12px}
+
+  .order-btn{display:block;width:100%;text-align:center;margin-top:36px;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--cream);background:var(--wine);border:1px solid var(--wine);border-radius:var(--radius-sm);padding:16px;transition:all .3s}
+  .order-btn:hover{background:var(--ink);border-color:var(--ink)}
+  .order-note{margin-top:12px;font-size:12.5px;opacity:0.6;text-align:center}
+
+  .wa-float{position:fixed;bottom:24px;right:24px;width:56px;height:56px;border-radius:50%;background:var(--wine);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(43,38,32,0.28);z-index:999}
+  .wa-float svg{width:26px;height:26px}
+</style>
+
+<nav>
+  <div class="wrap">
+    <div class="nav-mark">ICONIC</div>
+    <a class="back" href="iconic-catalogo.html">← Volver al catálogo</a>
+  </div>
+</nav>
+
+<div class="product">
+  <div class="gallery">
+    <div class="ph">
+      <img id="prod-img" src="" alt="" onerror="this.style.display='none'">
+    </div>
+    <div class="gallery-thumbs" id="gallery-thumbs"></div>
+  </div>
+
+  <div class="info">
+    <span class="tag" id="prod-tag">Encargo · Barcelona</span>
+    <h1 id="prod-name">Tarta</h1>
+    <div class="price" id="price">—</div>
+    <p class="desc" id="prod-desc"></p>
+
+    <div class="field">
+      <label>Tamaño</label>
+      <div class="sizes" id="sizes"></div>
+    </div>
+
+    <div class="field">
+      <label>Sabor del bizcocho</label>
+      <select id="bizcocho">
+        <option value="">Selecciona un sabor</option>
+        <option>Vainilla</option>
+        <option>Chocolate</option>
+        <option>Red velvet</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Sabor del relleno</label>
+      <select id="relleno">
+        <option value="">Selecciona un relleno</option>
+        <option>Maracuyá y arándanos</option>
+        <option>Frutos rojos (fresas/arándanos/moras)</option>
+        <option>Chocolate y brigadeiro</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Color</label>
+      <div class="colors" id="colors">
+        <button class="color-swatch" data-color="Amarillo" style="background:#E8C547" aria-label="Amarillo"></button>
+        <button class="color-swatch" data-color="Rojo" style="background:#B5342B" aria-label="Rojo"></button>
+        <button class="color-swatch" data-color="Negro" style="background:#1E1B18" aria-label="Negro"></button>
+        <button class="color-swatch" data-color="Verde" style="background:#5C7A52" aria-label="Verde"></button>
+        <button class="color-swatch" data-color="Azul" style="background:#3E6591" aria-label="Azul"></button>
+        <button class="color-swatch" data-color="Rosa" style="background:#E3A6B8" aria-label="Rosa"></button>
+      </div>
+      <p class="color-selected" id="color-selected">Sin seleccionar</p>
+    </div>
+
+    <div class="field">
+      <label>Entrega</label>
+      <div class="toggle-row" id="entrega-toggle">
+        <button class="toggle-pill active" data-entrega="recogida">Recogida</button>
+        <button class="toggle-pill" data-entrega="delivery">Delivery</button>
+      </div>
+
+      <div class="delivery-fields" id="delivery-fields">
+        <label>Dirección</label>
+        <input type="text" id="direccion" placeholder="Calle y número">
+        <div class="cp-row">
+          <input type="text" id="cp" placeholder="Código postal" maxlength="5" inputmode="numeric">
+        </div>
+        <p class="cp-msg" id="cp-msg"></p>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Fecha de entrega/recogida</label>
+      <div class="cal">
+        <div class="cal-head">
+          <button id="cal-prev" aria-label="Mes anterior">‹</button>
+          <span id="cal-month"></span>
+          <button id="cal-next" aria-label="Mes siguiente">›</button>
+        </div>
+        <div class="cal-grid" id="cal-grid"></div>
+      </div>
+      <p class="fecha-elegida" id="fecha-elegida">Sin fecha seleccionada · no disponible el mismo día ni el día siguiente</p>
+    </div>
+
+    <div class="field">
+      <label>Franja horaria</label>
+      <div class="slots" id="slots">
+        <button class="slot-pill" data-slot="10:00 - 12:00">10:00 - 12:00</button>
+        <button class="slot-pill" data-slot="12:00 - 14:00">12:00 - 14:00</button>
+        <button class="slot-pill" data-slot="16:00 - 18:00">16:00 - 18:00</button>
+        <button class="slot-pill" data-slot="18:00 - 20:00">18:00 - 20:00</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Cantidad</label>
+      <div class="qty">
+        <button id="qty-minus">−</button>
+        <span id="qty-val">1</span>
+        <button id="qty-plus">+</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>¿Mensaje personalizado en la tarta?</label>
+      <textarea id="mensaje" placeholder="Ej. Feliz cumpleaños, Sara"></textarea>
+    </div>
+
+    <a class="order-btn" id="order-link" href="#" target="_blank" rel="noopener">Encargar por WhatsApp</a>
+    <p class="order-note">El precio final se confirma por WhatsApp según disponibilidad de fecha.</p>
+  </div>
+</div>
+
+<a class="wa-float" href="https://wa.me/34657677038" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 4C9.4 4 4 9.4 4 16c0 2.2.6 4.3 1.7 6.1L4 28l6.1-1.6c1.7.9 3.7 1.4 5.9 1.4 6.6 0 12-5.4 12-12S22.6 4 16 4z" stroke="#FFFFFF" stroke-width="1.6" fill="none"/><path d="M11.5 10.8c.3-.6.6-.6.9-.6h.7c.2 0 .5 0 .7.6.3.7 1 2.3 1 2.5.1.2.1.4 0 .6-.1.2-.2.3-.4.5l-.5.6c-.2.2-.4.4-.2.7.2.4 1 1.5 2 2.4 1.3 1.2 2.3 1.5 2.7 1.7.4.2.6.1.8-.1l.7-.8c.2-.3.5-.2.8-.1l2.1 1c.2.1.4.2.5.4.1.2.1 1-.3 1.9-.4.9-2.1 1.7-2.9 1.7-.8 0-1.4.1-4.7-1.9-3.3-2-4.7-5.1-4.8-5.4-.1-.2-1-1.4-1-2.7 0-1.3.7-1.9.9-2.2z" fill="#FFFFFF"/></svg>
+</a>
+
+<!-- PLACEHOLDER: reemplazar fotos, descripciones y precios reales de cada tarta acá abajo -->
+<script id="product-data" type="application/json">
+{
+  "clasica": {
+    "name": "Tarta clásica decorada",
+    "tag": "Cumpleaños · Barcelona",
+    "desc": "Buttercream liso o texturizado, a elegir sabor y color. El diseño se ajusta a tu ocasión.",
+    "images": [
+      "https://i.ibb.co/GfsnmS0P/IMG-20260616-204716.jpg",
+      "https://i.ibb.co/S4PtbxBr/IMG-20260616-205000-4.jpg",
+      "https://i.ibb.co/mgQdJ6D/IMG-20260616-205000-2.jpg",
+      "https://i.ibb.co/gMWhkX3H/IMG-20260616-204821.jpg"
+    ],
+    "sizes": [
+      {"label": "S (10-12 personas)", "price": 45},
+      {"label": "M (20-25 personas)", "price": 65},
+      {"label": "L (35-40 personas)", "price": 90}
+    ]
+  },
+  "tematica": {
+    "name": "Tarta temática",
+    "tag": "Cumpleaños · Barcelona",
+    "desc": "Diseño personalizado según el motivo de la celebración — cuéntanos la idea en el mensaje.",
+    "images": ["https://i.ibb.co/XkpRm5cK/IMG-20260713-160559.jpg", "https://i.ibb.co/Xk7c7SVQ/IMG-20260713-181402.jpg", "https://i.ibb.co/rK20sw5C/IMG-20260713-184036.jpg", "https://i.ibb.co/VW18cB4S/IMG-20260713-170521.jpg"],
+    "sizes": [
+      {"label": "S (10-12 personas)", "price": 65},
+      {"label": "M (20-25 personas)", "price": 90},
+      {"label": "L (35-40 personas)", "price": 120}
+    ]
+  },
+  "dospisos": {
+    "name": "Tarta de dos pisos",
+    "tag": "Bodas y eventos · Barcelona",
+    "desc": "Para eventos con más invitados, acabado editorial en buttercream.",
+    "images": ["fotos/tarta-dospisos-1.jpg"],
+    "sizes": [
+      {"label": "S (30-35 personas)", "price": 120},
+      {"label": "M (50-60 personas)", "price": 160},
+      {"label": "L (70-80 personas)", "price": 200}
+    ]
+  },
+  "mesadulce": {
+    "name": "Mesa dulce a medida",
+    "tag": "Bodas y eventos · Barcelona",
+    "desc": "Tarta principal más piezas individuales a juego. El precio final se ajusta según cantidad de invitados.",
+    "images": ["fotos/mesa-dulce-1.jpg"],
+    "sizes": [
+      {"label": "Chica (≈20 personas)", "price": 150},
+      {"label": "Mediana (≈40 personas)", "price": 220},
+      {"label": "Grande (≈60 personas)", "price": 300}
+    ]
+  },
+  "diaria": {
+    "name": "Tarta simple, sin ocasión",
+    "tag": "Para el día a día · Barcelona",
+    "desc": "Para regalar o darte un gusto, sin ocasión especial.",
+    "images": ["fotos/tarta-diaria-1.jpg"],
+    "sizes": [
+      {"label": "S (6-8 personas)", "price": 35},
+      {"label": "M (10-12 personas)", "price": 50},
+      {"label": "L (15-18 personas)", "price": 65}
+    ]
+  },
+  "porciones": {
+    "name": "Porciones individuales",
+    "tag": "Para el día a día · Barcelona",
+    "desc": "Caja surtida para compartir o regalar.",
+    "images": ["fotos/porciones-1.jpg"],
+    "sizes": [
+      {"label": "Caja de 6", "price": 22},
+      {"label": "Caja de 12", "price": 38},
+      {"label": "Caja de 24", "price": 60}
+    ]
+  }
+}
+</script>
+
+<script>
+  const PRODUCTS = JSON.parse(document.getElementById('product-data').textContent);
+  const params = new URLSearchParams(window.location.search);
+  const pid = PRODUCTS[params.get('id')] ? params.get('id') : 'clasica';
+  const product = PRODUCTS[pid];
+
+  document.getElementById('prod-tag').textContent = product.tag;
+  document.getElementById('prod-name').textContent = product.name;
+  document.getElementById('prod-desc').textContent = product.desc;
+  document.title = product.name + ' · Iconic Pastelería';
+
+  const mainImg = document.getElementById('prod-img');
+  mainImg.style.display = '';
+  mainImg.src = product.images[0];
+  const thumbsEl = document.getElementById('gallery-thumbs');
+  if(product.images.length > 1){
+    product.images.forEach((src, i)=>{
+      const t = document.createElement('div');
+      t.className = 'thumb' + (i === 0 ? ' active' : '');
+      t.innerHTML = `<img src="${src}" alt="" onerror="this.parentElement.style.display='none'">`;
+      t.addEventListener('click', ()=>{
+        mainImg.style.display = '';
+        mainImg.src = src;
+        document.querySelectorAll('.gallery-thumbs .thumb').forEach(x=>x.classList.remove('active'));
+        t.classList.add('active');
+      });
+      thumbsEl.appendChild(t);
+    });
+  }
+
+  let sizePrice = product.sizes[0].price;
+  let sizeLabel = product.sizes[0].label;
+  let qty = 1;
+  let colorSel = '';
+  let entrega = 'recogida';
+  let deliveryFee = 0;
+  let cpValido = null;
+  let fechaSel = null;
+  let franjaSel = '';
+
+  const sizesEl = document.getElementById('sizes');
+  product.sizes.forEach((s, i)=>{
+    const btn = document.createElement('button');
+    btn.className = 'size-pill' + (i === 0 ? ' active' : '');
+    btn.textContent = s.label;
+    btn.dataset.price = s.price;
+    btn.dataset.label = s.label;
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.size-pill').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      sizePrice = s.price;
+      sizeLabel = s.label;
+      updatePrice();
+    });
+    sizesEl.appendChild(btn);
+  });
+
+  document.querySelectorAll('.color-swatch').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.color-swatch').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      colorSel = btn.dataset.color;
+      document.getElementById('color-selected').textContent = colorSel;
+      updateLink();
+    });
+  });
+
+  document.querySelectorAll('#entrega-toggle .toggle-pill').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('#entrega-toggle .toggle-pill').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      entrega = btn.dataset.entrega;
+      const df = document.getElementById('delivery-fields');
+      if(entrega === 'delivery'){ df.classList.add('show'); } else { df.classList.remove('show'); deliveryFee = 0; }
+      updatePrice();
+    });
+  });
+
+  document.getElementById('cp').addEventListener('input', function(){
+    this.value = this.value.replace(/\D/g,'').slice(0,5);
+    const cp = this.value;
+    const msg = document.getElementById('cp-msg');
+    if(cp.length < 5){
+      cpValido = null; deliveryFee = 0; msg.textContent = ''; msg.className = 'cp-msg';
+    } else if(cp === '08027'){
+      cpValido = cp; deliveryFee = 0; msg.textContent = '¡Delivery gratis en tu zona! 🎉'; msg.className = 'cp-msg free';
+    } else if(cp.startsWith('08')){
+      cpValido = cp; deliveryFee = 7; msg.textContent = 'Delivery disponible — se suman 7€'; msg.className = 'cp-msg paid';
+    } else {
+      cpValido = cp; deliveryFee = 7; msg.textContent = 'Fuera de nuestra zona habitual — confirmamos disponibilidad por WhatsApp'; msg.className = 'cp-msg warn';
+    }
+    updatePrice();
+  });
+
+  document.getElementById('qty-minus').addEventListener('click', ()=>{
+    if(qty > 1){ qty--; document.getElementById('qty-val').textContent = qty; updatePrice(); }
+  });
+  document.getElementById('qty-plus').addEventListener('click', ()=>{
+    qty++; document.getElementById('qty-val').textContent = qty; updatePrice();
+  });
+
+  function updatePrice(){
+    const total = (sizePrice * qty) + (entrega === 'delivery' ? deliveryFee : 0);
+    document.getElementById('price').textContent = total + '€';
+    updateLink();
+  }
+
+  const diasSemana = ['L','M','X','J','V','S','D'];
+  const meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  let viewDate = new Date(); viewDate.setDate(1);
+  const hoy = new Date(); hoy.setHours(0,0,0,0);
+  const minFecha = new Date(hoy); minFecha.setDate(minFecha.getDate() + 2);
+
+  function disponibleFecha(d){ return d >= minFecha; }
+
+  function renderCal(){
+    const grid = document.getElementById('cal-grid');
+    grid.innerHTML = '';
+    diasSemana.forEach(d=>{ const el=document.createElement('div'); el.className='dow'; el.textContent=d; grid.appendChild(el); });
+    const y = viewDate.getFullYear(), m = viewDate.getMonth();
+    document.getElementById('cal-month').textContent = meses[m] + ' ' + y;
+    const first = new Date(y,m,1);
+    let startOffset = first.getDay() === 0 ? 6 : first.getDay()-1;
+    const daysInMonth = new Date(y,m+1,0).getDate();
+    for(let i=0;i<startOffset;i++){ const el=document.createElement('div'); grid.appendChild(el); }
+    for(let d=1; d<=daysInMonth; d++){
+      const date = new Date(y,m,d);
+      const el = document.createElement('div');
+      el.className = 'day';
+      el.textContent = d;
+      if(disponibleFecha(date)){
+        el.classList.add('avail');
+        el.addEventListener('click', ()=>seleccionarFecha(date, el));
+      }
+      grid.appendChild(el);
+    }
+  }
+
+  function seleccionarFecha(date, el){
+    document.querySelectorAll('.cal-grid .day.sel').forEach(x=>x.classList.remove('sel'));
+    el.classList.add('sel');
+    fechaSel = date.toLocaleDateString('es-ES',{weekday:'long',day:'numeric',month:'long'});
+    document.getElementById('fecha-elegida').textContent = 'Fecha elegida: ' + fechaSel;
+    updateLink();
+  }
+
+  document.getElementById('cal-prev').addEventListener('click', ()=>{ viewDate.setMonth(viewDate.getMonth()-1); renderCal(); });
+  document.getElementById('cal-next').addEventListener('click', ()=>{ viewDate.setMonth(viewDate.getMonth()+1); renderCal(); });
+  renderCal();
+
+  document.querySelectorAll('.slot-pill').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.slot-pill').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      franjaSel = btn.dataset.slot;
+      updateLink();
+    });
+  });
+
+  function updateLink(){
+    const bizcocho = document.getElementById('bizcocho').value || 'sin especificar';
+    const relleno = document.getElementById('relleno').value || 'sin especificar';
+    const color = colorSel || 'sin especificar';
+    const mensaje = document.getElementById('mensaje').value;
+    const total = (sizePrice * qty) + (entrega === 'delivery' ? deliveryFee : 0);
+
+    let texto = `Hola, quiero encargar: ${product.name}.\nTamaño: ${sizeLabel}\nSabor del bizcocho: ${bizcocho}\nSabor del relleno: ${relleno}\nColor: ${color}\nCantidad: ${qty}`;
+    texto += `\nEntrega: ${entrega === 'delivery' ? 'Delivery' : 'Recogida'}`;
+    if(entrega === 'delivery'){
+      const dir = document.getElementById('direccion').value || 'sin especificar';
+      const cp = document.getElementById('cp').value || 'sin especificar';
+      texto += `\nDirección: ${dir}\nCódigo postal: ${cp}`;
+      texto += deliveryFee === 0 && cpValido === '08027' ? ' (delivery gratis)' : ' (+7€ delivery)';
+    }
+    texto += `\nFecha: ${fechaSel || 'sin especificar'}`;
+    texto += `\nFranja horaria: ${franjaSel || 'sin especificar'}`;
+    if(mensaje) texto += `\nMensaje en la tarta: "${mensaje}"`;
+    texto += `\nPrecio estimado: ${total}€`;
+
+    document.getElementById('order-link').href = 'https://wa.me/34657677038?text=' + encodeURIComponent(texto);
+  }
+
+  document.getElementById('bizcocho').addEventListener('change', updateLink);
+  document.getElementById('relleno').addEventListener('change', updateLink);
+  document.getElementById('direccion').addEventListener('input', updateLink);
+  document.getElementById('mensaje').addEventListener('input', updateLink);
+
+  updatePrice();
+</script>
