@@ -1,0 +1,202 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iconic Pastelería — Barcelona</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,300..600&family=Lora:ital,wght@0,400;0,500;1,400&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFFFFF; --cream-2:#F7F6F3; --wine:#6B1B22; --ink:#2B2620; --bronze:#A8834A;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--cream);color:var(--ink);font-family:'Lora',serif;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+
+  .announce-bar{position:sticky;top:0;z-index:60;background:var(--wine);color:var(--cream);text-align:center;padding:9px 16px;font-family:'Jost',sans-serif;font-size:11.5px;letter-spacing:0.5px}
+  @media(max-width:520px){.announce-bar{font-size:10.5px;padding:8px 12px;line-height:1.4}}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+  .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,38,32,0.05) 0%,rgba(43,38,32,0.15) 45%,rgba(30,15,16,0.88) 100%)}
+  .hero-inner{position:relative;z-index:2;width:100%;padding:0 24px 64px;text-align:center;color:var(--cream)}
+  .hero .eyebrow{font-family:'Jost',sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--bronze);opacity:0.95}
+  .hero h1{font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(48px,9vw,104px);letter-spacing:2px;line-height:0.95;margin-top:14px}
+  .hero h1 .sub{display:block;font-size:0.34em;letter-spacing:9px;margin-top:10px}
+  .hero p.lead{max-width:480px;margin:22px auto 0;font-size:16.5px;opacity:0.92}
+  .hero-ctas{margin-top:34px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;padding:16px 30px;border-radius:2px;transition:all .3s;display:inline-block}
+  .btn-solid{background:var(--cream);color:var(--wine)}
+  .btn-solid:hover{background:var(--bronze);color:var(--cream)}
+  .btn-outline{border:1px solid rgba(247,246,243,0.7);color:var(--cream)}
+  .btn-outline:hover{background:rgba(247,246,243,0.12);border-color:var(--cream)}
+  .scroll-cue{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);z-index:2;width:1px;height:36px;background:rgba(247,246,243,0.5)}
+  .scroll-cue::after{content:'';position:absolute;top:0;left:-2px;width:5px;height:5px;border-radius:50%;background:var(--cream);animation:cue 2.2s ease-in-out infinite}
+  @keyframes cue{0%{top:0;opacity:1}90%{top:32px;opacity:0}100%{top:32px;opacity:0}}
+
+  /* ---------- BAND (trayectoria) ---------- */
+  .band{background:var(--cream-2);padding:40px 24px}
+  .band-row{max-width:920px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+  .band-row .num{font-family:'Bodoni Moda',serif;font-size:clamp(24px,3.4vw,36px);color:var(--wine)}
+  .band-row .lbl{font-family:'Jost',sans-serif;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;opacity:0.7;margin-top:6px}
+  @media(max-width:640px){.band-row{grid-template-columns:1fr 1fr;row-gap:28px}}
+
+  /* ---------- MOSAICO EDITORIAL ---------- */
+  .showcase{padding:100px 24px 40px;max-width:1180px;margin:0 auto}
+  .showcase-head{text-align:center;max-width:560px;margin:0 auto 56px}
+  .showcase-head .eyebrow{font-family:'Jost',sans-serif;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--bronze)}
+  .showcase-head h2{font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(30px,4.5vw,44px);margin-top:12px}
+  .showcase-head p{margin-top:14px;opacity:0.75;font-size:15.5px}
+
+  .mosaic{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:120px;gap:10px}
+  .mosaic figure{position:relative;overflow:hidden;background:var(--cream-2)}
+  .mosaic img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.3,1)}
+  .mosaic figure:hover img{transform:scale(1.045)}
+  .mosaic figcaption{position:absolute;left:0;right:0;bottom:0;padding:16px 16px 12px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--cream);background:linear-gradient(0deg,rgba(30,15,16,0.75),transparent);opacity:0;transition:opacity .35s}
+  .mosaic figure:hover figcaption{opacity:1}
+
+  .m1{grid-column:1/4;grid-row:1/4}
+  .m2{grid-column:4/6;grid-row:1/3}
+  .m3{grid-column:6/7;grid-row:1/2}
+  .m4{grid-column:6/7;grid-row:2/3}
+  .m5{grid-column:4/5;grid-row:3/4}
+  .m6{grid-column:5/7;grid-row:3/4}
+  .m7{grid-column:1/3;grid-row:4/6}
+  .m8{grid-column:3/5;grid-row:4/5}
+  .m9{grid-column:5/7;grid-row:4/6}
+  .m10{grid-column:3/5;grid-row:5/6}
+
+  @media(max-width:760px){
+    .mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}
+    .m1{grid-column:1/3;grid-row:1/3}
+    .m2{grid-column:1/2;grid-row:3/4}
+    .m3{grid-column:2/3;grid-row:3/4}
+    .m4{grid-column:1/2;grid-row:4/5}
+    .m5{grid-column:2/3;grid-row:4/5}
+    .m6{grid-column:1/3;grid-row:5/7}
+    .m7{grid-column:1/2;grid-row:7/8}
+    .m8{grid-column:2/3;grid-row:7/8}
+    .m9{grid-column:1/2;grid-row:8/9}
+    .m10{grid-column:2/3;grid-row:8/9}
+  }
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:translateY(0)}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none} .scroll-cue::after{animation:none}}
+
+  /* ---------- SABORES ---------- */
+  .flavors{background:var(--wine);padding:80px 24px;text-align:center}
+  .flavors .eyebrow{font-family:'Jost',sans-serif;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--bronze)}
+  .flavors h2{font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(28px,4vw,40px);color:var(--cream);margin-top:12px}
+  .flavor-row{max-width:640px;margin:44px auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .flavor-row figure{border-radius:50%;overflow:hidden;aspect-ratio:1;border:1px solid rgba(247,246,243,0.25)}
+  .flavor-row img{width:100%;height:100%;object-fit:cover}
+  .flavor-row figcaption{margin-top:12px;font-family:'Jost',sans-serif;font-size:10.5px;letter-spacing:0.5px;text-transform:uppercase;color:var(--cream);opacity:0.85;line-height:1.4}
+  @media(max-width:560px){.flavor-row{gap:12px}.flavor-row figcaption{font-size:9px}}
+
+  /* ---------- CTA FINAL ---------- */
+  .final-cta{padding:100px 24px;text-align:center}
+  .final-cta .script{font-family:'Bodoni Moda',serif;font-weight:400;font-size:15px;letter-spacing:3px;color:var(--wine)}
+  .final-cta h2{font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(30px,5vw,48px);margin-top:10px}
+  .final-cta .ctas{margin-top:36px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .final-cta .btn-solid2{background:var(--wine);color:var(--cream);font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;padding:17px 34px;border-radius:2px;transition:background .3s}
+  .final-cta .btn-solid2:hover{background:var(--ink)}
+  .final-cta .btn-outline2{border:1px solid rgba(43,38,32,0.3);color:var(--ink);font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;padding:17px 34px;border-radius:2px;transition:all .3s}
+  .final-cta .btn-outline2:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+
+  footer{padding:36px 24px;text-align:center;border-top:0.5px solid rgba(43,38,32,0.12)}
+  footer .mark{font-family:'Bodoni Moda',serif;font-size:15px;letter-spacing:2px}
+  footer .sub{font-family:'Jost',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;opacity:0.55;margin-top:8px}
+</style>
+
+<div class="announce-bar">Tartas con 24h de anticipación · Pedidos urgentes listos en 4h (solo tartas clásicas)</div>
+
+<section class="hero">
+  <img src="https://iconicpasteleria.com/fotos/vintage-portada.webp" alt="Tarta Encanto Iconic Pastelería" loading="eager">
+  <div class="hero-inner">
+    <span class="eyebrow">Barcelona · Hecho a mano</span>
+    <h1>ICONIC<span class="sub">Pastelería</span></h1>
+    <p class="lead">Cada tarta se hace por encargo, con la misma técnica que enseñamos en clase — desde 2018, más de mil piezas armadas a mano.</p>
+    <div class="hero-ctas">
+      <a href="iconic-catalogo.html" class="btn btn-solid">Ver catálogo</a>
+      <a href="iconic-academia.html" class="btn btn-outline">Ver cursos</a>
+    </div>
+  </div>
+  <div class="scroll-cue"></div>
+</section>
+
+<div class="band">
+  <div class="band-row">
+    <div><div class="num">2018</div><div class="lbl">Clases desde</div></div>
+    <div><div class="num">+1.000</div><div class="lbl">Tartas armadas</div></div>
+    <div><div class="num">+2.500</div><div class="lbl">Alumnas online</div></div>
+    <div><div class="num">4h</div><div class="lbl">Pedidos urgentes</div></div>
+  </div>
+</div>
+
+<section class="showcase">
+  <div class="showcase-head reveal">
+    <span class="eyebrow">El trabajo</span>
+    <h2>Cada pieza, a mano</h2>
+    <p>Una muestra de lo último que salió del obrador — bizcocho, relleno y acabado, siempre por encargo.</p>
+  </div>
+
+  <div class="mosaic">
+    <figure class="m1 reveal"><img src="https://iconicpasteleria.com/fotos/floral-portada.webp" alt="Tarta temática" loading="lazy"><figcaption>Tarta temática</figcaption></figure>
+    <figure class="m2 reveal"><img src="https://iconicpasteleria.com/fotos/frambuesa-portada.webp" alt="Vintage Cake" loading="lazy"><figcaption>Vintage Cake</figcaption></figure>
+    <figure class="m3 reveal"><img src="https://iconicpasteleria.com/fotos/birthday-2.webp" alt="Birthday Cake" loading="lazy"></figure>
+    <figure class="m4 reveal"><img src="https://iconicpasteleria.com/fotos/vintage-3.webp" alt="Tarta Encanto detalle" loading="lazy"></figure>
+    <figure class="m5 reveal"><img src="https://iconicpasteleria.com/fotos/frambuesa-2.webp" alt="Vintage Cake" loading="lazy"></figure>
+    <figure class="m6 reveal"><img src="https://iconicpasteleria.com/fotos/petite-2.webp" alt="Petite Vintage Cake" loading="lazy"></figure>
+    <figure class="m7 reveal"><img src="https://iconicpasteleria.com/fotos/birthday-portada.webp" alt="Birthday Cake" loading="lazy"><figcaption>Birthday Cake</figcaption></figure>
+    <figure class="m8 reveal"><img src="https://iconicpasteleria.com/fotos/vintage-2.webp" alt="Tarta Encanto detalle" loading="lazy"></figure>
+    <figure class="m9 reveal"><img src="https://iconicpasteleria.com/fotos/petite-3.webp" alt="Petite Vintage Cake" loading="lazy"></figure>
+    <figure class="m10 reveal"><img src="https://iconicpasteleria.com/fotos/petite-vintage-portada.webp" alt="Petite Vintage Cake" loading="lazy"></figure>
+  </div>
+</section>
+
+<section class="flavors">
+  <span class="eyebrow">Para elegir</span>
+  <h2>Cuatro sabores de firma</h2>
+  <div class="flavor-row">
+    <div>
+      <figure class="reveal"><img src="https://iconicpasteleria.com/fotos/sabor-chocolate.webp" alt="Chocolate y brigadeiro" loading="lazy"></figure>
+      <figcaption>Chocolate y brigadeiro</figcaption>
+    </div>
+    <div>
+      <figure class="reveal"><img src="https://iconicpasteleria.com/fotos/sabor-frutos-rojos.webp" alt="Frutos rojos" loading="lazy"></figure>
+      <figcaption>Frutos rojos</figcaption>
+    </div>
+    <div>
+      <figure class="reveal"><img src="https://iconicpasteleria.com/fotos/sabor-maracuya-arandanos.webp" alt="Maracuyá y arándanos" loading="lazy"></figure>
+      <figcaption>Maracuyá y arándanos</figcaption>
+    </div>
+    <div>
+      <figure class="reveal"><img src="https://iconicpasteleria.com/fotos/sabor-beso-de-angel.webp" alt="Beso de ángel" loading="lazy"></figure>
+      <figcaption>Beso de ángel</figcaption>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <span class="script reveal">Empieza por acá</span>
+  <h2 class="reveal">¿Tarta por encargo, o prefieres aprender a hacerla tú?</h2>
+  <div class="ctas reveal">
+    <a href="iconic-catalogo.html" class="btn-solid2">Ver catálogo</a>
+    <a href="iconic-academia.html" class="btn-outline2">Ver cursos</a>
+  </div>
+</section>
+
+<footer>
+  <div class="mark">ICONIC PASTELERÍA</div>
+  <div class="sub">Barcelona</div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
