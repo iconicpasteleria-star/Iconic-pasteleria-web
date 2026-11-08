@@ -1,102 +1,1082 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://iconicpasteleria.com/index.html</loc>
+    <loc>https://iconicpasteleria.com/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/"/>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://iconicpasteleria.com/iconic-catalogo.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/iconic-catalogo.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/cataleg.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/catalogue.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/iconic-catalogo.html"/>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://iconicpasteleria.com/iconic-producto.html?id=encanto</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://iconicpasteleria.com/ca/cataleg.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/iconic-catalogo.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/cataleg.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/catalogue.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/iconic-catalogo.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://iconicpasteleria.com/iconic-producto.html?id=tematica</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://iconicpasteleria.com/en/catalogue.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/iconic-catalogo.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/cataleg.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/catalogue.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/iconic-catalogo.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://iconicpasteleria.com/iconic-producto.html?id=vintage</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://iconicpasteleria.com/iconic-producto.html?id=birthday</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://iconicpasteleria.com/iconic-producto.html?id=petite-vintage</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://iconicpasteleria.com/iconic-academia.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iconicpasteleria.com/iconic-clases.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iconicpasteleria.com/iconic-guias.html</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://iconicpasteleria.com/iconic-contacto.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/iconic-contacto.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/contacte.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/iconic-contacto.html"/>
+    <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://iconicpasteleria.com/iconic-producto.html?id=flores-pintadas</loc>
+    <loc>https://iconicpasteleria.com/ca/contacte.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/iconic-contacto.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/contacte.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/iconic-contacto.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/iconic-contacto.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/contacte.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/iconic-contacto.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/tarta-corazon-lila.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-corazon-lila.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-cor-lila.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/lilac-heart-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-corazon-lila.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iconicpasteleria.com/iconic-producto.html?id=corazon-otono</loc>
+    <loc>https://iconicpasteleria.com/ca/pastissos/pastis-cor-lila.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-corazon-lila.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-cor-lila.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/lilac-heart-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-corazon-lila.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iconicpasteleria.com/iconic-producto.html?id=petalos-vino</loc>
+    <loc>https://iconicpasteleria.com/en/cakes/lilac-heart-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-corazon-lila.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-cor-lila.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/lilac-heart-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-corazon-lila.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iconicpasteleria.com/iconic-producto.html?id=vintage-dos-pisos</loc>
+    <loc>https://iconicpasteleria.com/tartas/tarta-frambuesas-y-crema.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-frambuesas-y-crema.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-de-gerds-i-crema.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/raspberry-and-cream-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-frambuesas-y-crema.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iconicpasteleria.com/iconic-producto.html?id=corazon-morado</loc>
+    <loc>https://iconicpasteleria.com/ca/pastissos/pastis-de-gerds-i-crema.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-frambuesas-y-crema.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-de-gerds-i-crema.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/raspberry-and-cream-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-frambuesas-y-crema.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iconicpasteleria.com/iconic-producto.html?id=perrito</loc>
+    <loc>https://iconicpasteleria.com/en/cakes/raspberry-and-cream-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-frambuesas-y-crema.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-de-gerds-i-crema.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/raspberry-and-cream-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-frambuesas-y-crema.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iconicpasteleria.com/iconic-producto.html?id=tarta-beige</loc>
+    <loc>https://iconicpasteleria.com/tartas/tarta-corazon-morado.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-corazon-morado.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-cor-morat.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/purple-heart-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-corazon-morado.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iconicpasteleria.com/iconic-producto.html?id=tarta-bruja</loc>
+    <loc>https://iconicpasteleria.com/ca/pastissos/pastis-cor-morat.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-corazon-morado.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-cor-morat.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/purple-heart-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-corazon-morado.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iconicpasteleria.com/iconic-producto.html?id=corazon-rojo</loc>
+    <loc>https://iconicpasteleria.com/en/cakes/purple-heart-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-corazon-morado.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-cor-morat.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/purple-heart-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-corazon-morado.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iconicpasteleria.com/iconic-producto.html?id=virgo</loc>
+    <loc>https://iconicpasteleria.com/tartas/tarta-perrito.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-perrito.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-gosset.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/puppy-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-perrito.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/pastis-gosset.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-perrito.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-gosset.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/puppy-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-perrito.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/puppy-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-perrito.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-gosset.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/puppy-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-perrito.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/tarta-beige.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-beige.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-beix.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/beige-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-beige.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/pastis-beix.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-beige.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-beix.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/beige-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-beige.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/beige-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-beige.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-beix.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/beige-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-beige.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/tarta-bruja.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-bruja.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-bruixa.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/witch-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-bruja.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/pastis-bruixa.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-bruja.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-bruixa.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/witch-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-bruja.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/witch-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-bruja.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-bruixa.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/witch-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-bruja.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/tarta-corazon-rojo.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-corazon-rojo.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-cor-vermell.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/red-heart-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-corazon-rojo.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/pastis-cor-vermell.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-corazon-rojo.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-cor-vermell.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/red-heart-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-corazon-rojo.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/red-heart-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-corazon-rojo.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-cor-vermell.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/red-heart-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-corazon-rojo.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/tarta-virgo.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-virgo.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-verge.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/virgo-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-virgo.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/pastis-verge.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-virgo.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-verge.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/virgo-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-virgo.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/virgo-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-virgo.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-verge.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/virgo-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-virgo.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/tarta-vintage-dos-pisos.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-vintage-dos-pisos.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-vintage-de-dos-pisos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/two-tier-vintage-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-vintage-dos-pisos.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/pastis-vintage-de-dos-pisos.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-vintage-dos-pisos.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-vintage-de-dos-pisos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/two-tier-vintage-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-vintage-dos-pisos.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/two-tier-vintage-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-vintage-dos-pisos.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-vintage-de-dos-pisos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/two-tier-vintage-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-vintage-dos-pisos.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/tarta-de-petalos-color-vino.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-de-petalos-color-vino.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-de-petals-color-vi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/wine-coloured-petal-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-de-petalos-color-vino.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/pastis-de-petals-color-vi.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-de-petalos-color-vino.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-de-petals-color-vi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/wine-coloured-petal-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-de-petalos-color-vino.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/wine-coloured-petal-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-de-petalos-color-vino.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-de-petals-color-vi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/wine-coloured-petal-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-de-petalos-color-vino.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/tarta-flores-pintadas.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-flores-pintadas.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-flors-pintades.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/painted-flowers-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-flores-pintadas.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/pastis-flors-pintades.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-flores-pintadas.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-flors-pintades.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/painted-flowers-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-flores-pintadas.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/painted-flowers-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-flores-pintadas.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-flors-pintades.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/painted-flowers-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-flores-pintadas.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/tarta-corazon-otono.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-corazon-otono.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-cor-de-tardor.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/autumn-heart-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-corazon-otono.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/pastis-cor-de-tardor.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-corazon-otono.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-cor-de-tardor.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/autumn-heart-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-corazon-otono.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/autumn-heart-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-corazon-otono.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-cor-de-tardor.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/autumn-heart-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-corazon-otono.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/tarta-flores-naturales.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-flores-naturales.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-flors-naturals.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/fresh-flowers-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-flores-naturales.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/pastis-flors-naturals.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-flores-naturales.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-flors-naturals.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/fresh-flowers-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-flores-naturales.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/fresh-flowers-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-flores-naturales.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-flors-naturals.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/fresh-flowers-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-flores-naturales.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/vintage-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/vintage-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/vintage-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/vintage-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/vintage-cake.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/vintage-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/vintage-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/vintage-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/vintage-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/vintage-cake.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/vintage-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/vintage-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/vintage-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/vintage-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/vintage-cake.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/tarta-vintage-frambuesas.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-vintage-frambuesas.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-vintage-de-gerds.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/vintage-raspberry-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-vintage-frambuesas.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/pastis-vintage-de-gerds.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-vintage-frambuesas.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-vintage-de-gerds.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/vintage-raspberry-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-vintage-frambuesas.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/vintage-raspberry-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-vintage-frambuesas.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-vintage-de-gerds.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/vintage-raspberry-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-vintage-frambuesas.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/tarta-cumpleanos-sprinkles.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-cumpleanos-sprinkles.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-d-aniversari-sprinkles.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/birthday-sprinkles-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-cumpleanos-sprinkles.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/pastis-d-aniversari-sprinkles.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-cumpleanos-sprinkles.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-d-aniversari-sprinkles.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/birthday-sprinkles-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-cumpleanos-sprinkles.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/birthday-sprinkles-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-cumpleanos-sprinkles.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-d-aniversari-sprinkles.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/birthday-sprinkles-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-cumpleanos-sprinkles.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/tarta-petite-vintage-rojo-borgona.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-petite-vintage-rojo-borgona.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-petite-vintage-vermell-burdeus.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/petite-vintage-cake-burgundy-red.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-petite-vintage-rojo-borgona.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/pastis-petite-vintage-vermell-burdeus.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-petite-vintage-rojo-borgona.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-petite-vintage-vermell-burdeus.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/petite-vintage-cake-burgundy-red.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-petite-vintage-rojo-borgona.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/petite-vintage-cake-burgundy-red.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-petite-vintage-rojo-borgona.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-petite-vintage-vermell-burdeus.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/petite-vintage-cake-burgundy-red.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-petite-vintage-rojo-borgona.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/romantic-heart.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/romantic-heart.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/romantic-heart.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/romantic-heart.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/romantic-heart.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/romantic-heart.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/romantic-heart.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/romantic-heart.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/romantic-heart.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/romantic-heart.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/romantic-heart.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/romantic-heart.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/romantic-heart.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/romantic-heart.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/romantic-heart.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/turquoise-vintage.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/turquoise-vintage.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/turquoise-vintage.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/turquoise-vintage.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/turquoise-vintage.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/turquoise-vintage.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/turquoise-vintage.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/turquoise-vintage.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/turquoise-vintage.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/turquoise-vintage.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/turquoise-vintage.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/turquoise-vintage.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/turquoise-vintage.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/turquoise-vintage.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/turquoise-vintage.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/tarta-jardin-silvestre.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-jardin-silvestre.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-jardi-silvestre.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/wild-garden-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-jardin-silvestre.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/pastis-jardi-silvestre.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-jardin-silvestre.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-jardi-silvestre.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/wild-garden-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-jardin-silvestre.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/wild-garden-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-jardin-silvestre.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-jardi-silvestre.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/wild-garden-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-jardin-silvestre.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/tarta-calendario-comestible.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-calendario-comestible.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-calendari-comestible.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/edible-calendar-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-calendario-comestible.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/pastis-calendari-comestible.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-calendario-comestible.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-calendari-comestible.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/edible-calendar-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-calendario-comestible.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/edible-calendar-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-calendario-comestible.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-calendari-comestible.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/edible-calendar-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-calendario-comestible.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/gem-stone-mini-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/gem-stone-mini-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/gem-stone-mini-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/gem-stone-mini-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/gem-stone-mini-cake.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/gem-stone-mini-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/gem-stone-mini-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/gem-stone-mini-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/gem-stone-mini-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/gem-stone-mini-cake.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/gem-stone-mini-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/gem-stone-mini-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/gem-stone-mini-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/gem-stone-mini-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/gem-stone-mini-cake.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/tarta-corazon-vintage.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-corazon-vintage.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-cor-vintage.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/vintage-heart-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-corazon-vintage.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/pastis-cor-vintage.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-corazon-vintage.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-cor-vintage.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/vintage-heart-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-corazon-vintage.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/vintage-heart-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-corazon-vintage.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-cor-vintage.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/vintage-heart-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-corazon-vintage.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/tarta-libro.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-libro.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-llibre.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/book-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-libro.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/pastis-llibre.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-libro.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-llibre.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/book-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-libro.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/book-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-libro.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-llibre.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/book-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-libro.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/tarta-calendario.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-calendario.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-calendari.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/calendar-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-calendario.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/pastis-calendari.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-calendario.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-calendari.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/calendar-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-calendario.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/calendar-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-calendario.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-calendari.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/calendar-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-calendario.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/tarta-de-petalos.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-de-petalos.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-de-petals.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/petal-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-de-petalos.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/pastis-de-petals.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-de-petalos.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-de-petals.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/petal-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-de-petalos.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/petal-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-de-petalos.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-de-petals.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/petal-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-de-petalos.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/tarta-de-petalos-con-gemas.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-de-petalos-con-gemas.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-de-petals-amb-gemmes.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/petal-cake-with-gems.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-de-petalos-con-gemas.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/pastis-de-petals-amb-gemmes.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-de-petalos-con-gemas.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-de-petals-amb-gemmes.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/petal-cake-with-gems.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-de-petalos-con-gemas.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/petal-cake-with-gems.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-de-petalos-con-gemas.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-de-petals-amb-gemmes.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/petal-cake-with-gems.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-de-petalos-con-gemas.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/tarta-barca.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-barca.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-barca.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/barca-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-barca.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/pastis-barca.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-barca.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-barca.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/barca-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-barca.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/barca-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-barca.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-barca.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/barca-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-barca.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/tarta-calendario-lazos-negros.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-calendario-lazos-negros.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-calendari-llacos-negres.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/calendar-cake-with-black-bows.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-calendario-lazos-negros.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/pastis-calendari-llacos-negres.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-calendario-lazos-negros.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-calendari-llacos-negres.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/calendar-cake-with-black-bows.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-calendario-lazos-negros.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/calendar-cake-with-black-bows.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-calendario-lazos-negros.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-calendari-llacos-negres.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/calendar-cake-with-black-bows.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-calendario-lazos-negros.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/ring-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/ring-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/ring-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/ring-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/ring-cake.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/ring-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/ring-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/ring-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/ring-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/ring-cake.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/ring-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/ring-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/ring-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/ring-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/ring-cake.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/vintage-book-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/vintage-book-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/vintage-book-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/vintage-book-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/vintage-book-cake.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/vintage-book-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/vintage-book-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/vintage-book-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/vintage-book-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/vintage-book-cake.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/vintage-book-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/vintage-book-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/vintage-book-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/vintage-book-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/vintage-book-cake.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/red-vintage-love.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/red-vintage-love.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/red-vintage-love.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/red-vintage-love.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/red-vintage-love.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/red-vintage-love.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/red-vintage-love.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/red-vintage-love.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/red-vintage-love.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/red-vintage-love.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/red-vintage-love.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/red-vintage-love.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/red-vintage-love.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/red-vintage-love.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/red-vintage-love.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/party-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/party-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/party-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/party-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/party-cake.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/party-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/party-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/party-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/party-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/party-cake.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/party-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/party-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/party-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/party-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/party-cake.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/tarta-de-gemas.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-de-gemas.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-de-gemmes.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/gem-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-de-gemas.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/pastis-de-gemmes.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-de-gemas.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-de-gemmes.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/gem-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-de-gemas.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/gem-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-de-gemas.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-de-gemmes.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/gem-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-de-gemas.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/tarta-coquette-red-cherries.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-coquette-red-cherries.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-coquette-red-cherries.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/coquette-cake-red-cherries.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-coquette-red-cherries.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/pastis-coquette-red-cherries.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-coquette-red-cherries.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-coquette-red-cherries.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/coquette-cake-red-cherries.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-coquette-red-cherries.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/coquette-cake-red-cherries.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-coquette-red-cherries.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-coquette-red-cherries.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/coquette-cake-red-cherries.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-coquette-red-cherries.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/tarta-pink-vintage.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-pink-vintage.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-pink-vintage.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/pink-vintage-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-pink-vintage.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/pastis-pink-vintage.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-pink-vintage.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-pink-vintage.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/pink-vintage-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-pink-vintage.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/pink-vintage-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/tarta-pink-vintage.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/pastis-pink-vintage.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/pink-vintage-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/tarta-pink-vintage.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/tartas/burgundy-heart.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/burgundy-heart.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/burgundy-heart.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/burgundy-heart.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/burgundy-heart.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/ca/pastissos/burgundy-heart.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/burgundy-heart.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/burgundy-heart.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/burgundy-heart.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/burgundy-heart.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iconicpasteleria.com/en/cakes/burgundy-heart.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/tartas/burgundy-heart.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/pastissos/burgundy-heart.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/cakes/burgundy-heart.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/tartas/burgundy-heart.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -48,6 +48,7 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="site-urls.js"></script>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16">
@@ -474,7 +475,7 @@
   <div class="in">
     <div class="nl"><a href="iconic-catalogo.html">&larr; Catálogo</a><a href="iconic-contacto.html">Contacto</a></div>
     <a class="logo" href="index.html"><img src="logo-negro-transparente.png" alt="Iconic Pastelería"></a>
-    <div class="nr"><a href="index.html">Inicio</a></div>
+    <div class="nr"><a href="index.html">Inicio</a><span data-lang-switch></span></div>
   </div>
 </nav>
 
@@ -686,6 +687,72 @@
 <!-- PLACEHOLDER: reemplazar fotos, descripciones y precios reales de cada tarta acá abajo -->
 <script id="product-data" type="application/json">
 {
+  "corazon-lila": {
+    "name": "Tarta Corazón Lila",
+    "seoTitle": "Tarta Corazón Lila Personalizada en Barcelona | Lazos y Rosas en Crema",
+    "tag": "Cumpleaños · Aniversarios · Barcelona",
+    "desc": "Un corazón en tono lila con borde de crema marfil, pequeñas rosas moradas y lazos de organza, y un mensaje escrito a mano en el centro. Delicada, romántica y muy fotogénica: ideal para dedicar.",
+    "images": [
+      "https://iconicpasteleria.com/fotos/romantic-heart-lila.webp"
+    ],
+    "sizes": [
+      {
+        "label": "Petite · 15x7cm (5 a 7 personas)",
+        "price": 60,
+        "stripe": "https://buy.stripe.com/aFaaEQ0dfanS5A42xb9AA0K"
+      },
+      {
+        "label": "Clásica · 15x15cm (10 a 14 personas)",
+        "price": 77,
+        "stripe": "https://buy.stripe.com/bJeaEQ4tv9jO4w0efT9AA0L"
+      },
+      {
+        "label": "Grande · 20 x 16cm (20-25 personas)",
+        "price": 99,
+        "stripe": "https://buy.stripe.com/3cIdR28JL67CbYsgo19AA0M"
+      }
+    ],
+    "features": [
+      "**Libertad total de sabor:** Te enamora el diseño, ¡pero el interior es todo tuyo! Puedes personalizar este modelo con cualquier sabor de nuestro catálogo.",
+      "**Mensaje personalizado:** escribimos el texto que quieras en el centro de la tarta. Cuéntanoslo por WhatsApp.",
+      "**Ideal para:** Cumpleaños, aniversarios, San Valentín y detalles con dedicatoria.",
+      "**Entrega a domicilio:** Te la llevamos con la máxima atención a cualquier punto de Barcelona.",
+      "Recogida disponible en Poble-sec, 08004."
+    ]
+  },
+  "frambuesas-crema": {
+    "name": "Tarta Frambuesas y Crema",
+    "seoTitle": "Tarta de Frambuesas y Crema en Barcelona | Diseño Blanco Elegante",
+    "tag": "Cumpleaños · Barcelona",
+    "desc": "Una tarta blanca y limpia con una corona de rosetones de crema y frambuesas frescas en el centro. Fresca, elegante y sin artificios: para quienes prefieren la sencillez bien hecha.",
+    "images": [
+      "https://iconicpasteleria.com/fotos/vintage-fresa.webp"
+    ],
+    "sizes": [
+      {
+        "label": "Petite · 15x7cm (5 a 7 personas)",
+        "price": 60,
+        "stripe": "https://buy.stripe.com/aFaaEQ0dfanS5A42xb9AA0K"
+      },
+      {
+        "label": "Clásica · 15x15cm (10 a 14 personas)",
+        "price": 77,
+        "stripe": "https://buy.stripe.com/bJeaEQ4tv9jO4w0efT9AA0L"
+      },
+      {
+        "label": "Grande · 20 x 16cm (20-25 personas)",
+        "price": 99,
+        "stripe": "https://buy.stripe.com/3cIdR28JL67CbYsgo19AA0M"
+      }
+    ],
+    "features": [
+      "**Libertad total de sabor:** Te enamora el diseño, ¡pero el interior es todo tuyo! Puedes personalizar este modelo con cualquier sabor de nuestro catálogo.",
+      "**Fruta fresca:** frambuesas frescas sobre una corona de rosetones de crema.",
+      "**Ideal para:** Cumpleaños elegantes, aniversarios o sorpresas especiales.",
+      "**Entrega a domicilio:** Te la llevamos con la máxima atención a cualquier punto de Barcelona.",
+      "Recogida disponible en Poble-sec, 08004."
+    ]
+  },
   "corazon-morado": {
     "name": "Tarta Corazón Morado",
     "seoTitle": "Tarta Corazón Morado Personalizada en Barcelona | Flores en Crema y Mensaje",
@@ -1065,7 +1132,7 @@
   "vintage": {
     "name": "Vintage Cake",
     "tag": "Cumpleaños · Barcelona",
-    "desc": "Vintage Cake, tarta con estética vintage elaborada a mano en Barcelona, perfecta para cumpleaños y eventos con un toque retro. Puedes elegir este diseño con cualquiera de nuestros sabores disponibles: chocolate y ganache, frutos rojos, tiramisú, red velvet o beso de ángel. Delivery a domicilio en toda Barcelona, con coste según zona — o recogida disponible en Poble-sec, 08004.",
+    "desc": "Vintage Cake, tarta con estética vintage elaborada a mano en Barcelona, perfecta para cumpleaños y eventos con un toque retro. Puedes elegir este diseño con cualquiera de nuestros sabores disponibles. Delivery a domicilio en toda Barcelona, con coste según zona — o recogida disponible en Poble-sec, 08004.",
     "images": [
       "https://iconicpasteleria.com/fotos/frambuesa-portada.webp",
       "https://iconicpasteleria.com/fotos/frambuesa-2.webp",
@@ -1869,7 +1936,12 @@
   const DIAS_MINIMOS_PEDIDO = 2;
   const PRODUCTS = JSON.parse(document.getElementById('product-data').textContent);
   const params = new URLSearchParams(window.location.search);
-  const pid = PRODUCTS[params.get('id')] ? params.get('id') : 'vintage';
+  const rawId = document.documentElement.getAttribute('data-pid') || params.get('id');
+  const pid = PRODUCTS[rawId] ? rawId : 'vintage';
+  const STATIC = document.documentElement.hasAttribute('data-static-lang');
+  const ROOT = document.documentElement.getAttribute('data-root') || '';
+  const SLANG = document.documentElement.getAttribute('data-static-lang') || 'es';
+  const pUrl = id => ROOT + (window.IconicUrls ? IconicUrls.product(id, SLANG) : 'iconic-producto.html?id=' + id);
   const product = PRODUCTS[pid];
 
   if(product.excludeFlavors && product.excludeFlavors.length){
@@ -1906,11 +1978,12 @@
     if(ids.length < 2) return;
     document.getElementById('designs-name').textContent = product.name;
     const box = document.getElementById('swatches');
+    box.innerHTML = '';
     ids.forEach(function(i){
       const p = PRODUCTS[i];
       const a = document.createElement('a');
       a.className = 'sw' + (i === pid ? ' on' : '');
-      a.href = 'iconic-producto.html?id=' + i;
+      a.href = pUrl(i);
       a.title = p.name;
       const im = document.createElement('img');
       im.alt = p.name; im.decoding = 'async'; im.loading = 'lazy';
@@ -1943,9 +2016,11 @@
       return `<li>${withBold}</li>`;
     }).join('');
   }
+  /* En las páginas estáticas por idioma (/tartas, /ca, /en) la cabecera SEO ya viene generada */
+  if(!STATIC){
   document.title = (product.seoTitle || product.name) + ' · Iconic Pastelería';
 
-  const pageUrl = 'https://iconicpasteleria.com/iconic-producto.html?id=' + pid;
+  const pageUrl = window.IconicUrls ? 'https://iconicpasteleria.com/' + IconicUrls.product(pid, 'es') : 'https://iconicpasteleria.com/iconic-producto.html?id=' + pid;
   const shortDesc = product.desc.length > 155 ? product.desc.slice(0, 152) + '...' : product.desc;
   const seoName = product.seoTitle || product.name;
   document.getElementById('meta-desc').setAttribute('content', shortDesc);
@@ -1984,12 +2059,15 @@
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://iconicpasteleria.com/index.html"},
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://iconicpasteleria.com/"},
       {"@type": "ListItem", "position": 2, "name": "Catálogo de tartas", "item": "https://iconicpasteleria.com/iconic-catalogo.html"},
       {"@type": "ListItem", "position": 3, "name": product.name, "item": pageUrl}
     ]
   });
   document.head.appendChild(breadcrumbLd);
+  if(pid === 'testprueba'){ const rb = document.createElement('meta'); rb.name = 'robots'; rb.content = 'noindex, nofollow'; document.head.appendChild(rb); }
+  }
+  const pageUrl = window.IconicUrls ? 'https://iconicpasteleria.com/' + IconicUrls.product(pid, SLANG) : 'https://iconicpasteleria.com/iconic-producto.html?id=' + pid;
 
   const mainImg = document.getElementById('prod-img');
   mainImg.style.display = '';
@@ -2005,6 +2083,7 @@
   });
 
   const thumbsEl = document.getElementById('gallery-thumbs');
+  thumbsEl.innerHTML = '';
   if(product.images.length > 1){
     product.images.forEach((src, i)=>{
       const t = document.createElement('div');
@@ -2034,6 +2113,7 @@
   const deliveryFee = 0;
 
   const sizesEl = document.getElementById('sizes');
+  sizesEl.innerHTML = '';
   product.sizes.forEach((s, i)=>{
     const btn = document.createElement('button');
     btn.className = 'size-pill' + (i === 0 ? ' active' : '');
@@ -2424,5 +2504,6 @@
     els.forEach(function(el){ io.observe(el); });
   })();
 </script>
+<script src="i18n.js"></script>
 </body>
 </html>

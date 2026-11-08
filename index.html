@@ -1,20 +1,35 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-static-lang="es" data-root="" data-alt-es="index.html" data-alt-ca="ca/index.html" data-alt-en="en/index.html">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Iconic Pastelería — Tartas por encargo en Barcelona</title>
-<meta name="description" content="Tartas vintage y de diseño por encargo en Barcelona. Piezas hechas a mano para cumpleaños, aniversarios y celebraciones. Delivery o recogida en Poble-sec.">
+<!--SEO:START-->
+<title>Iconic Pastelería - Tartas y pasteles en Barcelona</title>
+<meta name="description" content="Tartas vintage y de diseño por encargo en Barcelona. Hechas a mano para cumpleaños, aniversarios y celebraciones. Delivery o recogida en Poble-sec.">
 <link rel="canonical" href="https://iconicpasteleria.com/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="alternate" hreflang="es" href="https://iconicpasteleria.com/">
+<link rel="alternate" hreflang="ca" href="https://iconicpasteleria.com/ca/">
+<link rel="alternate" hreflang="en" href="https://iconicpasteleria.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://iconicpasteleria.com/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Iconic Pastelería — Tartas por encargo en Barcelona">
-<meta property="og:description" content="Tartas vintage y de diseño por encargo en Barcelona. Hechas a mano, pensadas para lucirse.">
+<meta property="og:title" content="Iconic Pastelería - Tartas y pasteles en Barcelona">
+<meta property="og:description" content="Tartas vintage y de diseño por encargo en Barcelona. Hechas a mano para cumpleaños, aniversarios y celebraciones. Delivery o recogida en Poble-sec.">
 <meta property="og:url" content="https://iconicpasteleria.com/">
 <meta property="og:image" content="https://iconicpasteleria.com/fotos/s8.jpeg">
 <meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="ca_ES">
+<meta property="og:locale:alternate" content="en_GB">
 <meta property="og:site_name" content="Iconic Pastelería">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Iconic Pastelería - Tartas y pasteles en Barcelona">
+<meta name="twitter:description" content="Tartas vintage y de diseño por encargo en Barcelona. Hechas a mano para cumpleaños, aniversarios y celebraciones. Delivery o recogida en Poble-sec.">
 <meta name="twitter:image" content="https://iconicpasteleria.com/fotos/s8.jpeg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Bakery","@id":"https://iconicpasteleria.com/#negocio","name":"Iconic Pastelería","url":"https://iconicpasteleria.com/","image":"https://iconicpasteleria.com/fotos/s8.jpeg","description":"Pastelería artesanal en Barcelona (Poble-sec): tartas vintage y de diseño por encargo para cumpleaños, aniversarios, bodas y eventos.","telephone":"+34624928402","email":"iconicpasteleria@gmail.com","priceRange":"€€","address":{"@type":"PostalAddress","addressLocality":"Barcelona","addressRegion":"Catalunya","postalCode":"08004","addressCountry":"ES"},"areaServed":{"@type":"City","name":"Barcelona"},"sameAs":["https://instagram.com/iconicpasteleria","https://tiktok.com/@iconicpasteleria"],"knowsLanguage":["es","ca","en"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Iconic Pastelería","url":"https://iconicpasteleria.com/","inLanguage":"es","potentialAction":{"@type":"SearchAction","target":"https://iconicpasteleria.com/iconic-catalogo.html?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<!--SEO:END-->
+<script src="site-urls.js"></script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -88,8 +103,8 @@
   @media(min-width:640px){.hero-caption{padding:28px 32px}}
   .hero-caption .tag{font-family:'Space Mono',monospace;font-weight:700;font-size:12px;letter-spacing:1px;text-transform:uppercase;margin-bottom:5px}
   @media(min-width:480px){.hero-caption .tag{font-size:15px;letter-spacing:1.5px;margin-bottom:6px}}
-  .hero-caption p{font-size:10.5px;opacity:0.85;max-width:150px;line-height:1.4}
-  @media(min-width:480px){.hero-caption p{font-size:13px;max-width:280px}}
+  .hero-caption p,.hero-caption h1{font-size:10.5px;font-weight:400;opacity:0.85;max-width:150px;line-height:1.4}
+  @media(min-width:480px){.hero-caption p,.hero-caption h1{font-size:13px;max-width:280px}}
   .hero-shop{position:absolute;right:0;bottom:0;padding:16px 16px;z-index:2;animation:fadeUp 1s cubic-bezier(.16,1,.3,1) .5s both}
   @media(min-width:480px){.hero-shop{padding:22px 24px}}
   @media(min-width:640px){.hero-shop{padding:28px 32px}}
@@ -402,7 +417,7 @@
     <a href="index.html"><img class="nav-logo" src="logo-negro-transparente.png" alt="Iconic Pastelería"></a>
     <div class="nav-right">
       <button type="button" class="search-btn" id="search-btn" aria-label="Buscar" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></button>
-      <span class="txt">ES/€</span>
+      <span data-lang-switch class="lang-desk"></span>
       <span class="txt">Pedido (0)</span>
     </div>
   </div>
@@ -416,6 +431,7 @@
     <a href="index.html">Inicio</a>
     <a href="iconic-catalogo.html">Catálogo</a>
     <a href="iconic-contacto.html">Contacto</a>
+    <div data-lang-switch class="lang-mob" style="padding:10px 32px;border-top:1px solid var(--line)"></div>
   </div>
 </nav>
 
@@ -446,7 +462,7 @@
   <div class="hero-shade"></div>
   <div class="hero-caption">
     <div class="tag">La pieza central de tu mesa</div>
-    <p>Tartas por encargo en Barcelona. De las que se guardan en Pinterest antes de encargarse.</p>
+    <h1>Tartas por encargo en Barcelona. De las que se guardan en Pinterest antes de encargarse.</h1>
   </div>
   <div class="hero-shop"><a href="iconic-catalogo.html">Ver colección</a></div>
 </section>
@@ -458,7 +474,7 @@
     <p>Cuatro diseños que se llevan esta temporada. El sabor lo eliges tú.</p>
   </div>
   <div class="cat-list">
-    <a class="cat-row reveal" style="transition-delay:0ms" href="iconic-producto.html?id=petalos">
+    <a class="cat-row reveal" style="transition-delay:0ms" href="tartas/tarta-de-petalos.html">
       <div class="cat-ph"><img src="https://iconicpasteleria.com/fotos/petalorosa.jpg" alt="Tarta de pétalos"></div>
       <div class="cat-info">
         <div class="cat-num mono">01</div>
@@ -470,7 +486,7 @@
         <div class="cat-add">Ver pieza</div>
       </div>
     </a>
-    <a class="cat-row reveal" style="transition-delay:80ms" href="iconic-producto.html?id=burgundy-heart">
+    <a class="cat-row reveal" style="transition-delay:80ms" href="tartas/burgundy-heart.html">
       <div class="cat-ph"><img src="https://iconicpasteleria.com/fotos/corazon_burgundy.webp" alt="Burgundy Heart"></div>
       <div class="cat-info">
         <div class="cat-num mono">02</div>
@@ -482,7 +498,7 @@
         <div class="cat-add">Ver pieza</div>
       </div>
     </a>
-    <a class="cat-row reveal" style="transition-delay:160ms" href="iconic-producto.html?id=calendario-nueva">
+    <a class="cat-row reveal" style="transition-delay:160ms" href="tartas/tarta-calendario.html">
       <div class="cat-ph"><img src="https://iconicpasteleria.com/fotos/tarta_calendario_nueva.webp" alt="Tarta calendario"></div>
       <div class="cat-info">
         <div class="cat-num mono">03</div>
@@ -494,7 +510,7 @@
         <div class="cat-add">Ver pieza</div>
       </div>
     </a>
-    <a class="cat-row reveal" style="transition-delay:240ms" href="iconic-producto.html?id=petite-vintage">
+    <a class="cat-row reveal" style="transition-delay:240ms" href="tartas/tarta-petite-vintage-rojo-borgona.html">
       <div class="cat-ph"><img src="https://iconicpasteleria.com/fotos/petite-vintage-portada.webp" alt="Tarta Petite Vintage"></div>
       <div class="cat-info">
         <div class="cat-num mono">04</div>
@@ -667,5 +683,6 @@
 })();
 </script>
 
+<script src="i18n.js"></script>
 </body>
 </html>
