@@ -137,6 +137,7 @@
   .item .ph{aspect-ratio:3/4;background:var(--cream);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
   .ready-tag{position:absolute;top:12px;left:12px;background:var(--ink);color:#fff;font-family:'Space Mono',monospace;font-weight:700;font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:5px 10px;border-radius:0;z-index:2}
   .hot-tag{position:absolute;top:12px;left:12px;z-index:2;display:inline-flex;align-items:center;gap:5px;background:var(--ink);color:#fff;font-family:'Space Mono',monospace;font-weight:700;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;padding:6px 10px 5px;pointer-events:none}
+  .ltd-tag{position:absolute;top:12px;left:12px;z-index:2;background:#C8102E;color:#fff;font-family:'Space Mono',monospace;font-weight:700;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;padding:6px 10px 5px;pointer-events:none}
   .hot-tag svg{width:11px;height:11px;display:block;margin-top:-1px;color:#FF7A1A}
   .item .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
   .item:hover .ph img{transform:scale(1.04)}
@@ -238,55 +239,31 @@
   <button class="filter" data-f="boda">Weddings &amp; events</button>
 </div>
 
-<div class="grid" id="grid"><a class="item show reveal in" style="transition-delay: 0ms;" href="../en/cakes/wine-coloured-petal-cake.html" data-cat="cumple boda">
-      <div class="ph"><img src="https://iconicpasteleria.com/fotos/petalos-vino.webp" alt="Wine-coloured petal cake" loading="lazy" decoding="async" onerror="imgRetry(this)"></div>
-      <div class="body">
-        <span class="tag">Birthdays · Weddings &amp; events</span>
-        <h3>Wine-coloured petal cake</h3>
-        <p>Edible rice-paper petals in a wine tone, with an intense three-dimensional effect. A museum piece for your table.</p>
-        <span class="sig-label">Signature</span><span class="price">From €80 <small style="font-weight:400;opacity:.65;font-size:10.5px">VAT incl.</small></span>
-        <span class="link">View</span>
-      </div></a><a class="item show reveal in" style="transition-delay: 70ms;" href="../en/cakes/petal-cake.html" data-cat="cumple boda">
-      <div class="ph"><span class="hot-tag"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>Best seller</span><img src="https://iconicpasteleria.com/fotos/petalorosa.jpg" alt="Petal cake" loading="lazy" decoding="async" onerror="imgRetry(this)"></div>
-      <div class="body">
-        <span class="tag">Birthdays · Weddings &amp; events</span>
-        <h3>Petal cake</h3>
-        <p>A three-dimensional effect in edible rice paper, soft and enveloping. A museum piece for your table.</p>
-        <span class="sig-label">Signature</span><span class="price">From €80 <small style="font-weight:400;opacity:.65;font-size:10.5px">VAT incl.</small></span>
-        <span class="link">View</span>
-      </div></a><a class="item show reveal in" style="transition-delay: 140ms;" href="../en/cakes/petal-cake-with-gems.html" data-cat="cumple boda">
-      <div class="ph"><span class="hot-tag"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>Best seller</span><img src="https://iconicpasteleria.com/fotos/gemcake-blanca-1.webp" alt="Petal cake with gems" loading="lazy" decoding="async" onerror="imgRetry(this)"></div>
-      <div class="body">
-        <span class="tag">Birthdays · Weddings &amp; events</span>
-        <h3>Petal cake with gems</h3>
-        <p>Edible rice-paper petals with a three-dimensional effect, paired with sparkling gems.</p>
-        <span class="sig-label">Signature</span><span class="price">From €80 <small style="font-weight:400;opacity:.65;font-size:10.5px">VAT incl.</small></span>
-        <span class="link">View</span>
-      </div></a><a class="item show reveal in" style="transition-delay: 210ms;" href="../en/cakes/christmas-tree-cake.html" data-cat="navidad">
-      <div class="ph"><img src="https://iconicpasteleria.com/fotos/arbol1.webp" alt="Christmas Tree Cake" loading="lazy" decoding="async" onerror="imgRetry(this)"></div>
+<div class="grid" id="grid"><a class="item show reveal in" style="transition-delay: 0ms;" href="../en/cakes/christmas-tree-cake.html" data-cat="navidad">
+      <div class="ph"><span class="ltd-tag">Limited edition</span><img src="https://iconicpasteleria.com/fotos/arbol1.webp" alt="Christmas Tree Cake" loading="lazy" decoding="async" onerror="imgRetry(this)"></div>
       <div class="body">
         <span class="tag">Christmas · Events</span>
         <h3>Christmas Tree Cake</h3>
         <p>Edible Christmas tree in burgundy buttercream with golden pearls and a satin bow. Chocolate and hazelnut praline. Delivery in Barcelona.</p>
         <span class="price">From €65 <small style="font-weight:400;opacity:.65;font-size:10.5px">VAT incl.</small></span>
         <span class="link">View</span>
-      </div></a><a class="item show reveal in" style="transition-delay: 280ms;" href="../en/cakes/vintage-christmas-cake.html" data-cat="navidad">
-      <div class="ph"><img src="https://iconicpasteleria.com/fotos/vintage-christmas1.webp" alt="Vintage Christmas Cake" loading="lazy" decoding="async" onerror="imgRetry(this)"></div>
+      </div></a><a class="item show reveal in" style="transition-delay: 70ms;" href="../en/cakes/vintage-christmas-cake.html" data-cat="navidad">
+      <div class="ph"><span class="ltd-tag">Limited edition</span><img src="https://iconicpasteleria.com/fotos/vintage-christmas1.webp" alt="Vintage Christmas Cake" loading="lazy" decoding="async" onerror="imgRetry(this)"></div>
       <div class="body">
         <span class="tag">Christmas · Events</span>
         <h3>Vintage Christmas Cake</h3>
         <p>Vintage Christmas cake with cream ruffles and little roses in burgundy and green. Apple and cinnamon. Delivery in Barcelona.</p>
         <span class="price">From €60 <small style="font-weight:400;opacity:.65;font-size:10.5px">VAT incl.</small></span>
         <span class="link">View</span>
-      </div></a><a class="item show reveal in" style="transition-delay: 350ms;" href="../en/cakes/cinnamon-roll-bundt-cake.html" data-cat="navidad">
-      <div class="ph"><img src="https://iconicpasteleria.com/fotos/cinnamon1.webp" alt="Cinnamon Roll Bundt Cake" loading="lazy" decoding="async" onerror="imgRetry(this)"></div>
+      </div></a><a class="item show reveal in" style="transition-delay: 140ms;" href="../en/cakes/cinnamon-roll-bundt-cake.html" data-cat="navidad">
+      <div class="ph"><span class="ltd-tag">Limited edition</span><img src="https://iconicpasteleria.com/fotos/cinnamon1.webp" alt="Cinnamon Roll Bundt Cake" loading="lazy" decoding="async" onerror="imgRetry(this)"></div>
       <div class="body">
         <span class="tag">Christmas · Gifts</span>
         <h3>Cinnamon Roll Bundt Cake</h3>
         <p>Cinnamon roll bundt cake with cream cheese frosting, festive sprinkles and a satin bow. Delivery in Barcelona.</p>
         <span class="price">Price on request</span>
         <span class="link">View</span>
-      </div></a><a class="item show reveal in" style="transition-delay: 420ms;" href="../en/cakes/lilac-heart-cake.html" data-cat="cumple">
+      </div></a><a class="item show reveal in" style="transition-delay: 210ms;" href="../en/cakes/lilac-heart-cake.html" data-cat="cumple">
       <div class="ph"><img src="https://iconicpasteleria.com/fotos/romantic-heart-lila.webp" alt="Lilac Heart Cake" loading="lazy" decoding="async" onerror="imgRetry(this)"></div>
       <div class="body">
         <span class="tag">Birthdays · Anniversaries</span>
@@ -294,7 +271,15 @@
         <p>Lilac heart with a cream border, small purple roses, organza bows and a personalised message. Pick your flavour. Delivery in Barcelona.</p>
         <span class="price">From €60 <small style="font-weight:400;opacity:.65;font-size:10.5px">VAT incl.</small></span>
         <span class="link">View</span>
-      </div></a><a class="item show reveal in" style="transition-delay: 420ms;" href="../en/cakes/raspberry-and-cream-cake.html" data-cat="cumple">
+      </div></a><a class="item show reveal in" style="transition-delay: 280ms;" href="../en/cakes/wine-coloured-petal-cake.html" data-cat="cumple boda">
+      <div class="ph"><img src="https://iconicpasteleria.com/fotos/petalos-vino.webp" alt="Wine-coloured petal cake" loading="lazy" decoding="async" onerror="imgRetry(this)"></div>
+      <div class="body">
+        <span class="tag">Birthdays · Weddings &amp; events</span>
+        <h3>Wine-coloured petal cake</h3>
+        <p>Edible rice-paper petals in a wine tone, with an intense three-dimensional effect. A museum piece for your table.</p>
+        <span class="sig-label">Signature</span><span class="price">From €80 <small style="font-weight:400;opacity:.65;font-size:10.5px">VAT incl.</small></span>
+        <span class="link">View</span>
+      </div></a><a class="item show reveal in" style="transition-delay: 350ms;" href="../en/cakes/raspberry-and-cream-cake.html" data-cat="cumple">
       <div class="ph"><img src="https://iconicpasteleria.com/fotos/vintage-fresa.webp" alt="Raspberry and Cream Cake" loading="lazy" decoding="async" onerror="imgRetry(this)"></div>
       <div class="body">
         <span class="tag">Birthdays</span>
@@ -341,6 +326,14 @@
         <h3>Painted Flowers Cake</h3>
         <p>Hand-piped flowers and leaves in cream on a white background, with a golden message. Pick your flavour. Delivery in Barcelona.</p>
         <span class="price">From €60 <small style="font-weight:400;opacity:.65;font-size:10.5px">VAT incl.</small></span>
+        <span class="link">View</span>
+      </div></a><a class="item show reveal in" style="transition-delay: 420ms;" href="../en/cakes/petal-cake.html" data-cat="cumple boda">
+      <div class="ph"><span class="hot-tag"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>Best seller</span><img src="https://iconicpasteleria.com/fotos/petalorosa.jpg" alt="Petal cake" loading="lazy" decoding="async" onerror="imgRetry(this)"></div>
+      <div class="body">
+        <span class="tag">Birthdays · Weddings &amp; events</span>
+        <h3>Petal cake</h3>
+        <p>A three-dimensional effect in edible rice paper, soft and enveloping. A museum piece for your table.</p>
+        <span class="sig-label">Signature</span><span class="price">From €80 <small style="font-weight:400;opacity:.65;font-size:10.5px">VAT incl.</small></span>
         <span class="link">View</span>
       </div></a><a class="item show reveal in" style="transition-delay: 420ms;" href="../en/cakes/autumn-heart-cake.html" data-cat="cumple">
       <div class="ph"><img src="https://iconicpasteleria.com/fotos/corazon-otono.webp" alt="Autumn Heart Cake" loading="lazy" decoding="async" onerror="imgRetry(this)"></div>
@@ -389,6 +382,14 @@
         <h3>Edible Calendar Cake</h3>
         <p>Vintage calendar with edible printing, raised hearts and the date you want to highlight.</p>
         <span class="price">From €60 <small style="font-weight:400;opacity:.65;font-size:10.5px">VAT incl.</small></span>
+        <span class="link">View</span>
+      </div></a><a class="item show reveal in" style="transition-delay: 420ms;" href="../en/cakes/petal-cake-with-gems.html" data-cat="cumple boda">
+      <div class="ph"><span class="hot-tag"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>Best seller</span><img src="https://iconicpasteleria.com/fotos/gemcake-blanca-1.webp" alt="Petal cake with gems" loading="lazy" decoding="async" onerror="imgRetry(this)"></div>
+      <div class="body">
+        <span class="tag">Birthdays · Weddings &amp; events</span>
+        <h3>Petal cake with gems</h3>
+        <p>Edible rice-paper petals with a three-dimensional effect, paired with sparkling gems.</p>
+        <span class="sig-label">Signature</span><span class="price">From €80 <small style="font-weight:400;opacity:.65;font-size:10.5px">VAT incl.</small></span>
         <span class="link">View</span>
       </div></a><a class="item show reveal in" style="transition-delay: 420ms;" href="../en/cakes/burgundy-heart.html" data-cat="cumple boda">
       <div class="ph"><img src="https://iconicpasteleria.com/fotos/corazon_burgundy.webp" alt="Burgundy Heart" loading="lazy" decoding="async" onerror="imgRetry(this)"></div>
@@ -533,6 +534,7 @@
 [
   {
       "id": "arbol-navidad",
+      "limited": true,
       "cat": ["navidad"],
       "tag": "Navidad · Eventos",
       "name": "Tarta Árbol de Navidad",
@@ -542,6 +544,7 @@
     },
     {
       "id": "vintage-navidad",
+      "limited": true,
       "cat": ["navidad"],
       "tag": "Navidad · Eventos",
       "name": "Tarta Vintage de Navidad",
@@ -551,6 +554,7 @@
     },
     {
       "id": "cinnamon-bundt",
+      "limited": true,
       "cat": ["navidad"],
       "tag": "Navidad · Regalos",
       "name": "Bundt Cake Cinnamon Roll",
@@ -960,7 +964,17 @@
   const ROOT = document.documentElement.getAttribute('data-root') || '';
   const SLANG = document.documentElement.getAttribute('data-static-lang') || 'es';
   const pUrl = id => ROOT + (window.IconicUrls ? IconicUrls.product(id, SLANG) : 'iconic-producto.html?id=' + id);
-  items.sort((a,b)=>(b.sig?1:0)-(a.sig?1:0)); // Signature primero (orden estable)
+  /* Orden: ediciones limitadas primero; los pétalos se reparten (no van juntos) */
+  (function(){
+    const isP = it => /^petalos/.test(it.id);
+    const lim = items.filter(it => it.limited);
+    const rest = items.filter(it => !it.limited && !isP(it));
+    const pet = items.filter(isP);
+    const out = lim.concat(rest);
+    [4, 11, 18].forEach(function(pos, k){ if(pet[k]) out.splice(Math.min(pos, out.length), 0, pet[k]); });
+    pet.slice(3).forEach(function(p){ out.push(p); });
+    items.length = 0; out.forEach(function(it){ items.push(it); });
+  })();
   items.forEach((it,idx)=>{
     const el = document.createElement('a');
     el.className = 'item show reveal';
@@ -968,7 +982,7 @@
     el.href = pUrl(it.id);
     el.dataset.cat = Array.isArray(it.cat) ? it.cat.join(' ') : it.cat;
     el.innerHTML = `
-      <div class="ph">${it.hot ? '<span class="hot-tag"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>Top ventas</span>' : ''}${it.readyTime ? `<span class="ready-tag">Lista en ${it.readyTime}</span>` : ''}${it.img ? `<img src="${it.img}" alt="${it.name}" loading="lazy" decoding="async" onerror="imgRetry(this)">` : ''}</div>
+      <div class="ph">${it.limited ? '<span class="ltd-tag">Edición limitada</span>' : ''}${it.hot && !it.limited ? '<span class="hot-tag"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>Top ventas</span>' : ''}${it.readyTime ? `<span class="ready-tag">Lista en ${it.readyTime}</span>` : ''}${it.img ? `<img src="${it.img}" alt="${it.name}" loading="lazy" decoding="async" onerror="imgRetry(this)">` : ''}</div>
       <div class="body">
         <span class="tag">${it.tag}</span>
         <h3>${it.name}</h3>
