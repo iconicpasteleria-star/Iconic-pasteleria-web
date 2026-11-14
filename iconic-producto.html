@@ -687,6 +687,112 @@
 <!-- PLACEHOLDER: reemplazar fotos, descripciones y precios reales de cada tarta acá abajo -->
 <script id="product-data" type="application/json">
 {
+  "arbol-navidad": {
+    "name": "Tarta Árbol de Navidad",
+    "seoTitle": "Tarta Árbol de Navidad en Barcelona | Chocolate y Praliné de Avellanas",
+    "tag": "Navidad · Eventos · Barcelona",
+    "desc": "Un árbol de Navidad comestible en buttercream granate, con perlas doradas y un lazo de raso. Por dentro, capas de bizcocho de chocolate con crema y praliné de avellanas. El centro de mesa de Nochebuena y Navidad que se corta y se come.",
+    "images": [
+      "https://iconicpasteleria.com/fotos/arbol1.webp",
+      "https://iconicpasteleria.com/fotos/arbol2.webp"
+    ],
+    "sizes": [
+      {
+        "label": "Mediano (8 a 10 personas)",
+        "price": 65,
+        "stripe": "STRIPE_LINK_AQUI"
+      },
+      {
+        "label": "Grande (15 a 18 personas)",
+        "price": 85,
+        "stripe": "STRIPE_LINK_AQUI"
+      }
+    ],
+    "flavors": [
+      {
+        "name": "Chocolate y praliné de avellanas",
+        "desc": "Bizcocho de chocolate con crema y praliné de avellanas."
+      }
+    ],
+    "features": [
+      "**Sabor:** Chocolate y praliné de avellanas. Sujeto a revisión si prefieres otro sabor: escríbenos por WhatsApp.",
+      "**Dos tamaños:** Para 8 a 10 personas o para 15 a 18 personas.",
+      "**Ideal para:** Nochebuena, Navidad, cenas de empresa y regalos de Navidad.",
+      "**Entrega a domicilio:** Te la llevamos con la máxima atención a cualquier punto de Barcelona.",
+      "Recogida disponible en Poble-sec, 08004."
+    ]
+  },
+  "cinnamon-bundt": {
+    "name": "Bundt Cake Cinnamon Roll",
+    "noTarta": true,
+    "consultPrice": true,
+    "seoTitle": "Bundt Cake de Cinnamon Roll en Barcelona | Frosting de Queso Crema",
+    "tag": "Navidad · Regalos · Barcelona",
+    "desc": "Bundt cake esponjoso con remolino de canela al estilo cinnamon roll, cubierto con frosting de queso crema, sprinkles navideños y un lazo de raso. Un clásico de Navidad para compartir en la mesa o regalar.",
+    "images": [
+      "https://iconicpasteleria.com/fotos/cinnamon1.webp",
+      "https://iconicpasteleria.com/fotos/cinnamon2.webp"
+    ],
+    "sizes": [
+      {
+        "label": "Tamaño único",
+        "price": 0,
+        "stripe": "STRIPE_LINK_AQUI"
+      }
+    ],
+    "flavors": [
+      {
+        "name": "Cinnamon roll con frosting de queso crema",
+        "desc": "Bizcocho con remolino de canela y frosting de queso crema."
+      }
+    ],
+    "features": [
+      "**Sabor:** Cinnamon roll con frosting de queso crema.",
+      "**Precio:** Por confirmar. Escríbenos por WhatsApp para hacer tu pedido.",
+      "**Ideal para:** Regalos de Navidad, brunch navideño y mesas dulces.",
+      "**Entrega a domicilio:** Te la llevamos con la máxima atención a cualquier punto de Barcelona.",
+      "Recogida disponible en Poble-sec, 08004."
+    ]
+  },
+  "vintage-navidad": {
+    "name": "Tarta Vintage de Navidad",
+    "seoTitle": "Tarta Vintage de Navidad en Barcelona | Manzana y Canela",
+    "tag": "Navidad · Eventos · Barcelona",
+    "desc": "Tarta vintage navideña en blanco, rojo burdeos y verde, con volantes de crema, rositas y un mensaje navideño escrito a mano. Por dentro, manzana y canela. Hecha a mano en Barcelona para la mesa de Navidad.",
+    "images": [
+      "https://iconicpasteleria.com/fotos/vintage-christmas1.webp",
+      "https://iconicpasteleria.com/fotos/vintage-christmas2.webp"
+    ],
+    "sizes": [
+      {
+        "label": "Petite · 15x7cm (5 a 7 personas)",
+        "price": 60,
+        "stripe": "https://buy.stripe.com/aFaaEQ0dfanS5A42xb9AA0K"
+      },
+      {
+        "label": "Clásica · 15x15cm (10 a 14 personas)",
+        "price": 77,
+        "stripe": "https://buy.stripe.com/bJeaEQ4tv9jO4w0efT9AA0L"
+      },
+      {
+        "label": "Grande · 20 x 16cm (20-25 personas)",
+        "price": 99,
+        "stripe": "https://buy.stripe.com/3cIdR28JL67CbYsgo19AA0M"
+      }
+    ],
+    "flavors": [
+      {
+        "name": "Manzana y canela",
+        "desc": "Bizcocho relleno de crema, manzana y canela."
+      }
+    ],
+    "features": [
+      "**Sabor:** Manzana y canela.",
+      "**Ideal para:** Nochebuena, Navidad, cenas familiares y regalos de Navidad.",
+      "**Entrega a domicilio:** Te la llevamos con la máxima atención a cualquier punto de Barcelona.",
+      "Recogida disponible en Poble-sec, 08004."
+    ]
+  },
   "corazon-lila": {
     "name": "Tarta Corazón Lila",
     "seoTitle": "Tarta Corazón Lila Personalizada en Barcelona | Lazos y Rosas en Crema",
@@ -1944,6 +2050,20 @@
   const pUrl = id => ROOT + (window.IconicUrls ? IconicUrls.product(id, SLANG) : 'iconic-producto.html?id=' + id);
   const product = PRODUCTS[pid];
 
+  if(product.flavors && product.flavors.length){
+    const fg = document.getElementById('flavors');
+    fg.innerHTML = '';
+    product.flavors.forEach(function(f){
+      const b = document.createElement('button');
+      b.className = 'flavor-item'; b.type = 'button';
+      b.dataset.flavor = f.name; b.dataset.desc = f.desc || '';
+      const th = document.createElement('span'); th.className = 'thumb';
+      const im = document.createElement('img'); im.src = f.img || product.images[product.images.length > 1 ? 1 : 0]; im.alt = ''; im.decoding = 'async';
+      th.appendChild(im); b.appendChild(th);
+      const cp = document.createElement('span'); cp.className = 'caption'; cp.textContent = f.name; b.appendChild(cp);
+      fg.appendChild(b);
+    });
+  }
   if(product.excludeFlavors && product.excludeFlavors.length){
     document.querySelectorAll('.flavor-item').forEach(btn=>{
       if(product.excludeFlavors.includes(btn.dataset.flavor)) btn.remove();
@@ -1960,7 +2080,8 @@
       ['calendario-nueva','calendario-negra','calendario'],
       ['gemas-brillantes','gem-stone'],
       ['vintage-book-cake','book-lover'],
-      ['tematica','birthday','party-cake','barsa','jardin-silvestre']
+      ['tematica','birthday','party-cake','barsa','jardin-silvestre'],
+      ['arbol-navidad','vintage-navidad','cinnamon-bundt']
     ];
     const g = GROUPS.find(function(x){ return x.indexOf(pid) !== -1; });
     const field = document.getElementById('designs-field');
@@ -2031,6 +2152,16 @@
   document.getElementById('og-image').setAttribute('content', product.images[0]);
 
   const minPrice = Math.min(...product.sizes.map(s => s.price));
+  const ldOffers = product.consultPrice ? undefined : {
+      "@type": "AggregateOffer",
+      "priceCurrency": "EUR",
+      "lowPrice": minPrice,
+      "highPrice": Math.max(...product.sizes.map(s => s.price)),
+      "offerCount": product.sizes.length,
+      "availability": "https://schema.org/InStock",
+      "areaServed": { "@type": "City", "name": "Barcelona" },
+      "url": pageUrl
+    };
   const productLd = document.createElement('script');
   productLd.type = 'application/ld+json';
   productLd.textContent = JSON.stringify({
@@ -2040,16 +2171,7 @@
     "description": product.desc,
     "image": product.images,
     "brand": { "@type": "Brand", "name": "Iconic Pastelería" },
-    "offers": {
-      "@type": "AggregateOffer",
-      "priceCurrency": "EUR",
-      "lowPrice": minPrice,
-      "highPrice": Math.max(...product.sizes.map(s => s.price)),
-      "offerCount": product.sizes.length,
-      "availability": "https://schema.org/InStock",
-      "areaServed": { "@type": "City", "name": "Barcelona" },
-      "url": pageUrl
-    }
+    "offers": ldOffers
   });
   document.head.appendChild(productLd);
 
@@ -2161,6 +2283,13 @@
 
   function updatePrice(){
     const total = (sizePrice * qty) + (entrega === 'delivery' ? deliveryFee : 0);
+    if(product.consultPrice){
+      document.getElementById('price').textContent = 'Precio a consultar';
+      document.getElementById('sb-price').textContent = 'Precio a consultar';
+      document.getElementById('cta-price').textContent = 'Precio a consultar';
+      document.querySelectorAll('.iva').forEach(function(e){ e.style.display = 'none'; });
+      return;
+    }
     document.getElementById('price').textContent = total + '€';
     document.getElementById('sb-price').textContent = total + '€';
     document.getElementById('cta-price').textContent = total + ',00 EUR';
@@ -2380,6 +2509,10 @@
 
   if(sizeStripe === 'STRIPE_LINK_AQUI'){
     document.getElementById('stripe-link').style.display = 'none';
+  }
+
+  if(product.flavors && product.flavors.length === 1){
+    setTimeout(function(){ const fb = document.querySelector('.flavor-item'); if(fb) fb.click(); }, 0);
   }
 
   /* Dos pasos: 1) tarta (diseño, tamaño, sabor, color)  2) entrega y pago */
