@@ -128,8 +128,12 @@
   .hero-shop{position:absolute;right:0;bottom:0;padding:16px 16px;z-index:2;animation:fadeUp 1s cubic-bezier(.16,1,.3,1) .5s both}
   @media(min-width:480px){.hero-shop{padding:22px 24px}}
   @media(min-width:640px){.hero-shop{padding:28px 32px}}
-  .hero-shop a{font-family:'Space Mono',monospace;font-weight:700;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#fff;border-bottom:1px solid #fff;padding-bottom:3px;white-space:nowrap}
-  @media(min-width:480px){.hero-shop a{font-size:12px;letter-spacing:1.5px}}
+  .hero-shop a{display:inline-flex;align-items:center;gap:10px;font-family:'Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:#111;background:#fff;padding:13px 18px 12px;white-space:nowrap;box-shadow:0 6px 24px rgba(0,0,0,.35);transition:background .25s,color .25s,transform .25s}
+  .hero-shop a::after{content:"\2192";transition:transform .25s}
+  .hero-shop a:hover{background:#111;color:#fff;transform:translateY(-2px)}
+  .hero-shop a:hover::after{transform:translateX(4px)}
+  @media(min-width:480px){.hero-shop a{font-size:12.5px;letter-spacing:1.6px;padding:16px 26px 15px}}
+  @media(min-width:1024px){.hero-shop a{font-size:13.5px;padding:18px 32px 17px}}
   .video-slot{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;z-index:1;background:rgba(17,17,17,0.28)}
   .video-slot .play{width:60px;height:60px;border-radius:50%;border:1.5px solid #fff;display:flex;align-items:center;justify-content:center}
   .video-slot .play svg{width:18px;height:18px;fill:#fff;margin-left:3px}
@@ -219,6 +223,22 @@
     .xmas-head p{max-width:none}
   }
   @media(prefers-reduced-motion:reduce){.xmas-track{animation:none}.xmas-card img{transition:none}}
+  /* ---------- Colección: parrilla de fotos ---------- */
+  .cgrid{padding-top:8px;padding-bottom:24px}
+  .cg-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 12px}
+  @media(min-width:640px){.cg-grid{grid-template-columns:repeat(3,1fr);gap:32px 18px}}
+  @media(min-width:1000px){.cg-grid{grid-template-columns:repeat(4,1fr);gap:40px 22px}}
+  .cg-card{display:block;color:var(--ink)}
+  .cg-ph{position:relative;aspect-ratio:4/5;overflow:hidden;background:#F3EFE8}
+  .cg-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.16,1,.3,1)}
+  .cg-card:hover .cg-ph img{transform:scale(1.05)}
+  .cg-card h3{font-family:'Space Mono',monospace;font-weight:700;font-size:12.5px;letter-spacing:.6px;text-transform:uppercase;line-height:1.3;margin-top:12px}
+  .cg-price{font-size:11.5px;opacity:.65;margin-top:4px}
+  .cg-price small{font-size:10px;opacity:.8}
+  .cg-more{text-align:center;margin-top:44px}
+  .cg-more a{display:inline-block;font-family:'Space Mono',monospace;font-weight:700;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink);border:1px solid var(--ink);padding:16px 30px;transition:background .25s,color .25s}
+  .cg-more a::after{content:" \2192"}
+  .cg-more a:hover{background:var(--ink);color:#fff}
   .cat-head h2{font-family:'Space Mono',monospace;font-weight:700;font-size:clamp(26px,3.8vw,38px);line-height:1.15;letter-spacing:-0.4px;margin-bottom:14px}
   .cat-head p{font-size:14.5px;line-height:1.6;opacity:0.65}
   .cat-list{border-top:1px solid var(--ink)}
@@ -534,62 +554,55 @@
   <div class="hero-shop"><a href="../en/catalogue.html">View collection</a></div>
 </section>
 
-<section class="catalog wrap">
+<section class="cgrid wrap">
   <div class="cat-head reveal in">
     <div class="eyebrow">The collection</div>
     <h2>Pieces to look at. And to eat.</h2>
-    <p>Four designs everyone's after this season. You choose the flavour.</p>
+    <p>A selection of our designs. You choose the flavour.</p>
   </div>
-  <div class="cat-list">
-    <a class="cat-row reveal in" style="transition-delay:0ms" href="../en/cakes/petal-cake.html">
-      <div class="cat-ph"><img src="https://iconicpasteleria.com/fotos/petalorosa.jpg" alt="Petal cake"></div>
-      <div class="cat-info">
-        <div class="cat-num mono">01</div>
-        <h3>Petal cake</h3>
-        <p>Edible rice-paper petals with a 3D effect. More sculpture than cake.</p>
-      </div>
-      <div class="cat-right">
-        <div class="cat-price mono">From €80 <small>VAT incl.</small></div>
-        <div class="cat-add">View piece</div>
-      </div>
+  <div class="cg-grid">
+    <a class="cg-card reveal in" style="transition-delay:0ms" href="../en/cakes/petal-cake.html">
+      <div class="cg-ph"><img src="https://iconicpasteleria.com/fotos/petalorosa.jpg" alt="Petal cake" loading="lazy" decoding="async"></div>
+      <h3>Petal cake</h3>
+      <div class="cg-price mono">From €80 <small>VAT incl.</small></div>
     </a>
-    <a class="cat-row reveal in" style="transition-delay:80ms" href="../en/cakes/burgundy-heart.html">
-      <div class="cat-ph"><img src="https://iconicpasteleria.com/fotos/corazon_burgundy.webp" alt="Burgundy Heart"></div>
-      <div class="cat-info">
-        <div class="cat-num mono">02</div>
-        <h3>Burgundy Heart</h3>
-        <p>Burgundy heart, satin bows and pearls. Vintage, romantic and a little bit dramatic.</p>
-      </div>
-      <div class="cat-right">
-        <div class="cat-price mono">From €60 <small>VAT incl.</small></div>
-        <div class="cat-add">View piece</div>
-      </div>
+    <a class="cg-card reveal in" style="transition-delay:70ms" href="../en/cakes/burgundy-heart.html">
+      <div class="cg-ph"><img src="https://iconicpasteleria.com/fotos/corazon_burgundy.webp" alt="Burgundy Heart" loading="lazy" decoding="async"></div>
+      <h3>Burgundy Heart</h3>
+      <div class="cg-price mono">From €60 <small>VAT incl.</small></div>
     </a>
-    <a class="cat-row reveal in" style="transition-delay:160ms" href="../en/cakes/calendar-cake.html">
-      <div class="cat-ph"><img src="https://iconicpasteleria.com/fotos/tarta_calendario_nueva.webp" alt="Calendar cake"></div>
-      <div class="cat-info">
-        <div class="cat-num mono">03</div>
-        <h3>Calendar cake</h3>
-        <p>Red bows and an edible calendar with the date you want to highlight. The save the date that actually gets read.</p>
-      </div>
-      <div class="cat-right">
-        <div class="cat-price mono">From €60 <small>VAT incl.</small></div>
-        <div class="cat-add">View piece</div>
-      </div>
+    <a class="cg-card reveal in" style="transition-delay:140ms" href="../en/cakes/calendar-cake.html">
+      <div class="cg-ph"><img src="https://iconicpasteleria.com/fotos/tarta_calendario_nueva.webp" alt="Calendar cake" loading="lazy" decoding="async"></div>
+      <h3>Calendar cake</h3>
+      <div class="cg-price mono">From €60 <small>VAT incl.</small></div>
     </a>
-    <a class="cat-row reveal in" style="transition-delay:240ms" href="../en/cakes/petite-vintage-cake-burgundy-red.html">
-      <div class="cat-ph"><img src="https://iconicpasteleria.com/fotos/petite-vintage-portada.webp" alt="Petite Vintage Cake"></div>
-      <div class="cat-info">
-        <div class="cat-num mono">04</div>
-        <h3>Petite Vintage Cake</h3>
-        <p>Petite size in burgundy red. Serves 5–7, or one very determined person.</p>
-      </div>
-      <div class="cat-right">
-        <div class="cat-price mono">From €60 <small>VAT incl.</small></div>
-        <div class="cat-add">View piece</div>
-      </div>
+    <a class="cg-card reveal in" style="transition-delay:210ms" href="../en/cakes/petite-vintage-cake-burgundy-red.html">
+      <div class="cg-ph"><img src="https://iconicpasteleria.com/fotos/petite-vintage-portada.webp" alt="Petite Vintage Cake" loading="lazy" decoding="async"></div>
+      <h3>Petite Vintage Cake</h3>
+      <div class="cg-price mono">From €60 <small>VAT incl.</small></div>
+    </a>
+    <a class="cg-card reveal in" style="transition-delay:0ms" href="../en/cakes/lilac-heart-cake.html">
+      <div class="cg-ph"><img src="https://iconicpasteleria.com/fotos/romantic-heart-lila.webp" alt="Lilac Heart Cake" loading="lazy" decoding="async"></div>
+      <h3>Lilac Heart Cake</h3>
+      <div class="cg-price mono">From €60 <small>VAT incl.</small></div>
+    </a>
+    <a class="cg-card reveal in" style="transition-delay:70ms" href="../en/cakes/raspberry-and-cream-cake.html">
+      <div class="cg-ph"><img src="https://iconicpasteleria.com/fotos/vintage-fresa.webp" alt="Raspberry and Cream Cake" loading="lazy" decoding="async"></div>
+      <h3>Raspberry and Cream Cake</h3>
+      <div class="cg-price mono">From €60 <small>VAT incl.</small></div>
+    </a>
+    <a class="cg-card reveal in" style="transition-delay:140ms" href="../en/cakes/red-heart-cake.html">
+      <div class="cg-ph"><img src="https://iconicpasteleria.com/fotos/tarta-corazon-rojo.webp" alt="Red Heart Cake" loading="lazy" decoding="async"></div>
+      <h3>Red Heart Cake</h3>
+      <div class="cg-price mono">From €60 <small>VAT incl.</small></div>
+    </a>
+    <a class="cg-card reveal in" style="transition-delay:210ms" href="../en/cakes/gem-cake.html">
+      <div class="cg-ph"><img src="https://iconicpasteleria.com/fotos/gemas1.webp" alt="Gem cake" loading="lazy" decoding="async"></div>
+      <h3>Gem cake</h3>
+      <div class="cg-price mono">From €60 <small>VAT incl.</small></div>
     </a>
   </div>
+  <div class="cg-more reveal in"><a href="../en/catalogue.html">See the full collection</a></div>
 </section>
 
 <section class="story">

@@ -128,8 +128,12 @@
   .hero-shop{position:absolute;right:0;bottom:0;padding:16px 16px;z-index:2;animation:fadeUp 1s cubic-bezier(.16,1,.3,1) .5s both}
   @media(min-width:480px){.hero-shop{padding:22px 24px}}
   @media(min-width:640px){.hero-shop{padding:28px 32px}}
-  .hero-shop a{font-family:'Space Mono',monospace;font-weight:700;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#fff;border-bottom:1px solid #fff;padding-bottom:3px;white-space:nowrap}
-  @media(min-width:480px){.hero-shop a{font-size:12px;letter-spacing:1.5px}}
+  .hero-shop a{display:inline-flex;align-items:center;gap:10px;font-family:'Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:#111;background:#fff;padding:13px 18px 12px;white-space:nowrap;box-shadow:0 6px 24px rgba(0,0,0,.35);transition:background .25s,color .25s,transform .25s}
+  .hero-shop a::after{content:"\2192";transition:transform .25s}
+  .hero-shop a:hover{background:#111;color:#fff;transform:translateY(-2px)}
+  .hero-shop a:hover::after{transform:translateX(4px)}
+  @media(min-width:480px){.hero-shop a{font-size:12.5px;letter-spacing:1.6px;padding:16px 26px 15px}}
+  @media(min-width:1024px){.hero-shop a{font-size:13.5px;padding:18px 32px 17px}}
   .video-slot{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;z-index:1;background:rgba(17,17,17,0.28)}
   .video-slot .play{width:60px;height:60px;border-radius:50%;border:1.5px solid #fff;display:flex;align-items:center;justify-content:center}
   .video-slot .play svg{width:18px;height:18px;fill:#fff;margin-left:3px}
@@ -219,6 +223,22 @@
     .xmas-head p{max-width:none}
   }
   @media(prefers-reduced-motion:reduce){.xmas-track{animation:none}.xmas-card img{transition:none}}
+  /* ---------- Colección: parrilla de fotos ---------- */
+  .cgrid{padding-top:8px;padding-bottom:24px}
+  .cg-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 12px}
+  @media(min-width:640px){.cg-grid{grid-template-columns:repeat(3,1fr);gap:32px 18px}}
+  @media(min-width:1000px){.cg-grid{grid-template-columns:repeat(4,1fr);gap:40px 22px}}
+  .cg-card{display:block;color:var(--ink)}
+  .cg-ph{position:relative;aspect-ratio:4/5;overflow:hidden;background:#F3EFE8}
+  .cg-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.16,1,.3,1)}
+  .cg-card:hover .cg-ph img{transform:scale(1.05)}
+  .cg-card h3{font-family:'Space Mono',monospace;font-weight:700;font-size:12.5px;letter-spacing:.6px;text-transform:uppercase;line-height:1.3;margin-top:12px}
+  .cg-price{font-size:11.5px;opacity:.65;margin-top:4px}
+  .cg-price small{font-size:10px;opacity:.8}
+  .cg-more{text-align:center;margin-top:44px}
+  .cg-more a{display:inline-block;font-family:'Space Mono',monospace;font-weight:700;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink);border:1px solid var(--ink);padding:16px 30px;transition:background .25s,color .25s}
+  .cg-more a::after{content:" \2192"}
+  .cg-more a:hover{background:var(--ink);color:#fff}
   .cat-head h2{font-family:'Space Mono',monospace;font-weight:700;font-size:clamp(26px,3.8vw,38px);line-height:1.15;letter-spacing:-0.4px;margin-bottom:14px}
   .cat-head p{font-size:14.5px;line-height:1.6;opacity:0.65}
   .cat-list{border-top:1px solid var(--ink)}
@@ -534,62 +554,55 @@
   <div class="hero-shop"><a href="../ca/cataleg.html">Veure la col·lecció</a></div>
 </section>
 
-<section class="catalog wrap">
+<section class="cgrid wrap">
   <div class="cat-head reveal in">
     <div class="eyebrow">La col·lecció</div>
     <h2>Peces per mirar. I per menjar.</h2>
-    <p>Quatre dissenys que s'estilen aquesta temporada. El sabor el tries tu.</p>
+    <p>Una selecció dels nostres dissenys. El sabor el tries tu.</p>
   </div>
-  <div class="cat-list">
-    <a class="cat-row reveal in" style="transition-delay:0ms" href="../ca/pastissos/pastis-de-petals.html">
-      <div class="cat-ph"><img src="https://iconicpasteleria.com/fotos/petalorosa.jpg" alt="Pastís de pètals"></div>
-      <div class="cat-info">
-        <div class="cat-num mono">01</div>
-        <h3>Pastís de pètals</h3>
-        <p>Pètals de paper d'arròs comestible amb efecte 3D. Més escultura que pastís.</p>
-      </div>
-      <div class="cat-right">
-        <div class="cat-price mono">Des de 80€ <small>IVA inclòs</small></div>
-        <div class="cat-add">Veure la peça</div>
-      </div>
+  <div class="cg-grid">
+    <a class="cg-card reveal in" style="transition-delay:0ms" href="../ca/pastissos/pastis-de-petals.html">
+      <div class="cg-ph"><img src="https://iconicpasteleria.com/fotos/petalorosa.jpg" alt="Pastís de pètals" loading="lazy" decoding="async"></div>
+      <h3>Pastís de pètals</h3>
+      <div class="cg-price mono">Des de 80€ <small>IVA inclòs</small></div>
     </a>
-    <a class="cat-row reveal in" style="transition-delay:80ms" href="../ca/pastissos/burgundy-heart.html">
-      <div class="cat-ph"><img src="https://iconicpasteleria.com/fotos/corazon_burgundy.webp" alt="Burgundy Heart"></div>
-      <div class="cat-info">
-        <div class="cat-num mono">02</div>
-        <h3>Burgundy Heart</h3>
-        <p>Cor granat, llaços de setí i perles. Vintage, romàntic i una mica dramàtic.</p>
-      </div>
-      <div class="cat-right">
-        <div class="cat-price mono">Des de 60€ <small>IVA inclòs</small></div>
-        <div class="cat-add">Veure la peça</div>
-      </div>
+    <a class="cg-card reveal in" style="transition-delay:70ms" href="../ca/pastissos/burgundy-heart.html">
+      <div class="cg-ph"><img src="https://iconicpasteleria.com/fotos/corazon_burgundy.webp" alt="Burgundy Heart" loading="lazy" decoding="async"></div>
+      <h3>Burgundy Heart</h3>
+      <div class="cg-price mono">Des de 60€ <small>IVA inclòs</small></div>
     </a>
-    <a class="cat-row reveal in" style="transition-delay:160ms" href="../ca/pastissos/pastis-calendari.html">
-      <div class="cat-ph"><img src="https://iconicpasteleria.com/fotos/tarta_calendario_nueva.webp" alt="Pastís calendari"></div>
-      <div class="cat-info">
-        <div class="cat-num mono">03</div>
-        <h3>Pastís calendari</h3>
-        <p>Llaços vermells i un calendari comestible amb la data que vulguis destacar. El save the date que sí que es llegeix.</p>
-      </div>
-      <div class="cat-right">
-        <div class="cat-price mono">Des de 60€ <small>IVA inclòs</small></div>
-        <div class="cat-add">Veure la peça</div>
-      </div>
+    <a class="cg-card reveal in" style="transition-delay:140ms" href="../ca/pastissos/pastis-calendari.html">
+      <div class="cg-ph"><img src="https://iconicpasteleria.com/fotos/tarta_calendario_nueva.webp" alt="Pastís calendari" loading="lazy" decoding="async"></div>
+      <h3>Pastís calendari</h3>
+      <div class="cg-price mono">Des de 60€ <small>IVA inclòs</small></div>
     </a>
-    <a class="cat-row reveal in" style="transition-delay:240ms" href="../ca/pastissos/pastis-petite-vintage-vermell-burdeus.html">
-      <div class="cat-ph"><img src="https://iconicpasteleria.com/fotos/petite-vintage-portada.webp" alt="Pastís Petite Vintage"></div>
-      <div class="cat-info">
-        <div class="cat-num mono">04</div>
-        <h3>Pastís Petite Vintage</h3>
-        <p>Format Petite en vermell burdeus. Per a 5-7 persones, o per a una de molt decidida.</p>
-      </div>
-      <div class="cat-right">
-        <div class="cat-price mono">Des de 60€ <small>IVA inclòs</small></div>
-        <div class="cat-add">Veure la peça</div>
-      </div>
+    <a class="cg-card reveal in" style="transition-delay:210ms" href="../ca/pastissos/pastis-petite-vintage-vermell-burdeus.html">
+      <div class="cg-ph"><img src="https://iconicpasteleria.com/fotos/petite-vintage-portada.webp" alt="Pastís Petite Vintage" loading="lazy" decoding="async"></div>
+      <h3>Pastís Petite Vintage</h3>
+      <div class="cg-price mono">Des de 60€ <small>IVA inclòs</small></div>
+    </a>
+    <a class="cg-card reveal in" style="transition-delay:0ms" href="../ca/pastissos/pastis-cor-lila.html">
+      <div class="cg-ph"><img src="https://iconicpasteleria.com/fotos/romantic-heart-lila.webp" alt="Pastís Cor Lila" loading="lazy" decoding="async"></div>
+      <h3>Pastís Cor Lila</h3>
+      <div class="cg-price mono">Des de 60€ <small>IVA inclòs</small></div>
+    </a>
+    <a class="cg-card reveal in" style="transition-delay:70ms" href="../ca/pastissos/pastis-de-gerds-i-crema.html">
+      <div class="cg-ph"><img src="https://iconicpasteleria.com/fotos/vintage-fresa.webp" alt="Pastís de Gerds i Crema" loading="lazy" decoding="async"></div>
+      <h3>Pastís de Gerds i Crema</h3>
+      <div class="cg-price mono">Des de 60€ <small>IVA inclòs</small></div>
+    </a>
+    <a class="cg-card reveal in" style="transition-delay:140ms" href="../ca/pastissos/pastis-cor-vermell.html">
+      <div class="cg-ph"><img src="https://iconicpasteleria.com/fotos/tarta-corazon-rojo.webp" alt="Pastís Cor Vermell" loading="lazy" decoding="async"></div>
+      <h3>Pastís Cor Vermell</h3>
+      <div class="cg-price mono">Des de 60€ <small>IVA inclòs</small></div>
+    </a>
+    <a class="cg-card reveal in" style="transition-delay:210ms" href="../ca/pastissos/pastis-de-gemmes.html">
+      <div class="cg-ph"><img src="https://iconicpasteleria.com/fotos/gemas1.webp" alt="Pastís de gemmes" loading="lazy" decoding="async"></div>
+      <h3>Pastís de gemmes</h3>
+      <div class="cg-price mono">Des de 60€ <small>IVA inclòs</small></div>
     </a>
   </div>
+  <div class="cg-more reveal in"><a href="../ca/cataleg.html">Veure tota la col·lecció</a></div>
 </section>
 
 <section class="story">
