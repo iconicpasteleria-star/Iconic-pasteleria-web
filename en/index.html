@@ -138,6 +138,18 @@
   .video-slot .play{width:60px;height:60px;border-radius:50%;border:1.5px solid #fff;display:flex;align-items:center;justify-content:center}
   .video-slot .play svg{width:18px;height:18px;fill:#fff;margin-left:3px}
   .video-slot .note{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:#fff;opacity:0.85;background:rgba(0,0,0,0.35);padding:6px 12px;border-radius:999px}
+
+  /* Hero navidad (fotos) */
+  .hs{position:absolute;inset:0}
+  .hs img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0}
+  .hs-m{display:block}.hs-d{display:none}
+  .hs-m img{animation:hsM 30s ease-in-out infinite both}
+  .hs-d img{animation:hsD 10s ease-in-out infinite both}
+  @keyframes hsM{0%{opacity:0;transform:scale(1)}4%{opacity:1}16.7%{opacity:1}20.8%{opacity:0}100%{opacity:0;transform:scale(1.06)}}
+  @keyframes hsD{0%{opacity:0}6%{opacity:1}50%{opacity:1}56%{opacity:0}100%{opacity:0}}
+  @media(max-width:639px){.hero{aspect-ratio:4/5;max-height:88vh}}
+  @media(min-width:640px){.hs-m{display:none}.hs-d{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}.hs-col{position:relative;overflow:hidden}}
+  @media(prefers-reduced-motion:reduce){.hs img{animation:none}.hs-m img:first-child,.hs-col img:first-child{opacity:1}}
   .hero-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(0,0,0,0.55) 0%,rgba(0,0,0,0.05) 32%,rgba(0,0,0,0.05) 68%,rgba(0,0,0,0.4) 100%)}
 
   /* Flavor banner (2 fotos) */
@@ -375,12 +387,15 @@
   .footer-top{display:grid;grid-template-columns:1fr;gap:40px;padding-bottom:48px}
   @media(min-width:860px){.footer-top{grid-template-columns:1fr 1.6fr}}
   .footer-news p{font-size:13px;opacity:0.7;max-width:320px;margin-bottom:18px;line-height:1.5}
+  .news-links{display:flex;gap:10px;flex-wrap:wrap}
+  .news-links a{font-family:'Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:1px;text-transform:uppercase;background:#fff;color:var(--ink);padding:13px 20px;transition:opacity .25s}
+  .news-links a:hover{opacity:.8}
   .news-form{display:flex;max-width:340px}
   .news-form input{flex:1;background:none;border:1px solid rgba(255,255,255,0.3);color:#fff;padding:13px 14px;font-family:'Roboto',sans-serif;font-size:13px}
   .news-form input::placeholder{color:rgba(255,255,255,0.5)}
   .news-form button{font-family:'Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:1px;text-transform:uppercase;background:#fff;color:var(--ink);border:none;padding:0 20px}
   .footer-links{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
-  @media(min-width:500px){.footer-links{grid-template-columns:repeat(4,1fr)}}
+  @media(min-width:500px){.footer-links{grid-template-columns:repeat(3,1fr)}}
   .footer-links a{display:block;font-family:'Space Mono',monospace;font-weight:700;font-size:10.5px;letter-spacing:0.6px;text-transform:uppercase;opacity:0.75;margin-bottom:14px}
   .footer-links a:hover{opacity:1}
   .footer-bottom{border-top:1px solid rgba(255,255,255,0.15);padding:20px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.5px;text-transform:uppercase;opacity:0.6}
@@ -505,7 +520,6 @@
     <div class="nav-right">
       <button type="button" class="search-btn" id="search-btn" aria-label="Search" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg></button>
       <span data-lang-switch="" class="lang-desk lang-sw" role="group" aria-label="Idioma / Language" data-no-i18n=""></span>
-      <span class="txt">Order (0)</span>
     </div>
   </div>
   <div class="nav-search" id="nav-search">
@@ -545,7 +559,10 @@
 </script>
 
 <section class="hero">
-  <video class="hero-media" src="https://iconicpasteleria.com/fotos/hero-video.mp4" poster="https://iconicpasteleria.com/fotos/hero-video-poster.webp" autoplay="" muted="" loop="" playsinline=""></video>
+  <!-- HERO NAVIDAD: para volver al video, sustituye estos dos .hs por el video original (abajo) -->
+  <div class="hs hs-m"><img src="https://iconicpasteleria.com/fotos/navidad-2-mesa.webp" alt="Mesa de Nochebuena con tarta Iconic" width="1080" height="1350" fetchpriority="high" style="animation-delay:0s"><img src="https://iconicpasteleria.com/fotos/navidad-3-brindis.webp" alt="Brindis de Navidad junto a la tarta árbol" width="1080" height="1350" loading="lazy" style="animation-delay:5s"><img src="https://iconicpasteleria.com/fotos/navidad-4-porcion.webp" alt="Porción de tarta árbol de Navidad" width="1080" height="1350" loading="lazy" style="animation-delay:10s"><img src="https://iconicpasteleria.com/fotos/navidad-5-bundt.webp" alt="Cinnamon bundt cake con lazo navideño" width="1080" height="1350" loading="lazy" style="animation-delay:15s"><img src="https://iconicpasteleria.com/fotos/navidad-1-arbol.webp" alt="Tarta árbol de Navidad de Iconic Pastelería" width="1080" height="1350" loading="lazy" style="animation-delay:20s"><img src="https://iconicpasteleria.com/fotos/navidad-6-velas.webp" alt="Tarta rosa con velas" width="1080" height="1350" loading="lazy" style="animation-delay:25s"></div>
+  <div class="hs hs-d"><div class="hs-col"><img src="https://iconicpasteleria.com/fotos/navidad-1-arbol.webp" alt="Tarta árbol de Navidad de Iconic Pastelería" width="1080" height="1350" fetchpriority="high" style="animation-delay:0s"><img src="https://iconicpasteleria.com/fotos/navidad-4-porcion.webp" alt="Porción de tarta árbol de Navidad" width="1080" height="1350" loading="lazy" style="animation-delay:5s"></div><div class="hs-col"><img src="https://iconicpasteleria.com/fotos/navidad-2-mesa.webp" alt="Mesa de Nochebuena con tarta Iconic" width="1080" height="1350" loading="lazy" style="animation-delay:2s"><img src="https://iconicpasteleria.com/fotos/navidad-5-bundt.webp" alt="Cinnamon bundt cake con lazo navideño" width="1080" height="1350" loading="lazy" style="animation-delay:7s"></div><div class="hs-col"><img src="https://iconicpasteleria.com/fotos/navidad-3-brindis.webp" alt="Brindis de Navidad junto a la tarta árbol" width="1080" height="1350" loading="lazy" style="animation-delay:4s"><img src="https://iconicpasteleria.com/fotos/navidad-6-velas.webp" alt="Tarta rosa con velas" width="1080" height="1350" loading="lazy" style="animation-delay:9s"></div></div>
+  <!-- VIDEO ORIGINAL: <video class="hero-media" src="https://iconicpasteleria.com/fotos/hero-video.mp4" poster="https://iconicpasteleria.com/fotos/hero-video-poster.webp" autoplay muted loop playsinline></video> -->
   <div class="hero-shade"></div>
   <div class="hero-caption">
     <div class="tag">The centrepiece of your table</div>
@@ -755,25 +772,18 @@
     <div class="footer-top">
       <div class="footer-news reveal in">
         <div class="footer-wordmark">Iconic Pastelería</div>
-        <p>Subscribe and we'll tell you first about what's new: flavours, free dates and new pieces. No spam, promise.</p>
-        <form class="news-form" onsubmit="return false">
-          <input type="email" placeholder="Your email">
-          <button type="submit">Sign me up</button>
-        </form>
+        <p>Follow us and be the first to hear what's new: flavours, free dates and new pieces.</p>
+        <div class="news-links">
+          <a href="https://instagram.com/iconicpasteleria" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://tiktok.com/@iconicpasteleria" target="_blank" rel="noopener">TikTok</a>
+        </div>
       </div>
       <div class="footer-links reveal in" style="transition-delay:100ms">
         <div>
           <a href="../en/contact.html">Contact</a>
-          <a href="#">My order</a>
-          <a href="#">About me</a>
+          <a href="../en/catalogue.html">Catalogue</a>
         </div>
         <div>
-          <a href="#">Allergens</a>
-          <a href="#">Delivery</a>
-          <a href="#">Care</a>
-        </div>
-        <div>
-          <a href="#">Weddings &amp; events</a>
           <a href="../en/business.html">Business</a>
         </div>
         <div>
@@ -785,8 +795,8 @@
     <div class="footer-bottom">
       <span>© 2026 Iconic Pastelería. All rights reserved.</span>
       <div class="footer-social">
-        <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5"></rect></svg>
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2Z"></path></svg>
+        <a href="https://instagram.com/iconicpasteleria" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5"></rect></svg></a>
+        <a href="https://tiktok.com/@iconicpasteleria" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2Z"></path></svg></a>
       </div>
     </div>
   </div>
